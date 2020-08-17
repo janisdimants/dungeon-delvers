@@ -10,7 +10,7 @@ if (equip) {
   weapon_attack_frame = 11;
   weapon_height = 6;
   weapon_length = .6; // Seconds
-  weapon_damage = .35;
+  weapon_damage = .5;
   weapon_stun = 0.2;
   weapon_knockback = 50;
   weapon_movement_modifier = 0.7;

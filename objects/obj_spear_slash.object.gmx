@@ -53,7 +53,7 @@ depth = -y;
             <kind>1</kind>
             <string>/// Update image speed
 
-image_speed = (16/room_speed)*global.game_speed;
+image_speed = (60/room_speed)*global.game_speed;
 </string>
           </argument>
         </arguments>

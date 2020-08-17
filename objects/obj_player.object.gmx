@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Inherit entity variables
+            <string>/// Inherit event
 event_inherited();
 </string>
           </argument>
@@ -51,73 +51,24 @@ event_inherited();
 
 // Attack, spell, dodge
 pointer_direction = 0;
-active_attack = noone;
-attacked = false;
+active_equipment = noone;
 
+// Player animation 
 weapon_img_index = 0;
-weapon_icon_index = 0;
-show_weapon = true;
-
+weapon_img_number = 0;
 spell_img_index = 0;
-weapon_icon_index = 0;
-show_spell = true;
-
+spell_img_number = 0;
 dodge_img_index = 0;
 
-// Animation
+// Player animation
 bob_amount = 0;
 footstep_sound_played = false;
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Player stats
-
-team = 1;
-
-hp = 5;
-max_hp = hp;
-
-max_mana = 5;
-mana = 2.6;
-mana_restore_rate = .15;
-
-move_speed = 100;
-
-move = scr_move_state;
-dodge = scr_roll;
-weapon = scr_weapon_bow;
-spell = scr_spell_groundbeam;
-
-script_execute(dodge, true);
-script_execute(weapon, true);
-script_execute(spell, true);
-
-// Runtime variables
-state = scr_move_state;
-dir = 270;
-attack_direction = 270;
-head_direction = 0;
-face = 3;
-move_percentage = 0;
-move_speed_modifier = 1;
+// UI variables
+weapon_icon_index = 0;
+show_weapon = true;
+weapon_icon_index = 0;
+show_spell = true;
 
 </string>
           </argument>
@@ -143,7 +94,7 @@ move_speed_modifier = 1;
 
 head = spr_player_head;
 
-body_img_speed = 12;
+body_img_speed = 36;
 body[RIGHT] = spr_base_right;
 body[UP] = spr_base_down;
 body[LEFT] = spr_base_left;
@@ -153,6 +104,69 @@ shadow = spr_shadow_small;
 
 body_bob_height = 1;
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Player stats
+scr_get_equipment_mapping();
+
+team = 1;
+hp = 5;
+max_hp = hp;
+max_mana = 5;
+mana = 2.6;
+mana_restore_rate = .15;
+move_speed = 100;
+move = scr_move_state;
+
+combo_time = 0.21;
+
+// Active items
+scr_init_equipment_slot(0);
+scr_init_equipment_slot(1);
+scr_init_equipment_slot(2);
+scr_init_equipment_slot(3);
+
+dodge = scr_roll;
+//equipment[0] = scr_roll;
+script_execute(dodge, true);
+
+scr_weapon_spear(1, true);
+//equipment[1] = scr_weapon_spear;
+
+//spell = scr_spell_fire;
+//equipment[2] = scr_spell_fire;
+
+//special = scr_spell_groundbeam;
+//equipment[3] = scr_spell_groundbeam;
+
+
+// Runtime variables
+state = scr_move_state;
+dir = 270;
+attack_direction = 270;
+head_direction = 0;
+face = 3;
+move_percentage = 0;
+move_speed_modifier = 1;
 
 </string>
           </argument>
@@ -228,15 +242,13 @@ depth = -y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Restore mana
+            <string>/// Stat update (Restore mana)
 scr_frame_time();
 
-if (active_attack != spell &amp;&amp; mana &lt; max_mana) {
-  mana += mana_restore_rate * frame_time;
-  
-  if (mana &gt; max_mana) {
-    mana = max_mana;
-  }
+mana += mana_restore_rate * frame_time;
+
+if (mana &gt; max_mana) {
+  mana = max_mana;
 }
 </string>
           </argument>
@@ -280,7 +292,7 @@ draw_text(220, 100, 'len '+string(len));
 draw_text(220, 120, 'move_cap '+string(move_cap));
 
 draw_text(420, 20, 'state '+string(state));
-//draw_text(420, 40, 'vspd '+string(vspd));
+draw_text(420, 40, 'dash_key '+string(dash_key));
 </string>
           </argument>
         </arguments>
@@ -307,21 +319,17 @@ draw_text(420, 20, 'state '+string(state));
 
 // SHADOWS
 shader_set(shd_shadow);
-// Weapon
-if (show_weapon) {
-  draw_sprite_ext(
-    weapon_sprite, weapon_img_index, x, y,
-    1, 1, attack_direction, c_white, 1
-  );
+
+// Equipment shadow
+for (var i = 0; i &lt; array_height_2d(equipment); i++) {
+  if (equipment[i, _eq_script]) {
+    draw_sprite_ext(
+      equipment[i, _eq_sprite], equipment[i, _eq_image_index], x, y,
+      1, 1, attack_direction, c_white, 1
+    );
+  }
 }
 
-// Spell
-if (show_spell) {
-  draw_sprite_ext(
-    spell_sprite, spell_img_index, x, y,
-    1, 1, attack_direction, c_white, 1
-  );
-}
 // Body
 shader_reset();
 draw_sprite(shadow, 0, x, y);
@@ -340,29 +348,21 @@ var body_bob = bob_amount * body_bob_height;
 // Body
 draw_sprite(sprite_index, image_index, x, y - body_bob);
 
-// Weapon
-if (show_weapon) {
-  var weapon_y = y - weapon_height - body_bob;
-  draw_sprite_ext(
-    weapon_sprite, weapon_img_index, x, weapon_y,
-    1, 1, attack_direction, c_white, 1
-  );
-}
-
-// Spell
-if (show_spell) {
-  var spell_y = y - spell_height - body_bob;
-  draw_sprite_ext(
-    spell_sprite, spell_img_index, x, spell_y,
-    1, 1, attack_direction, c_white, 1
-  );
+// Equipment
+for (var i = 0; i &lt; array_height_2d(equipment); i++) {
+  if (equipment[i, _eq_script]) {
+    var _y = y - equipment[i, _eq_height] - body_bob;
+    draw_sprite_ext(
+      equipment[i, _eq_sprite], equipment[i, _eq_image_index], x, _y,
+      1, 1, attack_direction, image_blend, 1
+    );
+  }
 }
 
 // Head
 draw_sprite(head, head_direction, x, y - body_bob);
 
 shader_reset();
-
 </string>
           </argument>
         </arguments>

@@ -12,5 +12,5 @@ for (var i = 0; i < string_length(_string); i++ ) {
         _y + sin((frame + (i*0.2) ) * 6) * 2,
         _string[i]
     );
-    _total_dist += string_width(_letter);
+    _total_dist += string_width(_letter)-1;
 }

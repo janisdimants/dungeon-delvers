@@ -22,7 +22,7 @@ if (argument_count > 1) {
 // Set particle lifetime
 if (argument_count > 2) {
   var _lifetime = argument[2];
-  _particle.alarm[0] = _lifetime;
+  _particle.lifetime = _lifetime;
 }
 
 // Set physics props

@@ -1,31 +1,23 @@
 ///scr_draw_health()
 // Draw health
 
+var _sprite = spr_player_hp;
 var _max_hp = player.max_hp;
 var _hp = player.hp;
+var _x = -48 * scale_x;
+var _y = 0 * scale_y;
 
-for (var i = 0; i < _max_hp; i++) {
-  var _hp_fill = 0;
-  var _hp_x = hp_start_x + (hp_offset * i);
-  
-  if (i <= _hp) {
-    _hp_fill = round((_hp%1)*10);
-    
-    if (i+1 <= _hp) {
-      _hp_fill = 10;
-    }
-  }
-  
-  // Draw hp point
-  draw_sprite_ext(
-    spr_player_hp,
-    _hp_fill,
-    _hp_x,
-    hp_start_y,
-    scale_x,
-    scale_y,
-    0,
-    c_white,
-    1
-  );
-}
+var _hp_fill = (_hp/_max_hp) * (sprite_get_number(_sprite) - 1);
+
+// Draw hp point
+draw_sprite_ext(
+  _sprite,
+  _hp_fill,
+  width/2 + _x,
+  height - _y,
+  scale_x,
+  scale_y,
+  0,
+  c_white,
+  1
+);

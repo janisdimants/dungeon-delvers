@@ -20,5 +20,5 @@ if (equip) {
   exit;
 }
 
-scr_weapon_melee();
+scr_weapon_melee(0);
 

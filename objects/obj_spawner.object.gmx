@@ -31,7 +31,6 @@ image_speed = 10/room_speed;
 depth = -y + 16;
 
 obj_to_spawn = obj_skeleton_helmet;
-particle_effect = spr_explosion;
 </string>
           </argument>
         </arguments>
@@ -55,7 +54,7 @@ particle_effect = spr_explosion;
           <argument>
             <kind>1</kind>
             <string>/// Update sprite
-image_speed = (4/room_speed)*global.game_speed;
+image_speed = (13/room_speed)*global.game_speed;
 
 </string>
           </argument>
@@ -84,8 +83,24 @@ image_speed = (4/room_speed)*global.game_speed;
 // spawn object
 instance_create(x,y,obj_to_spawn);
 
-// spawn explosion in front
-instance_create(x,y, obj_explosion);
+// Create smoke particle effect
+var _count = 8 + irandom(4);
+
+for (var _i = 0; _i &lt; _count; _i++) {
+  var _particle = instance_create(x, y, obj_particle);
+  
+  _particle.image_angle = irandom(4) * 90;
+  _particle.rotation_speed = -90 + random(180);
+  _particle.dir = random(360);
+  _particle.len = 40+random(20);
+  _particle.height = 2 + random(2);
+  _particle.velocity = -5 + random(6);
+  _particle.grav = 2;
+  _particle.sprite_index = spr_smoke;
+  _particle.destroy_after_animation = true;
+  _particle.anim_speed = 10+random(6);
+  _particle.draw_shadow = false;
+}
 </string>
           </argument>
         </arguments>

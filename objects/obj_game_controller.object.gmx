@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10000000</depth>
+  <depth>-9000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Get player reference and set current menu
-current_menu = scr_menu_game;
+            <string>/// Game controller variables
+game_paused = false;
 player = obj_player;
 
 </string>
@@ -72,76 +72,15 @@ scr_update_ui_variables();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Runtime Menu variables
-menu_navigation_timer = 0;
-bg_fade_amount = 1;
-menu_position = 0;
-
-// Colors
-unselected_color = $c0c0c0;
-selected_color = $ffffff;
-
-// Window
-game_speed_before_game_minimised = 1;
-
-/*
-// Menu actions
-menu_action[PAUSE, 0] = scr_resume_game;
-menu_action[PAUSE, 1] = scr_open_options;
-menu_action[PAUSE, 2] = scr_exit_to_menu;
-
-menu_action[OPTIONS_GFX, 0] = scr_toggle_fullscreen;
-menu_action[OPTIONS_GFX, 1] = scr_next_resolution;
-menu_action[OPTIONS_GFX, 2] = scr_next_fps_cap;
-menu_action[OPTIONS_GFX, 3] = scr_apply_gfx_options;
-
-// Item count for each menu
-menu_item_count[0] = 0;
-menu_item_count[1] = 3;
-menu_item_count[2] = 4;
-
-// Menu values
-// used in options menu
-menu_value[PAUSE, 0] = '';
-menu_value[PAUSE, 1] = '';
-menu_value[PAUSE, 2] = '';
-
-menu_value[OPTIONS_GFX, 0] = !!window_get_fullscreen(); // fullscreen
-menu_value[OPTIONS_GFX, 1] = 1; // resolution
-menu_value[OPTIONS_GFX, 2] = 5; // fps cap
-menu_value[OPTIONS_GFX, 3] = -1; // apply button
-
-menu_value[OPTIONS_SFX, 0] = 1; // Master volume
-menu_value[OPTIONS_SFX, 1] = 1; // SFX volume
-menu_value[OPTIONS_SFX, 2] = 1; // Ambient volume
-
-menu_value[OPTIONS_CTRLS, 0] = true; // Gamepad enabled
-menu_value[OPTIONS_CTRLS, 1] = ''; // Controller deadzone
-menu_value[OPTIONS_CTRLS, 2] = ''; */
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Settings
 camera_speed = 10; // Percent per second
 menu_navigation_rate = 5;
 bg_fade_speed = 4; // fraction of second
+
+weapon_input_sprite = spr_mouse;
+weapon_input_index = 0;
+spell_input_sprite = spr_mouse;
+spell_input_index = 1;
 </string>
           </argument>
         </arguments>
@@ -162,10 +101,10 @@ bg_fade_speed = 4; // fraction of second
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set display settings
+            <string>/// DEBUG Set display settings
 
-var _w = 640;
-var _h = 360;
+var _w = 1280;
+var _h = 720;
 window_set_size(_w, _h);
 global.center_window = true;
 </string>
@@ -197,32 +136,6 @@ global.center_window = true;
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Center the game window
-
-if (global.center_window) {
-  global.center_window = false;
-  window_center();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -351,48 +264,7 @@ if (w != width || h != height) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Execute menu script and update bg fade
-scr_get_input();
-script_execute(current_menu, false);
-
-// Control background fade
-scr_frame_time_independant();
-fade_dir = 0;
-if (current_menu != scr_menu_game) {
-  fade_dir = 1;
-} else {
-  fade_dir = -1;
-}
-
-bg_fade_amount += fade_dir * bg_fade_speed * frame_time_indep;
-bg_fade_amount = clamp(bg_fade_amount, 0, 1);
-
-//menu_index = controller.menu_index;
-//current_menu = menu_items[menu_index];
-//menu_item_count = sprite_get_number(current_menu)
-//menu_position = controller.menu_position;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Update hit pause
+            <string>/// Handle game speed
 scr_frame_time_independant()
 
 var _hit_pause_timer = global.hit_pause_timer;
@@ -406,6 +278,8 @@ if (_hit_pause_timer &gt; 0) {
   global.hit_pause_timer = _hit_pause_timer;
 } else if (!global.game_paused) {
   global.game_speed = 1;
+} else {
+  global.game_speed = 0;
 }
 </string>
           </argument>
@@ -427,10 +301,42 @@ if (_hit_pause_timer &gt; 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Pause game if window is not focused
+            <string>/// Handle game pausing
+scr_get_input();
 
-if (os_is_paused() &amp;&amp; current_menu == scr_menu_game) {
+if (!global.game_paused &amp;&amp; menu_key) {
   scr_to_pause();
+}
+
+// Pause on focus loss
+if (os_is_paused() &amp;&amp; !global.game_paused) {
+  scr_to_pause();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Center the game window
+
+if (global.center_window) {
+  global.center_window = false;
+  window_center();
 }
 </string>
           </argument>
@@ -517,10 +423,12 @@ global.debug = false;
 global.game_speed = 1;
 global.controller_id = -1;
 global.mouse_moved = true;
+global.wave = 1;
 last_mouse_x = window_mouse_get_x();
 last_mouse_y = window_mouse_get_y();
 
 // Settings
+global.show_damage_numbers = false;
 global.fps_cap = 250;
 global.deadzone = 0.3;
 
@@ -554,8 +462,6 @@ global.hit_pause_timer = 0;
             <string>/// Draw debug text
 
 if (global.debug == true) {
-  draw_text(20, 100, 'current_menu'+string(current_menu));
-  draw_text(20, 120, 'menu_position'+string(menu_position));
   draw_text(20, 140, 'width'+string(width));
   draw_text(20, 160, 'height'+string(height));
   
@@ -563,7 +469,6 @@ if (global.debug == true) {
   draw_text(20, 210, 'y'+string(view_yview[0]));
   draw_text(20, 230, 'w'+string(view_wview[0]));
   draw_text(20, 250, 'h'+string(view_hview[0]));
-  draw_text(20, 270, 'fade_dir'+string(fade_dir));
   draw_text(20, 290, 'room_speed'+string(room_speed));
   draw_text(20, 310, 'game_speed'+string(global.game_speed));
 }
@@ -587,100 +492,15 @@ if (global.debug == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Paused menu
+            <string>/// Draw game UI
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Graphics menu
-/* draw graphics menu
-if (controller.menu_index != 2) { exit; }
+scr_draw_mana();
+scr_draw_health();
+scr_draw_equipment();
+scr_draw_wave();
+if (global.game_paused) {
 
-// Draw all menu items;
-for (var i = 0; i &lt; menu_item_count; i++) {
-  var color = unselected_color;
-  var item_value = controller.menu_value[menu_index, i];
-  var item_y = options_item_start + (options_item_offset * i);
-  
-  // Change color and draw underline for selected item
-  if (menu_position == i) { 
-    color = selected_color;
-    draw_sprite_ext(
-      spr_graphics_selection, 0,
-      center_x, item_y,
-      scale_x, scale_y, 0, 
-      color, bg_fade_amount
-    );
-  }
-  
-  // Draw menu item
-  draw_sprite_ext(
-    current_menu, i,
-    center_x, item_y,
-    scale_x, scale_y, 0, 
-    color, bg_fade_amount
-  );
-  
-  if (item_value &gt; -1) {
-    script_execute(controller.menu_action[menu_index, i], true, false);
-    // Draw option sprite
-    draw_sprite_ext(
-      option_sprite, option_index,
-      center_x + (73 * scale_x), item_y,
-      scale_x, scale_y, 0, 
-      color, bg_fade_amount
-    );
-  }
 }
-*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Handle menus
-draw_sprite_ext(spr_menu_bg, 0, 0, 0, width, height, 0, c_white, bg_fade_amount);
-script_execute(current_menu, true);
-
-/* drawing menu logic
-if (menu_index) {
-  // Draw header
-  draw_sprite_ext(menu_headers, menu_index, center_x, header_y,
-    scale_x, scale_y, 0, c_white, bg_fade_amount);
-}
-*/
 </string>
           </argument>
         </arguments>

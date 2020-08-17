@@ -107,6 +107,23 @@ with (other) {
     invinc_timer = invinc_time;
     stun_timer = _stun_time * stun_time_modifier;
     stun_time = stun_timer;
+
+    if (global.show_damage_numbers) {
+      // Create damage popup
+      var _popup = instance_create(x, y, obj_particle);
+      _popup.sprite_index = spr_numbers_small;
+      _popup.image_angle = 0;
+      _popup.image_blend = c_red;
+      _popup.image_index = (_damage*10);
+      _popup.anim_speed = 0;
+      _popup.height = 10;
+      _popup.velocity = -25;
+      _popup.len = 10;
+      _popup.dir = random(360);
+      _popup.grav = 25;
+      _popup.lifetime = 1;
+      _popup.draw_shadow = false;
+    }
   }
 }
 </string>

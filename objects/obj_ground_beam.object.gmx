@@ -80,15 +80,17 @@ for (var _i = 0; _i &lt; _particle_count; _i++) {
   var _particle = instance_create(x, y, obj_particle);
   
   _dir = random(360);
-  _len = 20 + random(20);
+  _len = 30 + random(50);
     
   _particle.rotation_speed = -90 + random(180);
   _particle.dir = _dir;
   _particle.len = _len;
-  _particle.velocity = random(1);
+  _particle.velocity = 0.2 + random(1) * 0.2;
   
   _particle.sprite_index = spr_ground_beam_projectile;
   _particle.height = 0;
+  _particle.bounce = 0.7;
+  _particle.damp = 150;
 }
 </string>
           </argument>

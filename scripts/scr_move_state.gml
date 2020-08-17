@@ -2,13 +2,32 @@
 
 if (global.game_speed <= 0) { exit; }
 
-scr_get_input();
 
 // Check for action inputs
-if (!active_attack) {
+/*if (!active_attack) {
   if (attack1_key_down) { active_attack = weapon; }
   if (attack2_key_down) { active_attack = spell; }
   if (dash_key && len != 0) { state = dodge; }
+}*/
+// Execute equipment
+scr_get_input();
+scr_get_equipment_mapping();
+
+for (var i = 0; i < array_height_2d(equipment); i++) {
+  if (equipment[i, _eq_script]) {
+    switch (i)
+    {
+        case 1:
+          equipment[i, _eq_input_down] = attack1_key_down;
+          equipment[i, _eq_input_up] = attack1_key_up;
+          break;
+    }
+     
+    // Update equipment inputs
+    
+    // Execute
+    script_execute(equipment[i, _eq_script], i, false);
+  }
 }
 
 // Calculate input direction and amount
@@ -30,12 +49,12 @@ if (abs(input_x) < global.deadzone && abs(input_y) < global.deadzone) {
 // Update movement cap
 move_cap = move_speed * move_speed_modifier;
 
-if (!active_attack) {
+//if (!active_attack) {
   scr_get_head_direction();
   attack_direction = pointer_direction;
-} else {
-  script_execute(active_attack, false);
-}
+//} else {
+//  script_execute(active_attack, false);
+//}
 
 // Updates bobbing movement based on current image
 var bob_value = (image_index/image_number) * pi * 2;

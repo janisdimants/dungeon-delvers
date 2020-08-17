@@ -1,24 +1,32 @@
-///scr_weapon_spear(equip?)
+///scr_weapon_spear(slot, equip?)
 
-var equip = argument0;
+var _slot = argument0;
+var _equip = argument1;
 
-if (equip) {
-  weapon = scr_weapon_spear;
-  weapon_sprite = spr_spear;
-  weapon_collision_sprite = spr_col_spear;
-  weapon_attack_object = obj_spear_slash;
-  weapon_icon_index = 1;
-  weapon_attacked = false;
-  weapon_attack_frame = 2;
-  weapon_height = 6;
-  weapon_length = .7; // Seconds
-  weapon_damage = 1;
-  weapon_stun = .5;
-  weapon_hit_pause = 0.03;
-  weapon_knockback = 250;
-  weapon_movement_modifier = 0.7;
+scr_get_equipment_mapping();
+
+if (_equip) {
+  equipment[_slot, _eq_script] = scr_weapon_spear;
+  equipment[_slot, _eq_active] = false;
+  equipment[_slot, _eq_progress_time] = 0;
+  equipment[_slot, _eq_image_index] = 0;
+  equipment[_slot, _eq_sprite] = spr_spear;
+  equipment[_slot, _eq_collision_sprite] = spr_col_spear;
+  equipment[_slot, _eq_particle_sprite] = spr_spear_slash;
+  equipment[_slot, _eq_hit_pause_time] = 0.03;
+  equipment[_slot, _eq_icon_index] = 2;
+  equipment[_slot, _eq_executed] = false; //attacked
+  equipment[_slot, _eq_execution_time] = .15;
+  equipment[_slot, _eq_height] = 6;
+  equipment[_slot, _eq_time] = .7; // Seconds (length)
+  equipment[_slot, _eq_combo_time] = 0.3;
+  equipment[_slot, _eq_combo_ready] = false;
+  equipment[_slot, _eq_damage] = .4;
+  equipment[_slot, _eq_stun_time] = .5;
+  equipment[_slot, _eq_knockback] = 240;
+  equipment[_slot, _eq_active_movement_modifier] = 0.7;
   exit;
 }
 
-scr_weapon_melee();
+scr_weapon_melee(_slot);
 

@@ -55,6 +55,7 @@ invinc_time = .2;
 knockback_amount = 150;
 damage = .5;
 stun_time = .3;
+mirror_towards_enemy = true;
 </string>
           </argument>
         </arguments>
@@ -133,11 +134,19 @@ if (!instance_exists(obj_player)) {
             <string>/// Update movement
 
 // Get move variables
-move_cap = move_speed;
-dir = point_direction(x, y, target.x, target.y);
-len = 1;
-if (stun_timer &gt; 0) {
-  len = 0;
+if (target) {
+  move_cap = move_speed;
+  dir = point_direction(x, y, target.x, target.y);
+  len = 1;
+  
+  if (mirror_towards_enemy) {
+    image_xscale = (target.x &gt; x)*2-1;
+  }
+  
+  // Stop movement while stunned
+  if (stun_timer &gt; 0) {
+    len = 0;
+  }
 }
 </string>
           </argument>
