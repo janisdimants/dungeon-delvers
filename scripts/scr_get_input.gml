@@ -13,7 +13,8 @@ var kb_attack1_key_down = mouse_check_button_pressed(mb_left);
 var kb_attack1_key_up = mouse_check_button_released(mb_left);
 var kb_attack2_key_down = mouse_check_button_pressed(mb_right);
 var kb_attack2_key_up = mouse_check_button_released(mb_right);
-var kb_dash_key = keyboard_check_pressed(vk_space);
+var kb_dash_key_down = keyboard_check_pressed(vk_space);
+var kb_dash_key_up = keyboard_check_released(vk_space);
 
 var kb_interact_key = keyboard_check_pressed(ord('E'));
 var kb_menu_key = keyboard_check_pressed(vk_escape);
@@ -35,7 +36,8 @@ var gp_attack1_key_down = gamepad_button_check_pressed(global.controller_id, gp_
 var gp_attack1_key_up = gamepad_button_check_released(global.controller_id, gp_shoulderrb);
 var gp_attack2_key_down = gamepad_button_check_pressed(global.controller_id, gp_shoulderlb);
 var gp_attack2_key_up = gamepad_button_check_released(global.controller_id, gp_shoulderlb);
-var gp_dash_key = gamepad_button_check_pressed(global.controller_id, gp_face1);
+var gp_dash_key_down = gamepad_button_check_pressed(global.controller_id, gp_face1);
+var gp_dash_key_up = gamepad_button_check_released(global.controller_id, gp_face1);
 
 var gp_interact_key = gamepad_button_check_pressed(global.controller_id, gp_face3);
 var gp_back_key = gamepad_button_check_pressed(global.controller_id, gp_face2);
@@ -48,10 +50,11 @@ attack1_key_down = kb_attack1_key_down || gp_attack1_key_down;
 attack1_key_up = kb_attack1_key_up || gp_attack1_key_up;
 attack2_key_down = kb_attack2_key_down || gp_attack2_key_down;
 attack2_key_up = kb_attack2_key_up || gp_attack2_key_up;
-dash_key = kb_dash_key || gp_dash_key;
+dash_key_down = kb_dash_key_down || gp_dash_key_down;
+dash_key_up = kb_dash_key_up || gp_dash_key_up;
 
 // Menu input variables
-accept_key = dash_key || kb_attack1_key_down;
+accept_key = dash_key_down || kb_attack1_key_down;
 back_key = gp_back_key; // No kb back key?
 menu_key = kb_menu_key || gp_menu_key;
 

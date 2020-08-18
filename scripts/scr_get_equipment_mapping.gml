@@ -21,3 +21,4 @@ _eq_damage = 15;
 _eq_stun_time = 16;
 _eq_knockback = 17;
 _eq_active_movement_modifier = 18;
+_eq_visual_progress = 21;

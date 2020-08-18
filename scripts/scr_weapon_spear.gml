@@ -1,7 +1,10 @@
 ///scr_weapon_spear(slot, equip?)
 
-var _slot = argument0;
-var _equip = argument1;
+var _slot = argument[0];
+var _equip = false;
+if (argument_count > 1) {
+  _equip = argument[1];
+}
 
 scr_get_equipment_mapping();
 
@@ -9,6 +12,7 @@ if (_equip) {
   equipment[_slot, _eq_script] = scr_weapon_spear;
   equipment[_slot, _eq_active] = false;
   equipment[_slot, _eq_progress_time] = 0;
+  equipment[_slot, _eq_visual_progress] = 0;
   equipment[_slot, _eq_image_index] = 0;
   equipment[_slot, _eq_sprite] = spr_spear;
   equipment[_slot, _eq_collision_sprite] = spr_col_spear;
@@ -19,7 +23,7 @@ if (_equip) {
   equipment[_slot, _eq_execution_time] = .15;
   equipment[_slot, _eq_height] = 6;
   equipment[_slot, _eq_time] = .7; // Seconds (length)
-  equipment[_slot, _eq_combo_time] = 0.3;
+  equipment[_slot, _eq_combo_time] = 0.25;
   equipment[_slot, _eq_combo_ready] = false;
   equipment[_slot, _eq_damage] = .4;
   equipment[_slot, _eq_stun_time] = .5;

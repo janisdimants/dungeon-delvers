@@ -27,60 +27,10 @@
             <kind>1</kind>
             <string>/// Game controller variables
 game_paused = false;
-player = obj_player;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Initialize UI variables
-scr_update_ui_variables();
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Settings
+player = instance_find(obj_player, 0);
 camera_speed = 10; // Percent per second
-menu_navigation_rate = 5;
-bg_fade_speed = 4; // fraction of second
 
-weapon_input_sprite = spr_mouse;
-weapon_input_index = 0;
-spell_input_sprite = spr_mouse;
-spell_input_index = 1;
+scr_update_ui_variables();
 </string>
           </argument>
         </arguments>
@@ -136,6 +86,28 @@ global.center_window = true;
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Find player object
+player = instance_find(obj_player, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -210,12 +182,14 @@ view_y = view_yview[0];
 view_w = view_wview[0];
 view_h = view_hview[0];
 
-cam_move_x = (player.x - (view_w/2)) - view_x;
-cam_move_y = (player.y - (view_h/2)) - view_y;
-
-view_xview[0] += cam_move_x * camera_speed * frame_time;
-view_yview[0] += cam_move_y * camera_speed * frame_time;
-
+if (player) {
+  cam_move_x = (player.x - (view_w/2)) - view_x;
+  cam_move_y = (player.y - (view_h/2)) - view_y;
+  
+  view_xview[0] += cam_move_x * camera_speed * frame_time;
+  view_yview[0] += cam_move_y * camera_speed * frame_time;
+}
+  
 </string>
           </argument>
         </arguments>
@@ -304,13 +278,15 @@ if (_hit_pause_timer &gt; 0) {
             <string>/// Handle game pausing
 scr_get_input();
 
-if (!global.game_paused &amp;&amp; menu_key) {
-  scr_to_pause();
-}
-
-// Pause on focus loss
-if (os_is_paused() &amp;&amp; !global.game_paused) {
-  scr_to_pause();
+if (room == rm_arena) {
+  if (!global.game_paused &amp;&amp; menu_key) {
+    scr_to_pause();
+  }
+  
+  // Pause on focus loss
+  if (os_is_paused() &amp;&amp; !global.game_paused) {
+    scr_to_pause();
+  }
 }
 </string>
           </argument>
@@ -433,7 +409,7 @@ global.fps_cap = 250;
 global.deadzone = 0.3;
 
 // Runtime
-global.center_window = false;
+global.center_window = true;
 global.game_paused = false;
 global.hit_pause_timer = 0;
 
@@ -493,11 +469,12 @@ if (global.debug == true) {
           <argument>
             <kind>1</kind>
             <string>/// Draw game UI
-
-scr_draw_mana();
-scr_draw_health();
-scr_draw_equipment();
-scr_draw_wave();
+if (player) {
+  scr_draw_equipment();
+  scr_draw_mana();
+  scr_draw_health();
+  scr_draw_wave();
+}
 if (global.game_paused) {
 
 }

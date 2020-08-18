@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>obj_entity</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -137,7 +137,7 @@ mana_restore_rate = .15;
 move_speed = 100;
 move = scr_move_state;
 
-combo_time = 0.21;
+combo_time = 0.3;
 
 // Active items
 scr_init_equipment_slot(0);
@@ -152,7 +152,7 @@ script_execute(dodge, true);
 scr_weapon_spear(1, true);
 //equipment[1] = scr_weapon_spear;
 
-//spell = scr_spell_fire;
+scr_spell_fire(2, true);
 //equipment[2] = scr_spell_fire;
 
 //special = scr_spell_groundbeam;

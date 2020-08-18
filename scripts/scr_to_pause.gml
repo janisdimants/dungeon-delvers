@@ -9,6 +9,6 @@ instance_create(0, 0, obj_ui_dark_layer);
 instance_create(16, 16, obj_ui_paused);
 var _s = instance_create(16, 48, obj_ui_resume);
 instance_create(16, 64, obj_ui_options);
-instance_create(16, 80, obj_ui_exit);
+instance_create(16, 80, obj_ui_to_menu);
 
 _s.selected = true

@@ -14,6 +14,7 @@ if (_equip) {
   equipment[_slot, _eq_icon_index] = 3;
   equipment[_slot, _eq_height] = 6;
   equipment[_slot, _eq_damage] = 0.2;
+  equipment[_slot, _eq_knockback] = 30;
   equipment[_slot, _eq_stun_time] = 0;
   equipment[_slot, _eq_time] = .15; // animation length
   equipment[_slot, _eq_executed] = false; //equipment[_slot, _eq_executed]
@@ -22,69 +23,92 @@ if (_equip) {
   exit;
 }
 
+// INPUT LOGIC
+if (!equipment[_slot, _eq_active] && equipment[_slot, _eq_input_down]) {
+  equipment[_slot, _eq_active] = true;
+}
+
+if (!equipment[_slot, _eq_active]) {
+  equipment[_slot, _eq_visual_progress] = 1;
+  exit;
+}
+
+// ATTACK LOGIC
+
 // Private variables
 var _spell_distance = 50; // projectile distance
-var _spell_rate = 10; // cast rate
-var _spell_rate_index = 0;
-var _spell_mana_drain = 1; // per second
+var _cast_rate = 80; // cast rate
+var _cast_time = 1/_cast_rate;
+var _mana_drain_per_second = 1;
+var _projectile_fwd_offset = 8;
+var _projectile_side_offset = -3;
   
 scr_get_head_direction();
 attack_direction = pointer_direction;
 
 var spell_img_number = sprite_get_number(equipment[_slot, _eq_sprite]);
-var shoot_index = equipment[_slot, _eq_execution_time];
-var _projectile_fwd_offset = 7;
-var _projectile_side_offset = -3;
 var release = equipment[_slot, _eq_input_up];
 
 if (!equipment[_slot, _eq_executed]) {
-  equipment[_slot, _eq_image_index] +=  (spell_img_number/spell_length) * frame_time;
+  // Update progress time
+  equipment[_slot, _eq_progress_time] += frame_time;
+    
+  equipment[_slot, _eq_visual_progress] = 1 - min(equipment[_slot, _eq_progress_time]/(equipment[_slot, _eq_time]-_cast_time), 1);
   
   // Arm extended to shoot
-  if (spell_img_index > shoot_index) {
-    spell_img_index = shoot_index;
+  if (equipment[_slot, _eq_progress_time] > equipment[_slot, _eq_execution_time]) {
+    // Get projectile count
+    var _progress_amount = equipment[_slot, _eq_progress_time] - equipment[_slot, _eq_execution_time];
+    var _projectile_count = ceil(_progress_amount/_cast_time);
+  
+    // Update progress timer, for next shot
+    equipment[_slot, _eq_progress_time] -= _cast_time * _projectile_count;
     
-    // Update spell rate, which projectile spawn rate is based on
-    spell_rate_index += spell_rate * frame_time;
-    
-    // Drain mana
-    mana -= spell_mana_drain * frame_time;
-    if (mana <= 0) {
-      mana = 0;
-      release = true;
+    if (_progress_amount * _mana_drain_per_second > mana) {
+        // Mana drain is more than available mana
+        _progress_amount -= _cast_time;
+        _projectile_count -= 1;
+        release = true;
     }
     
-    while (spell_rate_index > 1/spell_rate) {
-      spell_rate_index -= 1/spell_rate;
-
+    // Drain mana
+    mana -= _mana_drain_per_second * _progress_amount;
+    
+    for (var i = 0; i < _projectile_count; i++) {
+  
       // Spawn fire projectile
-      var projectile = scr_create_inst_offset(obj_fire_projectile, forw_offset, side_offset, attack_direction);
+      var projectile = scr_create_inst_offset(obj_fire_projectile, _projectile_fwd_offset, _projectile_side_offset, attack_direction);
       
       var direction_offset = (random_range(-20, 20));
       
       projectile.team = team;
-      projectile.damage = spell_damage;
-      projectile.stun_time = spell_stun;
+      projectile.damage = equipment[_slot, _eq_damage];
+      projectile.stun_time = equipment[_slot, _eq_stun_time];
+      projectile.knockback = equipment[_slot, _eq_knockback];
       projectile.piercing = true;
       
       
       // Creates rounder shape by decreasing distance on sides
-      projectile.distance = spell_distance - abs(sin(degtorad(direction_offset))*20);
+      projectile.distance = _spell_distance - abs(sin(degtorad(direction_offset))*20);
       projectile.dir = attack_direction + direction_offset;
       projectile.spd = random_range(70, 90);
-      projectile.height = spell_height;
+      projectile.height = equipment[_slot, _eq_height] + 0.5;
     }
   }
   
   // If player releases, return back
   equipment[_slot, _eq_executed] = release;
 } else {
-  spell_img_index -=  (spell_img_number/spell_length) * frame_time;
+  equipment[_slot, _eq_progress_time] -= frame_time;
+  equipment[_slot, _eq_visual_progress] = 1 - max(equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time], 0);
   
-  if (spell_img_index < 0) {
+  if (equipment[_slot, _eq_progress_time] < 0) {
     // Return to normal state
-    spell_img_index = 0;
-    active_attack = noone;
+    equipment[_slot, _eq_progress_time] = 0;
     equipment[_slot, _eq_executed] = false;
+    equipment[_slot, _eq_active] = false;
   }
 }
+
+// Update sprite
+equipment[_slot, _eq_image_index] = (equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time]) * spell_img_number;

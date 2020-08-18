@@ -8,6 +8,7 @@ equipment[_slot, _eq_input_down] = false;
 equipment[_slot, _eq_input_up] = false;
 equipment[_slot, _eq_active] = false;
 equipment[_slot, _eq_progress_time] = 0;
+equipment[_slot, _eq_visual_progress] = 0;
 equipment[_slot, _eq_image_index] = 0;
 equipment[_slot, _eq_sprite] = spr_empty;
 equipment[_slot, _eq_collision_sprite] = spr_empty;

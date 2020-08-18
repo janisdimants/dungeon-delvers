@@ -15,13 +15,27 @@ scr_get_equipment_mapping();
 
 for (var i = 0; i < array_height_2d(equipment); i++) {
   if (equipment[i, _eq_script]) {
+    var _down = false;
+    var _up = false;
     switch (i)
     {
+        case 0:
+          _down = dash_key_down;
+          _up = dash_key_up;
+          break;
         case 1:
-          equipment[i, _eq_input_down] = attack1_key_down;
-          equipment[i, _eq_input_up] = attack1_key_up;
+          _down = attack1_key_down;
+          _up = attack1_key_up;
+          break;
+        case 2:
+          _down = attack2_key_down;
+          _up = attack2_key_up;
+          break;
+        case 3:
           break;
     }
+    equipment[i, _eq_input_down] = _down;
+    equipment[i, _eq_input_up] = _up;
      
     // Update equipment inputs
     
@@ -49,7 +63,8 @@ if (abs(input_x) < global.deadzone && abs(input_y) < global.deadzone) {
 // Update movement cap
 move_cap = move_speed * move_speed_modifier;
 
-//if (!active_attack) {
+//TODO: Add rotation speed with modifier
+//if (!active_attack) { 
   scr_get_head_direction();
   attack_direction = pointer_direction;
 //} else {

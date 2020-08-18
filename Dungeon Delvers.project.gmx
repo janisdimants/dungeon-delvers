@@ -85,6 +85,9 @@
         <sprite>sprites\spr_numbers_small</sprite>
       </sprites>
       <sprites name="Menu">
+        <sprites name="Main">
+          <sprite>sprites\spr_main_menu_items</sprite>
+        </sprites>
         <sprites name="Paused">
           <sprite>sprites\spr_paused_header</sprite>
           <sprite>sprites\spr_pause_items</sprite>
@@ -176,6 +179,10 @@
       </scripts>
     </scripts>
     <scripts name="UI">
+      <scripts name="Helper">
+        <script>scripts\scr_get_base_ui.gml</script>
+        <script>scripts\scr_update_ui_variables.gml</script>
+      </scripts>
       <scripts name="Game">
         <script>scripts\scr_draw_mana.gml</script>
         <script>scripts\scr_draw_mana_old.gml</script>
@@ -186,24 +193,28 @@
         <script>scripts\scr_draw_equipment.gml</script>
       </scripts>
       <scripts name="Navigation">
-        <script>scripts\scr_to_game.gml</script>
-        <script>scripts\scr_to_pause.gml</script>
-        <script>scripts\scr_to_options.gml</script>
-        <script>scripts\scr_to_options_gameplay.gml</script>
-        <script>scripts\scr_to_options_graphics.gml</script>
-        <script>scripts\scr_to_options_audio.gml</script>
-        <script>scripts\scr_to_options_input.gml</script>
-        <script>scripts\scr_exit_to_desktop.gml</script>
+        <scripts name="Main Menu">
+          <script>scripts\scr_play_game.gml</script>
+          <script>scripts\scr_exit_to_desktop.gml</script>
+        </scripts>
+        <scripts name="In-Game">
+          <script>scripts\scr_to_pause.gml</script>
+          <script>scripts\scr_to_menu.gml</script>
+          <script>scripts\scr_to_game.gml</script>
+        </scripts>
+        <scripts name="Options">
+          <script>scripts\scr_to_options.gml</script>
+          <script>scripts\scr_to_options_gameplay.gml</script>
+          <script>scripts\scr_to_options_graphics.gml</script>
+          <script>scripts\scr_to_options_audio.gml</script>
+          <script>scripts\scr_to_options_input.gml</script>
+        </scripts>
       </scripts>
       <scripts name="GFX Options">
         <script>scripts\scr_toggle_fullscreen.gml</script>
         <script>scripts\scr_next_resolution.gml</script>
         <script>scripts\scr_next_fps_cap.gml</script>
         <script>scripts\scr_apply_gfx_options.gml</script>
-      </scripts>
-      <scripts name="Helper">
-        <script>scripts\scr_get_base_ui.gml</script>
-        <script>scripts\scr_update_ui_variables.gml</script>
       </scripts>
       <scripts name="Options">
         <script>scripts\scr_apply_values.gml</script>
@@ -222,6 +233,14 @@
     <scripts name="Effects">
       <script>scripts\scr_create_particle.gml</script>
       <script>scripts\scr_arrow_destroy.gml</script>
+    </scripts>
+    <scripts name="fp">
+      <script>scripts\map.gml</script>
+      <script>scripts\of.gml</script>
+      <script>scripts\filter.gml</script>
+      <script>scripts\array_find.gml</script>
+      <script>scripts\for_each.gml</script>
+      <script>scripts\reduce.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -274,12 +293,16 @@
     </objects>
     <objects name="UI">
       <object>objects\obj_ui_element</object>
+      <objects name="Main">
+        <object>objects\obj_play</object>
+        <object>objects\obj_exit</object>
+      </objects>
       <objects name="Pause">
         <object>objects\obj_ui_paused</object>
         <object>objects\obj_ui_dark_layer</object>
         <object>objects\obj_ui_resume</object>
         <object>objects\obj_ui_options</object>
-        <object>objects\obj_ui_exit</object>
+        <object>objects\obj_ui_to_menu</object>
       </objects>
       <objects name="Options">
         <object>objects\obj_options_gameplay</object>
@@ -300,9 +323,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_arena</room>
     <room>rooms\rm_base</room>
-    <room>rooms\rm_main</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

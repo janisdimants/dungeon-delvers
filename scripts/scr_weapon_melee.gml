@@ -7,20 +7,26 @@ if (!equipment[_slot, _eq_active] && equipment[_slot, _eq_input_down]) {
   equipment[_slot, _eq_active] = true;
 }
 
-if (!equipment[_slot, _eq_active]) { exit; }
+if (!equipment[_slot, _eq_active]) {
+  equipment[_slot, _eq_visual_progress] = 1;
+  exit;
+}
 
 // ATTACK LOGIC
 // Update progress time
 equipment[_slot, _eq_progress_time] += frame_time;
 
+// Update progress bar
+equipment[_slot, _eq_visual_progress] = (equipment[_slot, _eq_progress_time] / equipment[_slot, _eq_time]);
+
 // Update sprite
 var _img_number = sprite_get_number(equipment[_slot, _eq_sprite]);
 equipment[_slot, _eq_image_index] = (equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time]) * _img_number;
 
-move_speed_modifier = equipment[0, _eq_active_movement_modifier]; //TODO: rework this so we don't manually update it?
+move_speed_modifier = equipment[_slot, _eq_active_movement_modifier]; //TODO: rework this so we don't manually update it?
 
-var _non_combo_length = equipment[0, _eq_time] - equipment[0, _eq_combo_time];
-equipment[0, _eq_combo_ready] = equipment[_slot, _eq_progress_time] > _non_combo_length;
+var _non_combo_length = equipment[_slot, _eq_time] - equipment[_slot, _eq_combo_time];
+equipment[_slot, _eq_combo_ready] = equipment[_slot, _eq_progress_time] > _non_combo_length;
 
 // Turn towards pointer
 scr_get_head_direction();
@@ -58,7 +64,7 @@ if (equipment[_slot, _eq_combo_ready] && equipment[_slot, _eq_input_down]) {
   equipment[_slot, _eq_combo_ready] = false;
   equipment[_slot, _eq_executed] = false;
   equipment[_slot, _eq_progress_time] = 0;
-  equipment[_slot, _eq_active] = false;
+  equipment[_slot, _eq_active] = true;
 }
 
 // Return to normal

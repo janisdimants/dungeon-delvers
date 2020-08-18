@@ -47,14 +47,12 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set options variables
+            <string>/// Set exit variables
 
-action = scr_to_options;
-image_index = 1;
+action = scr_to_menu;
+image_index = 2;
 
-previous = obj_ui_resume;
-next = obj_ui_to_menu;
-
+previous = obj_ui_options;
 </string>
           </argument>
         </arguments>

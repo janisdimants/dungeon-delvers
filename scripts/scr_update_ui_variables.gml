@@ -17,9 +17,10 @@ view_hview[0] = view_h;
 
 // Center the view on player, to ensure after minimising
 // the view is in the right position
-view_xview[0] = player.x - (view_wview[0]/2);
-view_yview[0] = player.y - (view_hview[0]/2);
-
+if (player) {
+  view_xview[0] = player.x - (view_wview[0]/2);
+  view_yview[0] = player.y - (view_hview[0]/2);
+}
 
 // Resize application surface 4 times larger,
 // to make subpixel movements smoother
@@ -33,14 +34,4 @@ center_y = height/2;
 
 font_scale_x = scale_x/6;
 font_scale_y = scale_y/6;
-
-// Game UI variables
-hp_start_x = 42 * scale_x;
-hp_start_y = height - (6 * scale_y);
-hp_offset = 14 * scale_x;
-
-mana_start_x = width - hp_start_x;
-mana_start_y = hp_start_y;
-mana_offset = -hp_offset;
-
 
