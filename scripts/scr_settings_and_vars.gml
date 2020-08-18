@@ -13,7 +13,7 @@ last_mouse_y = window_mouse_get_y();
 // Settings
 // Gameplay
 global.show_damage_numbers = false;
-global.show_healthbar_level = 2;
+global.show_healthbar_level = 0;
 // Graphics
 global.fps_cap = 250;
 // Controls
