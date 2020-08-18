@@ -37,6 +37,7 @@ select_padding = 0;
 cooldown = 0.2;
 
 // runtime
+was_unselected = false;
 input_cooldown = 0;
 accept_cooldown = 0;
 image_speed = 0;
@@ -66,7 +67,6 @@ depth = -10000;
             <string>/// Selection and navigation
 
 var _trigger_sound = false;
-was_unselected = true;
 
 if (!selectable) { exit; }
 
@@ -99,13 +99,13 @@ if (global.mouse_moved) {
       _my &lt; (y+sprite_height) * scale_y
   );
   
-  if (!selected &amp;&amp; !was_unselected) {
+  if (selected &amp;&amp; !was_unselected) {
     was_unselected = true;
+    _trigger_sound = true;
   }
   
-  if (selected &amp;&amp; was_unselected) {
+  if (!selected &amp;&amp; was_unselected) {
     was_unselected = false;
-    _trigger_sound = true;
   }
 }
 
