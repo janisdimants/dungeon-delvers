@@ -1,7 +1,6 @@
 ///scr_to_pause()
 // Pause the game and initialise pause menu elements
 global.game_paused = true;
-audio_play_sound(snd_menu_open, 0, false);
 
 // Clear before drawing
 instance_destroy(obj_ui_element);
