@@ -15,6 +15,10 @@
     <sounds name="weapons">
       <sound>sound\snd_bow_shoot</sound>
     </sounds>
+    <sounds name="ui">
+      <sound>sound\snd_menu_open</sound>
+      <sound>sound\snd_menu_close</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -246,6 +250,10 @@
       <scripts name="Game Controller">
         <script>scripts\scr_settings_and_vars.gml</script>
       </scripts>
+      <scripts name="Audio Controller">
+        <script>scripts\scr_audio_mixer.gml</script>
+        <script>scripts\scr_set_group_gain.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -257,6 +265,7 @@
     <font>fonts\fnt_main</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_audio_controller</object>
     <object>objects\obj_game_controller</object>
     <objects name="Damages">
       <object>objects\obj_damage</object>
