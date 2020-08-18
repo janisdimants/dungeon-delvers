@@ -101,6 +101,7 @@
           <sprite>sprites\spr_options_header</sprite>
           <sprite>sprites\spr_options_items</sprite>
           <sprite>sprites\spr_options_gameplay_items</sprite>
+          <sprite>sprites\spr_hp_visibility</sprite>
         </sprites>
         <sprites name="Elements">
           <sprite>sprites\spr_options_apply</sprite>
@@ -225,6 +226,7 @@
         <script>scripts\scr_apply_values.gml</script>
         <script>scripts\scr_target_increment.gml</script>
         <script>scripts\scr_set_dmg_number_visibility.gml</script>
+        <script>scripts\scr_set_hp_visibility.gml</script>
       </scripts>
     </scripts>
     <scripts name="Movement">
@@ -322,15 +324,15 @@
       </objects>
       <objects name="Options">
         <object>objects\obj_options_gameplay</object>
+        <objects name="Gameplay">
+          <object>objects\obj_option_dmg_numbers</object>
+          <object>objects\obj_option_hp_visibility</object>
+        </objects>
         <object>objects\obj_options_graphics</object>
         <object>objects\obj_options_audio</object>
         <object>objects\obj_options_input</object>
         <object>objects\obj_options_back_to_menu</object>
         <object>objects\obj_options_back_to_options</object>
-        <objects name="Gameplay">
-          <object>objects\obj_option_dmg_numbers</object>
-          <object>objects\obj_option_hp_visibility</object>
-        </objects>
       </objects>
       <objects name="Elements">
         <object>objects\obj_ui_value</object>

@@ -54,9 +54,9 @@ next = obj_options_graphics;
 
 // Create switch showing value
 var _value = instance_create(x + sprite_width + 20, y, obj_ui_value);
-_value.sprite_index = spr_visibility_toggle;
-_value.value = global.show_damage_numbers;
-_value.action = scr_set_dmg_number_visibility;
+_value.sprite_index = spr_hp_visibility;
+_value.value = global.show_healthbar_level;
+_value.action = scr_set_hp_visibility;
 </string>
           </argument>
         </arguments>
