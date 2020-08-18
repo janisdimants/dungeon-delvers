@@ -18,6 +18,7 @@
     <sounds name="ui">
       <sound>sound\snd_menu_open</sound>
       <sound>sound\snd_menu_close</sound>
+      <sound>sound\snd_menu_hover</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">

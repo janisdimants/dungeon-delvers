@@ -6,7 +6,8 @@ var _max = 1.0;
 
 // UI
 scr_set_group_gain(of(
-    of(snd_menu_open, _max),  
+    of(snd_menu_open, _max),
+    of(snd_menu_hover, _max),
 ));
 
 // Movement

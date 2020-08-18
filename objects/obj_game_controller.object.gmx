@@ -280,11 +280,13 @@ scr_get_input();
 
 if (room == rm_arena) {
   if (!global.game_paused &amp;&amp; menu_key) {
+    audio_play_sound(snd_menu_open, 0, false);
     scr_to_pause();
   }
   
   // Pause on focus loss
   if (os_is_paused() &amp;&amp; !global.game_paused) {
+    audio_play_sound(snd_menu_open, 0, false);
     scr_to_pause();
   }
 }

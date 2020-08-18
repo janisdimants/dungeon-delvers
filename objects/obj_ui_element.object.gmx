@@ -65,6 +65,9 @@ depth = -10000;
             <kind>1</kind>
             <string>/// Selection and navigation
 
+var _trigger_sound = false;
+was_unselected = true;
+
 if (!selectable) { exit; }
 
 // Reselect if it's last selected
@@ -74,6 +77,7 @@ if (!selected &amp;&amp; last_selected) {
   if (input_y != 0) {
     selected = true;
     input_cooldown = cooldown;
+    _trigger_sound = true;
   }
 }
 
@@ -94,6 +98,15 @@ if (global.mouse_moved) {
       _my &gt; y * scale_y &amp;&amp;
       _my &lt; (y+sprite_height) * scale_y
   );
+  
+  if (!selected &amp;&amp; !was_unselected) {
+    was_unselected = true;
+  }
+  
+  if (selected &amp;&amp; was_unselected) {
+    was_unselected = false;
+    _trigger_sound = true;
+  }
 }
 
 // Update cooldowns
@@ -124,6 +137,7 @@ if (selected) {
       previous.selected = true;
       previous.input_cooldown = cooldown;
       selected = false;
+      _trigger_sound = true; 
     }
     
     // Navigate down
@@ -131,10 +145,14 @@ if (selected) {
       next.selected = true;
       next.input_cooldown = cooldown;
       selected = false;
+      _trigger_sound = true;
     }
   }
 }
 
+if (_trigger_sound) {
+    audio_play_sound(snd_menu_hover, 0, false);
+}
 </string>
           </argument>
         </arguments>
