@@ -686,7 +686,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="9">
+    <constants number="12">
       <constant name="RIGHT">0</constant>
       <constant name="UP">1</constant>
       <constant name="LEFT">2</constant>
@@ -696,6 +696,9 @@
       <constant name="OPTIONS_GFX">2</constant>
       <constant name="OPTIONS_SFX">3</constant>
       <constant name="OPTIONS_CTRLS">4</constant>
+      <constant name="NEUTRAL">0</constant>
+      <constant name="FRIENDLY">1</constant>
+      <constant name="AGGRESIVE">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

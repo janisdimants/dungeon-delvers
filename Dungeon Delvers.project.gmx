@@ -83,6 +83,7 @@
         <sprite>sprites\spr_equipment_combo_progress</sprite>
         <sprite>sprites\spr_equipment_column</sprite>
         <sprite>sprites\spr_wave</sprite>
+        <sprite>sprites\spr_healthbar</sprite>
       </sprites>
       <sprites name="Numbers and Fonts">
         <sprite>sprites\spr_numbers</sprite>
@@ -233,6 +234,7 @@
     </scripts>
     <scripts name="Drawing">
       <script>scripts\scr_wavy_text.gml</script>
+      <script>scripts\scr_draw_healthbar.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\scr_create_particle.gml</script>
@@ -327,6 +329,7 @@
         <object>objects\obj_options_back_to_options</object>
         <objects name="Gameplay">
           <object>objects\obj_option_dmg_numbers</object>
+          <object>objects\obj_option_hp_visibility</object>
         </objects>
       </objects>
       <objects name="Elements">

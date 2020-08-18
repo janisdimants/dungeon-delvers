@@ -55,6 +55,9 @@ if (!equipment[_slot, _eq_executed]) {
     
   equipment[_slot, _eq_visual_progress] = 1 - min(equipment[_slot, _eq_progress_time]/(equipment[_slot, _eq_time]-_cast_time), 1);
   
+  // Stop mana regeneration by reverse updating it
+  mana -= mana_restore_rate * frame_time;
+
   // Arm extended to shoot
   if (equipment[_slot, _eq_progress_time] > equipment[_slot, _eq_execution_time]) {
     // Get projectile count

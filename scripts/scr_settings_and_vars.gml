@@ -11,8 +11,12 @@ last_mouse_x = window_mouse_get_x();
 last_mouse_y = window_mouse_get_y();
 
 // Settings
+// Gameplay
 global.show_damage_numbers = false;
+global.show_healthbar_level = 2;
+// Graphics
 global.fps_cap = 250;
+// Controls
 global.deadzone = 0.3;
 
 // Audio settings
