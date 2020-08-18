@@ -242,6 +242,11 @@
       <script>scripts\for_each.gml</script>
       <script>scripts\reduce.gml</script>
     </scripts>
+    <scripts name="Objects">
+      <scripts name="Game Controller">
+        <script>scripts\scr_settings_and_vars.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_white.shader</shader>

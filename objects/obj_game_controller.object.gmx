@@ -377,43 +377,41 @@ window_set_cursor(cr_none);
       </action>
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>/// Global Game Settings and runtime variables
-
-global.debug = false;
-
-// Game variables
-global.game_speed = 1;
-global.controller_id = -1;
-global.mouse_moved = true;
-global.wave = 1;
-last_mouse_x = window_mouse_get_x();
-last_mouse_y = window_mouse_get_y();
-
-// Settings
-global.show_damage_numbers = false;
-global.fps_cap = 250;
-global.deadzone = 0.3;
-
-// Runtime
-global.center_window = true;
-global.game_paused = false;
-global.hit_pause_timer = 0;
-
-</string>
+            <kind>9</kind>
+            <script>scr_settings_and_vars</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
