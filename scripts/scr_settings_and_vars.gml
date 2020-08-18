@@ -15,6 +15,10 @@ global.show_damage_numbers = false;
 global.fps_cap = 250;
 global.deadzone = 0.3;
 
+// Audio settings
+global.sfx_volume = 1.0;
+global.music_volume = 1.0;
+
 // Runtime
 global.center_window = true;
 global.game_paused = false;
