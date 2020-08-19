@@ -112,7 +112,10 @@ var _disable = (
 selectable = !_disable;
 image_index = forward * 2 + _disable;
 
-
+if (increment &lt; 0) {
+  // Back button pressed - play close sound instead.
+  action_snd = snd_menu_submenu_close;
+}
 </string>
           </argument>
         </arguments>
