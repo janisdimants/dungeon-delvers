@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialise variables
+scr_get_base_ui();
 // settings
 selected = false;
 last_selected = false;
@@ -34,8 +35,16 @@ previous = undefined;
 next = undefined;
 action = undefined;
 action_snd = snd_menu_submenu_open;
+text = "";
+text_size = 10;
+text_spacing = 1;
 select_padding = 0;
 cooldown = 0.2;
+
+// These two get set automatically within alarm 0
+alarm[0] = 1;
+element_width = 0;
+element_height = 0;
 
 // runtime
 was_unselected = false;
@@ -43,6 +52,36 @@ input_cooldown = 0;
 accept_cooldown = 0;
 image_speed = 0;
 depth = -10000;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update width and height variables
+if (string_length(text) &gt; 0) {
+  element_width = scr_get_text_width(text, text_size, text_spacing);
+  element_height = text_size;
+} else {
+  element_width = sprite_width;
+  element_height = sprite_height;
+}
 </string>
           </argument>
         </arguments>
@@ -95,9 +134,9 @@ if (global.mouse_moved) {
   var _my = window_mouse_get_y();
   
   selected = (_mx &gt; x * scale_x &amp;&amp;
-      _mx &lt; (x+sprite_width) * scale_x &amp;&amp;
+      _mx &lt; (x+element_width) * scale_x &amp;&amp;
       _my &gt; y * scale_y &amp;&amp;
-      _my &lt; (y+sprite_height) * scale_y
+      _my &lt; (y+element_height) * scale_y
   );
   
   if (selected &amp;&amp; !was_unselected) {
@@ -185,16 +224,16 @@ if (_trigger_sound) {
 scr_get_base_ui();
 
 // Draw selection under sprite
-/*
-if (selected) {
+
+/*if (selected) {
   draw_set_colour(image_blend);
   draw_set_alpha(0.3);
   
   draw_rectangle(
     (x-select_padding) * scale_x,
     (y-select_padding) * scale_y,
-    (x+sprite_width+(select_padding*2)) * scale_x,
-    (y+sprite_height+(select_padding*2)) * scale_y,
+    (x+element_width+(select_padding*2)) * scale_x,
+    (y+element_height+(select_padding*2)) * scale_y,
     0
   );
   
@@ -208,18 +247,26 @@ if (!selectable || selected) {
   _col = image_blend;
 }
 
-draw_sprite_ext(
-  sprite_index,
-  image_index,
-  (x) * scale_x,
-  (y) * scale_y,
-  (image_xscale) * scale_x,
-  (image_yscale) * scale_y,
-  image_angle,
-  _col,
-  image_alpha
-);
-  
+var _x = x * scale_x;
+var _y = y * scale_y;
+
+if (sprite_index &gt; -1) {
+  draw_sprite_ext(
+    sprite_index,
+    image_index,
+    _x,
+    _y,
+    (image_xscale) * scale_x,
+    (image_yscale) * scale_y,
+    image_angle,
+    _col,
+    image_alpha
+  );
+}
+
+if (string_length(text) &gt; 0) {
+  scr_draw_text(_x, _y, text_size, text, false);
+}
 
 </string>
           </argument>

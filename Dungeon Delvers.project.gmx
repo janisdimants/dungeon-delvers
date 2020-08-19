@@ -249,6 +249,7 @@
       <script>scripts\scr_draw_text.gml</script>
       <scripts name="Helper">
         <script>scripts\scr_get_char_width.gml</script>
+        <script>scripts\scr_get_text_width.gml</script>
         <script>scripts\scr_get_char_index.gml</script>
       </scripts>
     </scripts>

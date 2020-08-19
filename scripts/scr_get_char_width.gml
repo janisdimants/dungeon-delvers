@@ -25,7 +25,7 @@ switch (_char_id)
   case "h":
     break;
   case "i":
-    _width = 4;
+    _width = 2;
     break;
   case "j":
     break;
@@ -82,6 +82,7 @@ switch (_char_id)
   case "0":
     break;
   case ":":
+    _width = 2;
     break;
   case "/":
     break;
