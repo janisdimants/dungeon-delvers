@@ -27,5 +27,8 @@ scr_set_group_gain(of(
 var _volume_weapons = _max;
 scr_set_group_gain(of(
     of(snd_bow_shoot, _max * _volume_weapons),  
+    of(snd_damage_1, 0.5 * _volume_weapons), 
+    of(snd_damage_2, 0.6 * _volume_weapons),
+    of(snd_damage_3, 0.4 * _volume_weapons),  
 ));
 

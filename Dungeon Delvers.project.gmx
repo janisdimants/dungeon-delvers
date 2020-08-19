@@ -15,6 +15,9 @@
     </sounds>
     <sounds name="weapons">
       <sound>sound\snd_bow_shoot</sound>
+      <sound>sound\snd_damage_1</sound>
+      <sound>sound\snd_damage_2</sound>
+      <sound>sound\snd_damage_3</sound>
     </sounds>
     <sounds name="ui">
       <sound>sound\snd_menu_open</sound>

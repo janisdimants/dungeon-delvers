@@ -107,6 +107,12 @@ with (other) {
     invinc_timer = invinc_time;
     stun_timer = _stun_time * stun_time_modifier;
     stun_time = stun_timer;
+         
+    scr_play_rand_snd(of(
+      snd_damage_1,
+      snd_damage_2,
+      snd_damage_3,
+    ));
 
     if (global.show_damage_numbers) {
       // Create damage popup
