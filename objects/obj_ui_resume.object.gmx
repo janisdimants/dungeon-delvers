@@ -50,6 +50,7 @@ event_inherited();
             <string>/// Set resume variables
 
 action = scr_to_game;
+action_snd = undefined;
 next = obj_ui_options;
 image_index = 0;
 </string>
