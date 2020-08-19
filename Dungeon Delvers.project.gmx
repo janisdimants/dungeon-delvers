@@ -2,6 +2,7 @@
 <assets>
   <Configs name="configs">
     <Config>Configs\Default</Config>
+    <Config>Configs\Test</Config>
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
@@ -78,6 +79,14 @@
       </sprites>
     </sprites>
     <sprites name="UI">
+      <sprites name="Fonts">
+        <sprite>sprites\spr_font_12</sprite>
+        <sprite>sprites\spr_font_10</sprite>
+        <sprite>sprites\spr_font_8</sprite>
+        <sprite>sprites\spr_font_6</sprite>
+        <sprite>sprites\spr_numbers</sprite>
+        <sprite>sprites\spr_numbers_small</sprite>
+      </sprites>
       <sprites name="Game">
         <sprite>sprites\spr_player_mana</sprite>
         <sprite>sprites\spr_player_hp</sprite>
@@ -87,10 +96,6 @@
         <sprite>sprites\spr_equipment_column</sprite>
         <sprite>sprites\spr_wave</sprite>
         <sprite>sprites\spr_healthbar</sprite>
-      </sprites>
-      <sprites name="Numbers and Fonts">
-        <sprite>sprites\spr_numbers</sprite>
-        <sprite>sprites\spr_numbers_small</sprite>
       </sprites>
       <sprites name="Menu">
         <sprites name="Main">
@@ -158,34 +163,32 @@
       <script>scripts\scr_next_floor.gml</script>
       <script>scripts\scr_get_equipment_mapping.gml</script>
     </scripts>
-    <scripts name="Player">
-      <scripts name="States">
-        <script>scripts\scr_move_state.gml</script>
-        <script>scripts\scr_dead_state.gml</script>
+    <scripts name="Equipment">
+      <script>scripts\scr_init_equipment_slot.gml</script>
+      <scripts name="Melee">
+        <script>scripts\scr_weapon_sword.gml</script>
+        <script>scripts\scr_weapon_scythe.gml</script>
+        <script>scripts\scr_weapon_bloodsword.gml</script>
+        <script>scripts\scr_weapon_spear.gml</script>
       </scripts>
-      <scripts name="Equipment">
-        <scripts name="Melee">
-          <script>scripts\scr_weapon_sword.gml</script>
-          <script>scripts\scr_weapon_scythe.gml</script>
-          <script>scripts\scr_weapon_bloodsword.gml</script>
-          <script>scripts\scr_weapon_spear.gml</script>
-        </scripts>
-        <scripts name="Ranged">
-          <script>scripts\scr_weapon_bow.gml</script>
-        </scripts>
-        <scripts name="Base">
-          <script>scripts\scr_weapon_melee.gml</script>
-          <script>scripts\scr_weapon_ranged.gml</script>
-        </scripts>
-        <scripts name="Spells">
-          <script>scripts\scr_spell_fire.gml</script>
-          <script>scripts\scr_spell_groundbeam.gml</script>
-        </scripts>
-        <script>scripts\scr_init_equipment_slot.gml</script>
+      <scripts name="Ranged">
+        <script>scripts\scr_weapon_bow.gml</script>
+      </scripts>
+      <scripts name="Base">
+        <script>scripts\scr_weapon_melee.gml</script>
+        <script>scripts\scr_weapon_ranged.gml</script>
+      </scripts>
+      <scripts name="Spells">
+        <script>scripts\scr_spell_fire.gml</script>
+        <script>scripts\scr_spell_groundbeam.gml</script>
       </scripts>
       <scripts name="Dodges">
         <script>scripts\scr_roll.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="Player States">
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_dead_state.gml</script>
     </scripts>
     <scripts name="UI">
       <scripts name="Helper">
@@ -240,6 +243,11 @@
     <scripts name="Drawing">
       <script>scripts\scr_wavy_text.gml</script>
       <script>scripts\scr_draw_healthbar.gml</script>
+      <script>scripts\scr_draw_text.gml</script>
+      <scripts name="Helper">
+        <script>scripts\scr_get_char_width.gml</script>
+        <script>scripts\scr_get_char_index.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Effects">
       <script>scripts\scr_create_particle.gml</script>

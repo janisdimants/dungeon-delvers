@@ -61,6 +61,8 @@ for (var i = 0; i <= 3; i++) {
     1
   );
   
+  scr_draw_text(_x - 32, _icon_y - 128 + (i * 16), 12, "testing");
+  
   // Draw equipment time
   if (global.debug) {
     draw_text(_x, _icon_y, string(_progress));
