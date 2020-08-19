@@ -10,6 +10,7 @@ scr_set_group_gain(of(
     of(snd_menu_open, _max * _volume_ui),
     of(snd_menu_close, _max * _volume_ui),
     of(snd_menu_hover, _max * _volume_ui),
+    of(snd_menu_submenu_open, _max * _volume_ui),
 ));
 
 // Movement

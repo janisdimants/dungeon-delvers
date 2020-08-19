@@ -19,6 +19,8 @@
       <sound>sound\snd_menu_open</sound>
       <sound>sound\snd_menu_close</sound>
       <sound>sound\snd_menu_hover</sound>
+      <sound>sound\snd_menu_submenu_open</sound>
+      <sound>sound\snd_menu_submenu_close</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">

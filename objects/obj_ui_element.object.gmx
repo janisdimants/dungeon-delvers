@@ -33,6 +33,7 @@ selectable = true;
 previous = undefined;
 next = undefined;
 action = undefined;
+action_snd = snd_menu_submenu_open;
 select_padding = 0;
 cooldown = 0.2;
 
@@ -126,6 +127,11 @@ if (selected) {
   // Action
   if (accept_key &amp;&amp; accept_cooldown &lt;= 0 &amp;&amp; action) {
     script_execute(action);
+    
+    if (action_snd) {
+        audio_play_sound(action_snd, 0, false);
+    }
+
     accept_cooldown = cooldown;
     /// Debug - clear mouse for HTML5 specific input bug
     mouse_clear(mb_any); 
