@@ -78,16 +78,13 @@ bob_amount = abs(sin(bob_value));
 // Play footstep sound if player is landing from bob
 if (bob_amount < .1) {
   if (!footstep_sound_played) {
-    var _footstep_sounds;
-    _footstep_sounds[0] = snd_footstep_1;
-    _footstep_sounds[1] = snd_footstep_2;
-    _footstep_sounds[2] = snd_footstep_3;
-    _footstep_sounds[3] = snd_footstep_4;
-    _footstep_sounds[4] = snd_footstep_5;
-    
-    var _sound_to_play = irandom_range(0, 4);
-    
-    audio_play_sound(_footstep_sounds[_sound_to_play], 0, false);
+    scr_play_rand_snd(of(
+      snd_footstep_1,
+      snd_footstep_2,
+      snd_footstep_3,
+      snd_footstep_4,
+      snd_footstep_5,    
+    ))
     footstep_sound_played = true;
   }
 } else if (bob_amount > .7) {
