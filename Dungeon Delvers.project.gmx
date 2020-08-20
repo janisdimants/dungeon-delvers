@@ -198,6 +198,7 @@
     </scripts>
     <scripts name="Player States">
       <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_dodge_state.gml</script>
       <script>scripts\scr_dead_state.gml</script>
     </scripts>
     <scripts name="UI">

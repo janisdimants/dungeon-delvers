@@ -145,15 +145,11 @@ scr_init_equipment_slot(1);
 scr_init_equipment_slot(2);
 scr_init_equipment_slot(3);
 
-dodge = scr_roll;
-//equipment[0] = scr_roll;
-script_execute(dodge, true);
+scr_roll(0, true);
 
 scr_weapon_spear(1, true);
-//equipment[1] = scr_weapon_spear;
 
 scr_spell_fire(2, true);
-//equipment[2] = scr_spell_fire;
 
 //special = scr_spell_groundbeam;
 //equipment[3] = scr_spell_groundbeam;
@@ -322,7 +318,7 @@ shader_set(shd_shadow);
 
 // Equipment shadow
 for (var i = 0; i &lt; array_height_2d(equipment); i++) {
-  if (equipment[i, _eq_script]) {
+  if (equipment[i, _eq_script] &amp;&amp; equipment[i, _eq_sprite]) {
     draw_sprite_ext(
       equipment[i, _eq_sprite], equipment[i, _eq_image_index], x, y,
       1, 1, attack_direction, c_white, 1
@@ -338,11 +334,6 @@ if (invinc_timer &gt; 0) {
   shader_set(shd_white);
 }
 
-if (state == dodge) {
-  draw_sprite(dodge_sprite[face], dodge_img_index, x, y);
-  exit;
-}
-
 var body_bob = bob_amount * body_bob_height;
 
 // Body
@@ -350,7 +341,7 @@ draw_sprite(sprite_index, image_index, x, y - body_bob);
 
 // Equipment
 for (var i = 0; i &lt; array_height_2d(equipment); i++) {
-  if (equipment[i, _eq_script]) {
+  if (equipment[i, _eq_script] &amp;&amp; equipment[i, _eq_sprite]) {
     var _y = y - equipment[i, _eq_height] - body_bob;
     draw_sprite_ext(
       equipment[i, _eq_sprite], equipment[i, _eq_image_index], x, _y,

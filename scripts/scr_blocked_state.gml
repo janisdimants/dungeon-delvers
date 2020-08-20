@@ -1,4 +1,4 @@
-///scr_dead_state()
+///scr_blocked_state()
 
 if (global.game_speed <= 0) { exit; }
 
