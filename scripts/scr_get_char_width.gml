@@ -77,6 +77,8 @@ switch (_char_id)
     break;
   case "7":
     break;
+  case "8":
+    break;
   case "9":
     break;
   case "0":
@@ -87,6 +89,12 @@ switch (_char_id)
   case "/":
     break;
   case "-":
+    break;
+  case ".":
+    _width = 2;
+    if (_size <= 6) {
+    _width = 1;
+    }
     break;
   default:
     break;

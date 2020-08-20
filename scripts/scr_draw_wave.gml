@@ -3,7 +3,7 @@
 // Draw wave ui
 draw_sprite_ext(
   spr_wave,
-  global.wave,
+  wave,
   width/2,
   0,
   scale_x,

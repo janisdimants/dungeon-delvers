@@ -1,4 +1,4 @@
-/// filter(predicate_script_idx, arr)
+/// filter(predicate_script_idx, arr, data?)
 
 /*
 Return a filtered array based on a predicate script.
@@ -17,13 +17,19 @@ var new_array = filter(is_even, test_array); // { { 2,4 }, }
 ```
 */
 
-var script = argument0;
-var arr = argument1;
+var script = argument[0];
+var arr = argument[1];
+var data = undefined;
+
+if (argument_count > 2) {
+  data = argument[2];
+}
+
 var new_arr = array_create(0);
 
 for (var i = 0; i < array_length_1d(arr); i += 1) {
     var item = arr[i];
-    if (script_execute(script, item, i)) {
+    if (script_execute(script, item, i, data)) {
         new_arr[array_length_1d(new_arr)] = item;
     }
 }

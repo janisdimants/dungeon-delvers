@@ -96,7 +96,11 @@ _particle.anim_damp = 4;
 _particle.sprite_index = spr_helmet;
 _particle.height = 10;
 
-instance_create(x, y, obj_skeleton);
+// Create regular skeleton and update it's velocity to match current
+
+var _skeleton = instance_create(x, y, obj_skeleton);
+_skeleton.total_move_h = total_move_h;
+_skeleton.total_move_v = total_move_v;
 </string>
           </argument>
         </arguments>

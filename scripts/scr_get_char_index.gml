@@ -106,23 +106,31 @@ switch (_character)
   case "7":
     _id = 32;
     break;
-  case "9":
+  case "8":
     _id = 33;
-    break;
-  case "0":
+  case "9":
     _id = 34;
     break;
-  case ":":
+  case "0":
     _id = 35;
     break;
-  case "/":
+  case ":":
     _id = 36;
     break;
-  case "-":
+  case "/":
     _id = 37;
     break;
+  case "-":
+    _id = 38;
+    break;
+  case " ":
+    _id = 39;
+    break;
+  case ".":
+    _id = 40;
+    break;
   default:
-    _id = -1;
+    _id = 0;
     break;
 }
 

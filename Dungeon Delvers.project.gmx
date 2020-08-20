@@ -171,6 +171,7 @@
       <script>scripts\scr_create_inst_offset.gml</script>
       <script>scripts\scr_next_floor.gml</script>
       <script>scripts\scr_get_equipment_mapping.gml</script>
+      <script>scripts\scr_round_to_decimal.gml</script>
     </scripts>
     <scripts name="Equipment">
       <script>scripts\scr_init_equipment_slot.gml</script>
@@ -282,6 +283,16 @@
           <script>scripts\scr_play_rand_snd.gml</script>
         </scripts>
       </scripts>
+      <scripts name="Wave Controller">
+        <script>scripts\scr_start_next_stage.gml</script>
+        <script>scripts\scr_update_wave_status.gml</script>
+        <script>scripts\scr_calculate_budget.gml</script>
+        <script>scripts\scr_calculate_stage_spawn_rate.gml</script>
+        <script>scripts\scr_get_enemy_by_budget.gml</script>
+        <script>scripts\scr_filter_mobs_by_budget.gml</script>
+        <script>scripts\scr_get_enemy_count.gml</script>
+        <script>scripts\scr_get_enemy_list.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -295,6 +306,7 @@
   <objects name="objects">
     <object>objects\obj_audio_controller</object>
     <object>objects\obj_game_controller</object>
+    <object>objects\obj_wave_controller</object>
     <objects name="Damages">
       <object>objects\obj_damage</object>
       <object>objects\obj_base_projectile</object>

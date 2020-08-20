@@ -40,7 +40,8 @@ if (_centered) {
 }
 
 for (var i = 0; i < string_length(_text); i++) {
-  var _char_id = scr_get_char_index(string_char_at(_text, i+1));
+  var _char = string_char_at(_text, i+1)
+  var _char_id = scr_get_char_index(_char);
   
   draw_sprite_ext(
     _font_sprite,
@@ -54,7 +55,7 @@ for (var i = 0; i < string_length(_text); i++) {
     1
   );
     
-  _x += (scr_get_char_width(_char_id, _size) + _spacing) * scale_x;
+  _x += (scr_get_char_width(_char, _size) + _spacing) * scale_x;
 }
 
 
