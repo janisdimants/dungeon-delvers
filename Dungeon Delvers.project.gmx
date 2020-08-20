@@ -32,6 +32,9 @@
       <sound>sound\snd_menu_submenu_open</sound>
       <sound>sound\snd_menu_submenu_close</sound>
     </sounds>
+    <sounds name="spells">
+      <sound>sound\snd_fire</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">

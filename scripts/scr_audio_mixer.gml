@@ -26,14 +26,15 @@ scr_set_group_gain(of(
 // Weapons
 var _volume_weapons = _max;
 scr_set_group_gain(of(
-    of(snd_bow_shoot, _max * _volume_weapons),  
-    of(snd_damage_1, 0.5 * _volume_weapons), 
-    of(snd_damage_2, 0.6 * _volume_weapons),
-    of(snd_damage_3, 0.4 * _volume_weapons),  
+    of(snd_bow_shoot, _volume_weapons),  
+    of(snd_fire, _volume_weapons), 
+    of(snd_damage_1, _volume_weapons), 
+    of(snd_damage_2, _volume_weapons),
+    of(snd_damage_3, _volume_weapons),  
 ));
 
 // Spear
-var _volume_spear = 0.5;
+var _volume_spear = _max;
 scr_set_group_gain(of(
     of(snd_spear_swing_1, _volume_spear),  
     of(snd_spear_swing_2, _volume_spear), 

@@ -52,6 +52,37 @@ event_inherited();
 rotation_spd = random(360);
 distance = 0;
 image_speed = 0;
+sound_index = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Stop sound
+
+if (instance_number(object_index) == 1) {
+  // Last instance of it's kind
+  // audio_stop_sound(snd_fire);
+  // TODO: Probably need to stop the sound as well
+  audio_sound_gain(snd_fire, 0, 350);
+}
 </string>
           </argument>
         </arguments>
@@ -109,6 +140,41 @@ image_angle += rotation_spd * frame_time;
 if (image_index &gt; image_number) {
   instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Sound
+
+var _snd = snd_fire;
+var _fade = 100;
+
+if (!audio_is_playing(_snd) &amp;&amp; instance_number(object_index)) {
+  // Only play sound if not already playing and projectiles present
+  audio_play_sound(_snd, 0, true);
+  audio_sound_gain(_snd, 0, 0);
+  audio_sound_gain(_snd, 1, _fade);
+} else if (audio_is_playing(_snd) &amp;&amp; instance_number(object_index) &amp;&amp; audio_sound_get_gain(_snd) == 0) {
+  // Sound was faded out, so, just set gain back to 1 over time
+  audio_sound_gain(_snd, 1, _fade);
+}
+
 </string>
           </argument>
         </arguments>
