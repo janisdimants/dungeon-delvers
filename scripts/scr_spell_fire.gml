@@ -42,6 +42,8 @@ var _cast_time = 1/_cast_rate;
 var _mana_drain_per_second = 1;
 var _projectile_fwd_offset = 8;
 var _projectile_side_offset = -3;
+var _snd = snd_fire;
+var _fade = 100;
   
 scr_get_head_direction();
 attack_direction = pointer_direction;
@@ -77,9 +79,20 @@ if (!equipment[_slot, _eq_executed]) {
     // Drain mana
     mana -= _mana_drain_per_second * _progress_amount;
     
+    // Play Sound
+    if (!audio_is_playing(_snd)) {
+      // Only play sound if not already playing
+      audio_play_sound(_snd, 0, true);
+      audio_sound_gain(_snd, 0, 0);
+      audio_sound_gain(_snd, 1, _fade);
+    } else if (audio_is_playing(_snd) && audio_sound_get_gain(_snd) == 0) {
+      // Sound was faded out, so, just set gain back to 1 over time
+      audio_sound_gain(_snd, 1, _fade);
+    }
+
+    
+    // Spawn fire projectiles
     for (var i = 0; i < _projectile_count; i++) {
-  
-      // Spawn fire projectile
       var projectile = scr_create_inst_offset(obj_fire_projectile, _projectile_fwd_offset, _projectile_side_offset, attack_direction);
       
       var direction_offset = (random_range(-20, 20));
@@ -101,6 +114,10 @@ if (!equipment[_slot, _eq_executed]) {
   
   // If player releases, return back
   equipment[_slot, _eq_executed] = release;
+  if (release) {
+    var _projectile_lifespan_in_ms = (_spell_distance-15)/85 * 1000;
+    audio_sound_gain(snd_fire, 0, _projectile_lifespan_in_ms);
+  }
 } else {
   equipment[_slot, _eq_progress_time] -= frame_time;
   equipment[_slot, _eq_visual_progress] = 1 - max(equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time], 0);

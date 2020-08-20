@@ -76,13 +76,13 @@ sound_index = 0;
           <argument>
             <kind>1</kind>
             <string>/// Stop sound
-
+/*
 if (instance_number(object_index) == 1) {
   // Last instance of it's kind
   // audio_stop_sound(snd_fire);
   // TODO: Probably need to stop the sound as well
   audio_sound_gain(snd_fire, 0, 350);
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -161,7 +161,7 @@ if (image_index &gt; image_number) {
           <argument>
             <kind>1</kind>
             <string>/// Sound
-
+/*
 var _snd = snd_fire;
 var _fade = 100;
 
@@ -174,7 +174,7 @@ if (!audio_is_playing(_snd) &amp;&amp; instance_number(object_index)) {
   // Sound was faded out, so, just set gain back to 1 over time
   audio_sound_gain(_snd, 1, _fade);
 }
-
+*/
 </string>
           </argument>
         </arguments>
