@@ -37,6 +37,13 @@ if (equipment[_slot, _eq_progress_time] >= equipment[_slot, _eq_execution_time] 
   
   var _damage_obj = scr_create_inst_offset(obj_damage, 0, 0, attack_direction);
   
+  scr_play_rand_snd(of(
+    snd_spear_swing_1,
+    snd_spear_swing_2,
+    snd_spear_swing_3,
+    snd_spear_swing_4,
+  ));
+  
   _damage_obj.team = team;
   _damage_obj.damage = equipment[_slot, _eq_damage]; // add modifiers in calculation here? maybe script?
   _damage_obj.knockback_amount = equipment[_slot, _eq_knockback];

@@ -32,3 +32,12 @@ scr_set_group_gain(of(
     of(snd_damage_3, 0.4 * _volume_weapons),  
 ));
 
+// Spear
+var _volume_spear = 0.5;
+scr_set_group_gain(of(
+    of(snd_spear_swing_1, _volume_spear),  
+    of(snd_spear_swing_2, _volume_spear), 
+    of(snd_spear_swing_3, _volume_spear),
+    of(snd_spear_swing_4, _volume_spear),  
+));
+
