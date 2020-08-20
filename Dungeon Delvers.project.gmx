@@ -18,6 +18,12 @@
       <sound>sound\snd_damage_1</sound>
       <sound>sound\snd_damage_2</sound>
       <sound>sound\snd_damage_3</sound>
+      <sounds name="spear">
+        <sound>sound\snd_spear_swing_1</sound>
+        <sound>sound\snd_spear_swing_2</sound>
+        <sound>sound\snd_spear_swing_3</sound>
+        <sound>sound\snd_spear_swing_4</sound>
+      </sounds>
     </sounds>
     <sounds name="ui">
       <sound>sound\snd_menu_open</sound>
