@@ -4,6 +4,8 @@ if (room != rm_arena) { exit; }
 
 scr_frame_time();
 
+var _waves_total = 5;
+
 if (!wave_active) {
   // Pause section between waves
   wave_cooldown_timer -= frame_time;
@@ -12,10 +14,12 @@ if (!wave_active) {
   if (wave_cooldown_timer <= 0) {
     wave += 1;
     
-    if (wave > 5) {
+    if (wave > _waves_total) {
       scr_end_stage();
       exit;
     }
+    
+    audio_play_sound(snd_wave_start, 0, false);
     
     wave_budget = scr_calculate_budget(stage, wave);
     budget = wave_budget;
@@ -50,6 +54,11 @@ if (!wave_active) {
   if (active_enemies == 0) {
     wave_cooldown_timer = wave_cooldown;
     wave_active = false;
+    
+    if (wave < _waves_total) {
+      // Play audio cue unless last wave end
+      audio_play_sound(snd_wave_end, 0, false);
+    }
   }
 }
 

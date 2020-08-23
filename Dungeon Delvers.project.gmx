@@ -35,6 +35,10 @@
     <sounds name="spells">
       <sound>sound\snd_fire</sound>
     </sounds>
+    <sounds name="level">
+      <sound>sound\snd_wave_start</sound>
+      <sound>sound\snd_wave_end</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
