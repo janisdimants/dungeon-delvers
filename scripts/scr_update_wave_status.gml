@@ -58,6 +58,9 @@ if (!wave_active) {
     if (wave < _waves_total) {
       // Play audio cue unless last wave end
       audio_play_sound(snd_wave_end, 0, false);
+    } else {
+      // Play stage end sound
+      audio_play_sound(snd_stage_end, 0, false);
     }
   }
 }
