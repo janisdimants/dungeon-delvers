@@ -56,17 +56,18 @@
         <sprite>sprites\spr_head_gork</sprite>
       </sprites>
     </sprites>
+    <sprites name="Collision Boxes">
+      <sprite>sprites\spr_col_sword</sprite>
+      <sprite>sprites\spr_col_scythe</sprite>
+      <sprite>sprites\spr_col_spear</sprite>
+      <sprite>sprites\spr_col_circle</sprite>
+    </sprites>
     <sprites name="Weapons">
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_bloodsword</sprite>
       <sprite>sprites\spr_scythe</sprite>
       <sprite>sprites\spr_bow</sprite>
       <sprite>sprites\spr_spear</sprite>
-      <sprites name="Collision Boxes">
-        <sprite>sprites\spr_col_sword</sprite>
-        <sprite>sprites\spr_col_scythe</sprite>
-        <sprite>sprites\spr_col_spear</sprite>
-      </sprites>
     </sprites>
     <sprites name="Spells">
       <sprite>sprites\spr_fire_hand</sprite>
@@ -155,6 +156,7 @@
         <sprite>sprites\spr_skeleton_head</sprite>
         <sprite>sprites\spr_skeleton_bone</sprite>
         <sprite>sprites\spr_helmet</sprite>
+        <sprite>sprites\spr_skeleton_bomb</sprite>
       </sprites>
       <sprites name="Bat">
         <sprite>sprites\spr_bat</sprite>
@@ -278,6 +280,7 @@
     <scripts name="Effects">
       <script>scripts\scr_create_particle.gml</script>
       <script>scripts\scr_arrow_destroy.gml</script>
+      <script>scripts\scr_create_smoke_puff.gml</script>
     </scripts>
     <scripts name="fp">
       <script>scripts\map.gml</script>
@@ -309,6 +312,9 @@
         <script>scripts\scr_get_enemy_count.gml</script>
         <script>scripts\scr_get_enemy_list.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="Enemies">
+      <script>scripts\scr_explode.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -351,6 +357,7 @@
     </objects>
     <objects name="Enemies">
       <object>objects\obj_skeleton</object>
+      <object>objects\obj_skeleton_bomb</object>
       <object>objects\obj_skeleton_helmet</object>
       <object>objects\obj_bat</object>
     </objects>
