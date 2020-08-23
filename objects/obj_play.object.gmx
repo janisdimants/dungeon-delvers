@@ -47,7 +47,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set resume variables
+            <string>/// Set play variables
 
 action = scr_play_game;
 last_selected = true;

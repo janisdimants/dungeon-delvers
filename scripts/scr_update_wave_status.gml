@@ -13,7 +13,7 @@ if (!wave_active) {
     wave += 1;
     
     if (wave > 5) {
-      scr_start_next_stage();
+      scr_end_stage();
       exit;
     }
     

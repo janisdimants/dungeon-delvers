@@ -52,23 +52,11 @@ event_inherited();
 // Attack, spell, dodge
 pointer_direction = 0;
 active_equipment = noone;
-
-// Player animation 
-weapon_img_index = 0;
-weapon_img_number = 0;
-spell_img_index = 0;
-spell_img_number = 0;
-dodge_img_index = 0;
+invincible = false;
 
 // Player animation
 bob_amount = 0;
 footstep_sound_played = false;
-
-// UI variables
-weapon_icon_index = 0;
-show_weapon = true;
-weapon_icon_index = 0;
-show_spell = true;
 
 </string>
           </argument>
@@ -94,7 +82,7 @@ show_spell = true;
 
 head = spr_player_head;
 
-body_img_speed = 36;
+body_img_speed = 32;
 body[RIGHT] = spr_base_right;
 body[UP] = spr_base_down;
 body[LEFT] = spr_base_left;

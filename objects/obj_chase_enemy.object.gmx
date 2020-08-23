@@ -183,7 +183,7 @@ var _stun_time = stun_time;
 with (other) {
   // Make sure player isn't invincible
   // or in middle of a roll
-  if (invinc_timer &lt;= 0 &amp;&amp; (dodge_img_index &lt;= 0)) {
+  if (invinc_timer &lt;= 0 &amp;&amp; !invincible) {
     hp -= _damage;
     global.hit_pause_timer = other.hit_pause;
     scr_apply_force(_knockback_amount, _knockback_dir);

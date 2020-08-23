@@ -2,16 +2,10 @@
 
 if (global.game_speed <= 0) { exit; }
 
-
-// Check for action inputs
-/*if (!active_attack) {
-  if (attack1_key_down) { active_attack = weapon; }
-  if (attack2_key_down) { active_attack = spell; }
-  if (dash_key && len != 0) { state = dodge; }
-}*/
 // Execute equipment
 scr_get_input();
 scr_get_equipment_mapping();
+invincible = false;
 
 for (var i = 0; i < array_height_2d(equipment); i++) {
   if (equipment[i, _eq_script]) {

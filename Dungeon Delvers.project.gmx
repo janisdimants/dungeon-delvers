@@ -45,6 +45,11 @@
       <sprite>sprites\spr_base_left</sprite>
       <sprite>sprites\spr_shadow_small</sprite>
       <sprite>sprites\spr_shadow_tiny</sprite>
+      <sprites name="Heads">
+        <sprite>sprites\spr_head_elf</sprite>
+        <sprite>sprites\spr_head_human</sprite>
+        <sprite>sprites\spr_head_gork</sprite>
+      </sprites>
     </sprites>
     <sprites name="Weapons">
       <sprite>sprites\spr_sword</sprite>
@@ -162,6 +167,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\ts_dungeon</background>
+    <background>background\bg_main</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -289,6 +295,7 @@
       </scripts>
       <scripts name="Wave Controller">
         <script>scripts\scr_start_next_stage.gml</script>
+        <script>scripts\scr_end_stage.gml</script>
         <script>scripts\scr_update_wave_status.gml</script>
         <script>scripts\scr_calculate_budget.gml</script>
         <script>scripts\scr_calculate_stage_spawn_rate.gml</script>
@@ -380,10 +387,15 @@
         <object>objects\obj_ui_arrow</object>
       </objects>
     </objects>
+    <objects name="Break">
+      <object>objects\obj_home</object>
+      <object>objects\obj_shop</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_arena</room>
+    <room>rooms\rm_break</room>
     <room>rooms\rm_base</room>
   </rooms>
   <help>
