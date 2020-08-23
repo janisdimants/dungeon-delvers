@@ -38,6 +38,7 @@
     <sounds name="level">
       <sound>sound\snd_wave_start</sound>
       <sound>sound\snd_wave_end</sound>
+      <sound>sound\snd_stage_end</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
