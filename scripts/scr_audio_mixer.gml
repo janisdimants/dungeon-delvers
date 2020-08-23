@@ -42,3 +42,10 @@ scr_set_group_gain(of(
     of(snd_spear_swing_4, _volume_spear),  
 ));
 
+// Waves
+var _volume_waves = _max;
+scr_set_group_gain(of(
+    of(snd_wave_start, _volume_waves),  
+    of(snd_wave_end, _volume_waves),
+));
+
