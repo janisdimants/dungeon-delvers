@@ -169,6 +169,7 @@
       <sprite>sprites\spr_spear_slash</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_smoke</sprite>
+      <sprite>sprites\spr_stunned</sprite>
     </sprites>
     <sprite>sprites\spr_empty</sprite>
   </sprites>
@@ -315,6 +316,9 @@
     </scripts>
     <scripts name="Enemies">
       <script>scripts\scr_explode.gml</script>
+      <script>scripts\scr_chase_target.gml</script>
+      <script>scripts\scr_melee_attack_target.gml</script>
+      <script>scripts\scr_find_target.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -353,7 +357,7 @@
     <objects name="Entities">
       <object>objects\obj_player</object>
       <object>objects\obj_entity</object>
-      <object>objects\obj_chase_enemy</object>
+      <object>objects\obj_base_enemy</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_skeleton</object>

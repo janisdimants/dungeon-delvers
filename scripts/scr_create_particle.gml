@@ -1,5 +1,6 @@
 ///scr_create_particle(len, dir, lifetime, height, bounce, attached)
 // Creates an particle of current object
+// Used in projectiles to easily create identical particle
 var _particle = instance_create(x, y, obj_particle);
 
 // Set sprite properties

@@ -47,15 +47,25 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Chase enemy variables
+            <string>/// Base enemy variables
+
+move_state = scr_chase_target;
+attack_state = scr_melee_attack_target;
 
 team = 2;
 move_speed = 30;
 invinc_time = .2;
 knockback_amount = 150;
 damage = .5;
+range = 7;
 stun_time = .3;
 mirror_towards_enemy = true;
+
+// Runtime
+current_state = move_state;
+target = undefined;
+target_reached = false;
+
 </string>
           </argument>
         </arguments>
@@ -103,96 +113,24 @@ if (hp &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Find closest target
+            <string>/// Update state
 
-if (!instance_exists(obj_player)) {
-  exit;
-} else {
-  target = obj_player;
-}
+target = scr_find_target();
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Update movement
-
-// Get move variables
 if (target) {
-  move_cap = move_speed;
-  dir = point_direction(x, y, target.x, target.y);
-  len = 1;
+  var _finished = false;
   
-  if (mirror_towards_enemy) {
-    image_xscale = (target.x &gt; x)*2-1;
+  if (!target_reached) {
+    target_reached = script_execute(move_state, target, range);
+  } else {
+    _finished = script_execute(attack_state, target);
   }
   
-  // Stop movement while stunned
-  if (stun_timer &gt; 0) {
-    len = 0;
+  if (_finished) {
+    // Go back to move state after attack is done
+    target_reached = false;
   }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Damage logic
-
-if (team == -1) { exit; }
-if (other.team == team) { exit; }
-
-var _damage = damage;
-var _knockback_dir = dir;
-var _knockback_amount = knockback_amount;
-var _stun_time = stun_time;
-
-with (other) {
-  // Make sure player isn't invincible
-  // or in middle of a roll
-  if (invinc_timer &lt;= 0 &amp;&amp; !invincible) {
-    hp -= _damage;
-    global.hit_pause_timer = other.hit_pause;
-    scr_apply_force(_knockback_amount, _knockback_dir);
-    invinc_timer = invinc_time;
-    stun_timer = _stun_time * stun_time_modifier;
-    stun_time = stun_timer;
-  }
-}
-
 </string>
           </argument>
         </arguments>

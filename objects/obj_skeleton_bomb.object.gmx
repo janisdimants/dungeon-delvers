@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_chase_enemy</parentName>
+  <parentName>obj_base_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -48,6 +48,9 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Set stats
+
+attack_state = scr_explode;
+range = 10;
 
 hp = 2;
 max_hp = hp;

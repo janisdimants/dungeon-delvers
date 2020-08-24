@@ -1,12 +1,14 @@
 ///scr_explode()
+// Explode instance, dealing damage around
+// Required instance var: range
 
-/// Create explosion
+var _scale = range/8;
 
 // Create effects
 // TODO: Play sound
 
 // particle
-scr_create_smoke_puff(x, y, 1);
+scr_create_smoke_puff(x, y, _scale);
 
 var _explosion = instance_create(x, y, obj_particle);
 
@@ -21,7 +23,6 @@ _explosion.draw_shadow = false;
 
 
 // Create damage object
-
 var _damage = instance_create(x, y, obj_damage);
 
 _damage.team = team;
@@ -32,4 +33,9 @@ _damage.stun_time = stun_time;
 _damage.lifetime = 0.01;
 
 _damage.sprite_index = spr_col_circle;
+_damage.image_xscale = _scale;
+_damage.image_yscale = _scale;
+
+// Destroy self
+instance_destroy();
 
