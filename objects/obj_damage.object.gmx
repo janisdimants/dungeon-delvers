@@ -27,11 +27,14 @@
             <kind>1</kind>
             <string>/// Initialize damage variables
 team = -1;
+
 damage = 0;
-temperature = 0;
+burn_amount = 0;
+stun_time = 0;
+
 knockback_dir = 0;
 knockback_amount = 0;
-stun_time = 0;
+
 hit_pause = 0;
 
 lifetime = -1;
@@ -98,6 +101,7 @@ var _damage = damage;
 var _knockback_dir = knockback_dir;
 var _knockback_amount = knockback_amount;
 var _stun_time = stun_time;
+var _burn_amount = burn_amount;
 
 with (other) {
   if (invinc_timer &lt;= 0) {
@@ -105,8 +109,16 @@ with (other) {
     global.hit_pause_timer = other.hit_pause;
     scr_apply_force(_knockback_amount, _knockback_dir);
     invinc_timer = invinc_time;
-    stun_timer = _stun_time * stun_time_modifier;
-    stun_time = stun_timer;
+    
+    // EFFECTS
+    // Set hitstun time
+    hit_timer = hit_time;
+    
+    // Set stun
+    stun_timer = _stun_time;
+    
+    // Add burn
+    burn_timer += _burn_amount;
          
     scr_play_rand_snd(of(
       snd_damage_1,

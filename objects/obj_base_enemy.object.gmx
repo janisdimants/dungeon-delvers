@@ -49,8 +49,13 @@ event_inherited();
             <kind>1</kind>
             <string>/// Base enemy variables
 
+// States
 move_state = scr_chase_target;
 attack_state = scr_melee_attack_target;
+
+// Sprites
+move_sprite = spr_empty;
+hit_sprite = spr_empty;
 
 team = 2;
 move_speed = 30;
@@ -62,7 +67,6 @@ stun_time = .3;
 mirror_towards_enemy = true;
 
 // Runtime
-current_state = move_state;
 target = undefined;
 target_reached = false;
 
@@ -130,6 +134,38 @@ if (target) {
     // Go back to move state after attack is done
     target_reached = false;
   }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update sprite
+
+depth = -y;
+
+if (hit_timer &lt;= 0 &amp;&amp; stun_timer &lt;= 0) {
+  sprite_index = move_sprite;
+  image_speed = anim_speed / room_speed * global.game_speed;
+} else if (hit_timer &gt; 0) {
+  sprite_index = hit_sprite;
+  image_speed = 0;
+  image_index = ((hit_time - hit_timer) / hit_time) * image_number;
 }
 </string>
           </argument>

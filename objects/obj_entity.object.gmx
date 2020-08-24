@@ -28,28 +28,37 @@
             <string>/// Entity variables
 hp = 1;
 max_hp = hp;
-invinc_time = .2;
-stun_time_modifier = 1;
 
-// Runtime variables
+// Movement
+move_cap = 100;
+acceleration = 800;
+max_speed = 250;
+damp_amount = 500;
+len = 0;
+dir = 0;
+
+team = 0;
+
+scr_initialise_stats();
+
+// TIMERS
+invinc_timer = .02;
+invinc_time = .2;
+invincible = false;
+
+// Timer for stun when getting hit. This is seperate from stun time
+hit_timer = 0;
+hit_time = 0;
+
+hit_pause = 0;
+
+// RUNTIME
 move_h = 0;
 move_v = 0;
 kb_h = 0
 kb_v = 0;
 total_move_h = 0;
 total_move_v = 0;
-move_cap = 100;
-acceleration = 800;
-max_speed = 250;
-damp_amount = 500;
-team = 0;
-invinc_timer = .02;
-invincible = false;
-stun_timer = 0;
-stun_time = 0;
-len = 0;
-dir = 0;
-hit_pause = 0;
 </string>
           </argument>
         </arguments>
@@ -140,10 +149,23 @@ if (invinc_timer &gt; 0) {
   invinc_timer -= frame_time;
   invinc_timer = max(0, invinc_timer);
 }
+
+if (hit_timer &gt; 0) {
+  hit_timer -= frame_time;
+  hit_timer = max(0, hit_timer);
+}
+
 if (stun_timer &gt; 0) {
   stun_timer -= frame_time;
   stun_timer = max(0, stun_timer);
 }
+
+// Apply burn
+if (burn_timer &gt; 0) {
+  burn_timer -= frame_time;
+  hp -= frame_time * burn_damage;
+}
+
 </string>
           </argument>
         </arguments>
@@ -181,6 +203,31 @@ with (other) {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// DEBUG
+
+draw_text(x, y-16, string(burn_timer));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -202,6 +249,12 @@ with (other) {
 
 if (invinc_timer &gt; 0) {
   shader_set(shd_white);
+}
+
+if (burn_timer &gt; 0) {
+  image_blend = c_orange;
+} else {
+  image_blend = c_white;
 }
 
 draw_self();
@@ -228,6 +281,46 @@ shader_reset();
           <argument>
             <kind>9</kind>
             <script>scr_draw_healthbar</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_draw_stun_effect</script>
           </argument>
           <argument>
             <kind>0</kind>

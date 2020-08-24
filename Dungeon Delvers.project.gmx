@@ -269,14 +269,15 @@
       <script>scripts\scr_apply_force.gml</script>
     </scripts>
     <scripts name="Drawing">
-      <script>scripts\scr_wavy_text.gml</script>
-      <script>scripts\scr_draw_healthbar.gml</script>
-      <script>scripts\scr_draw_text.gml</script>
       <scripts name="Helper">
         <script>scripts\scr_get_char_width.gml</script>
         <script>scripts\scr_get_text_width.gml</script>
         <script>scripts\scr_get_char_index.gml</script>
       </scripts>
+      <script>scripts\scr_wavy_text.gml</script>
+      <script>scripts\scr_draw_healthbar.gml</script>
+      <script>scripts\scr_draw_text.gml</script>
+      <script>scripts\scr_draw_stun_effect.gml</script>
     </scripts>
     <scripts name="Effects">
       <script>scripts\scr_create_particle.gml</script>
@@ -314,11 +315,21 @@
         <script>scripts\scr_get_enemy_list.gml</script>
       </scripts>
     </scripts>
-    <scripts name="Enemies">
-      <script>scripts\scr_explode.gml</script>
-      <script>scripts\scr_chase_target.gml</script>
-      <script>scripts\scr_melee_attack_target.gml</script>
-      <script>scripts\scr_find_target.gml</script>
+    <scripts name="Utils">
+      <script>scripts\chance.gml</script>
+    </scripts>
+    <scripts name="Entities">
+      <script>scripts\scr_initialise_stats.gml</script>
+      <scripts name="Effect Modifiers">
+        <script>scripts\scr_get_stun_time.gml</script>
+        <script>scripts\scr_get_burn_amount.gml</script>
+      </scripts>
+      <scripts name="Enemies">
+        <script>scripts\scr_explode.gml</script>
+        <script>scripts\scr_chase_target.gml</script>
+        <script>scripts\scr_melee_attack_target.gml</script>
+        <script>scripts\scr_find_target.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">

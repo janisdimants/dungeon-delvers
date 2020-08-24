@@ -8,7 +8,7 @@ if (_target.team == team) { exit; }
 var _damage = damage;
 var _knockback_dir = dir;
 var _knockback_amount = knockback_amount;
-var _stun_time = stun_time;
+var _stun_time = scr_get_stun_time(stun_length);
 
 with (_target) {
   // Make sure player isn't invincible
@@ -18,8 +18,7 @@ with (_target) {
     global.hit_pause_timer = other.hit_pause;
     scr_apply_force(_knockback_amount, _knockback_dir);
     invinc_timer = invinc_time;
-    stun_timer = _stun_time * stun_time_modifier;
-    stun_time = stun_timer;
+    stun_timer = _stun_time;
   }
 }
 

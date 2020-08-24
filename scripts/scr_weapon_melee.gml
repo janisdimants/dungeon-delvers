@@ -48,9 +48,11 @@ if (equipment[_slot, _eq_progress_time] >= equipment[_slot, _eq_execution_time] 
   _damage_obj.damage = equipment[_slot, _eq_damage]; // add modifiers in calculation here? maybe script?
   _damage_obj.knockback_amount = equipment[_slot, _eq_knockback];
   _damage_obj.knockback_dir = attack_direction;
-  _damage_obj.stun_time = equipment[_slot, _eq_stun_time];
   _damage_obj.lifetime = 0.01;
   _damage_obj.hit_pause = equipment[_slot, _eq_hit_pause_time];
+  
+  // Apply stun
+  _damage_obj.stun_time = scr_get_stun_time(equipment[_slot, _eq_stun_time]);
   
   _damage_obj.sprite_index = equipment[_slot, _eq_collision_sprite];
   _damage_obj.image_angle = attack_direction;

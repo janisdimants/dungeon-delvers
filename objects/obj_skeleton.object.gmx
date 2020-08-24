@@ -53,6 +53,9 @@ hp = 2;
 max_hp = hp;
 anim_speed = 26;
 move_speed = 30;
+
+move_sprite = spr_skeleton;
+hit_sprite = spr_skeleton_hit;
 </string>
           </argument>
         </arguments>
@@ -114,62 +117,6 @@ for (var _i = 0; _i &lt; _bone_count; _i++) {
     _particle.sprite_index = spr_skeleton_bone;
     _particle.height = 4 + random(6);
   }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Inherit parent
-event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Update sprite
-
-depth = -y;
-
-if (stun_timer &lt;= 0) {
-  sprite_index = spr_skeleton;
-  image_speed = anim_speed / room_speed * global.game_speed;
-} else {
-  sprite_index = spr_skeleton_hit;
-  image_speed = 0;
-  image_index = ((stun_time - stun_timer) / stun_time) * image_number;
 }
 </string>
           </argument>

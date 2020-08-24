@@ -13,7 +13,7 @@ if (_equip) {
   equipment[_slot, _eq_sprite] = spr_fire_hand;
   equipment[_slot, _eq_icon_index] = 3;
   equipment[_slot, _eq_height] = 6;
-  equipment[_slot, _eq_damage] = 0.2;
+  equipment[_slot, _eq_damage] = 0.5;
   equipment[_slot, _eq_knockback] = 30;
   equipment[_slot, _eq_stun_time] = 0;
   equipment[_slot, _eq_time] = .15; // animation length
@@ -98,7 +98,8 @@ if (!equipment[_slot, _eq_executed]) {
       var direction_offset = (random_range(-20, 20));
       
       projectile.team = team;
-      projectile.damage = equipment[_slot, _eq_damage];
+      //projectile.damage = equipment[_slot, _eq_damage];
+      projectile.burn_amount = equipment[_slot, _eq_damage];
       projectile.stun_time = equipment[_slot, _eq_stun_time];
       projectile.knockback = equipment[_slot, _eq_knockback];
       projectile.piercing = true;

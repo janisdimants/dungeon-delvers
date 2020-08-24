@@ -123,9 +123,11 @@ max_mana = 5;
 mana = 2.6;
 mana_restore_rate = .15;
 move_speed = 100;
-move = scr_move_state;
 
-combo_time = 0.3;
+stun_chance = 0.2;
+stun_time = 1;
+
+move = scr_move_state;
 
 // Active items
 scr_init_equipment_slot(0);
