@@ -25,12 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Game controller variables
-game_paused = false;
-player = instance_find(obj_player, 0);
-camera_speed = 10; // Percent per second
+            <string>/// DEBUG Set display settings
 
-scr_update_ui_variables();
+var _w = 1280;
+var _h = 720;
+
+// RECORDING MODE
+var recording = false;
+if (recording) {
+  var _w = 640;
+  var _h = 360;
+}
+
+window_set_size(_w, _h);
+global.center_window = true;
 </string>
           </argument>
         </arguments>
@@ -51,12 +59,12 @@ scr_update_ui_variables();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// DEBUG Set display settings
+            <string>/// Game controller variables
+game_paused = false;
+player = instance_find(obj_player, 0);
+camera_speed = 10; // Percent per second
 
-var _w = 1280;
-var _h = 720;
-window_set_size(_w, _h);
-global.center_window = true;
+scr_update_ui_variables();
 </string>
           </argument>
         </arguments>
