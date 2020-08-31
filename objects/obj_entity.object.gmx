@@ -160,10 +160,28 @@ if (stun_timer &gt; 0) {
   stun_timer = max(0, stun_timer);
 }
 
-// Apply burn
 if (burn_timer &gt; 0) {
   burn_timer -= frame_time;
+  
+  // Apply burn
   hp -= frame_time * burn_damage;
+  var _burn_interval = 0.25;
+  
+  if (burn_timer % _burn_interval &lt; frame_time) {
+     var _particle = scr_create_particle(
+       random(10),
+       random(360),
+       -1,
+       (sprite_height + random(sprite_height)) * 0.4
+     );
+       
+     _particle.destroy_after_animation = true;
+     _particle.grav = -25;
+     _particle.anim_speed = 8;
+     _particle.velocity = -10;
+     _particle.sprite_index = spr_fire_projectile;
+     _particle.draw_shadow = false;
+  }
 }
 
 </string>
@@ -198,31 +216,6 @@ var _push_amount = (_total_move_speed + damp_amount) * frame_time;
 with (other) {
   scr_apply_force(_push_amount, _dir);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// DEBUG
-
-draw_text(x, y-16, string(burn_timer));
 </string>
           </argument>
         </arguments>
