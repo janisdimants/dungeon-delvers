@@ -3,6 +3,9 @@
 
 var _character = argument0;
 
+// Currently only supporting lowercase characters
+_character = string_lower(_character);
+
 var _id = -1;
 
 switch (_character)

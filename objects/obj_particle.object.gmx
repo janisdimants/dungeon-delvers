@@ -11,6 +11,46 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_limit_instance_count</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>100</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -52,53 +92,6 @@ attach_offset_y = 0;
 image_angle = random(360);
 ground_level = 1;
 
-// Initialise optimisation timer after 10 seconds
-alarm[0] = room_speed * 10;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Create static particle
-
-if (attached &gt; 0) {
-  alarm[0] = room_speed * 5;
-  exit;
-}
-
-// create a new particle object that's static
-
-var _static_obj = instance_create(x,y,obj_particle_static);
-
-_static_obj.sprite_index = sprite_index;
-_static_obj.image_angle = image_angle;
-_static_obj.depth = depth;
-_static_obj.image_index = image_index;
-_static_obj.image_xscale = image_xscale;
-_static_obj.image_yscale = image_yscale;
-_static_obj.image_speed = 0;
-_static_obj.image_alpha = image_alpha;
-
-// Destroy self
-instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -161,6 +154,45 @@ depth = -y + _depth_offset;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Optimise particle
+// checks that particle has stopped moving
+// if so, optimises it to static surface
+
+if (attached &gt; 0 || len &gt; 0 || velocity &gt; 0 || anim_speed &gt; 0) {
+  exit;
+}
+
+// draw static sprite on gibs surface
+var _surf = obj_game_controller.gibs_surf;
+
+if surface_exists(_surf) {
+  surface_set_target(_surf);
+  scr_draw_self_height_shadow();
+  surface_reset_target();
+}
+
+// Destroy self
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -179,19 +211,85 @@ depth = -y + _depth_offset;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>/// Exit if attached
+if (attached &gt; 0) {
+  exit;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_frame_time</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Update height
 
-if (attached &gt; 0) { exit; }
-
-scr_frame_time();
-
-velocity += grav * frame_time;
-
-height -= velocity * frame_time;
-
-if (height &lt; ground_level) {
-  height = ground_level;
-  velocity *= -bounce;
+if (velocity &gt; 0) {
+  velocity += grav * frame_time;
+  
+  height -= velocity * frame_time;
+  
+  if (height &lt; ground_level) {
+    height = ground_level;
+    velocity *= -bounce;
+    
+    if (velocity &gt; -0.1) {
+      velocity = 0;
+    }
+  }
 }
 </string>
           </argument>
@@ -214,8 +312,6 @@ if (height &lt; ground_level) {
           <argument>
             <kind>1</kind>
             <string>/// Update rotation
-
-if (attached &gt; 0) { exit; }
 
 image_angle += rotation_speed * frame_time;
 rotation_speed -= sign(rotation_speed) * rotation_dampen * frame_time;
@@ -240,8 +336,6 @@ rotation_speed -= sign(rotation_speed) * rotation_dampen * frame_time;
           <argument>
             <kind>1</kind>
             <string>/// Update movement
-
-if (attached &gt; 0) { exit; }
 
 scr_move(len, dir);
 var _new_len = len - (damp*frame_time)
@@ -271,10 +365,8 @@ len = max(0, _new_len);
 image_speed = (anim_speed/room_speed)*global.game_speed;
 
 if (anim_speed &gt; 0 &amp;&amp; anim_damp &gt; 0) {
-  scr_frame_time();
   anim_speed = max(anim_speed - anim_damp * frame_time, 0);
 } else if (anim_speed &lt; 0 &amp;&amp; anim_damp &lt; 0) {
-  scr_frame_time();
   anim_speed = min(anim_speed - anim_damp * frame_time, 0);
 }
 </string>
@@ -300,7 +392,6 @@ if (anim_speed &gt; 0 &amp;&amp; anim_damp &gt; 0) {
             <string>/// Update lifetime
 
 if (lifetime &gt; 0) {
-  scr_frame_time();
   lifetime -= frame_time;
   if (lifetime &lt;= 0) {
     instance_destroy();
@@ -369,42 +460,41 @@ if (destroy_after_animation) {
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>/// Draw with height and shadow
-
-if (draw_shadow) {
-  shader_set(shd_shadow);
-  draw_sprite_ext(
-    sprite_index, image_index,
-    x, y,
-    image_xscale, image_yscale,
-    image_angle, image_blend,
-    1
-  );
-}
-
-shader_reset();
-draw_sprite_ext(
-  sprite_index, image_index,
-  x, y - height,
-  image_xscale, image_yscale,
-  image_angle, image_blend,
-  1
-);
-</string>
+            <kind>9</kind>
+            <script>scr_draw_self_height_shadow</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

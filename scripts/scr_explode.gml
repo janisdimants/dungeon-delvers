@@ -7,20 +7,21 @@ var _scale = range/8;
 // Create effects
 // TODO: Play sound
 
-// particle
-scr_create_smoke_puff(x, y, _scale);
-
+// particles
 var _explosion = instance_create(x, y, obj_particle);
 
-_explosion.image_angle = irandom(4) * 90;
-_explosion.height = 5;
-_explosion.velocity = 0;
-_explosion.grav = 0;
-_explosion.sprite_index = spr_explosion;
-_explosion.destroy_after_animation = true;
-_explosion.anim_speed = 30;
-_explosion.draw_shadow = false;
+if (instance_exists(_explosion)) {
+  _explosion.image_angle = irandom(4) * 90;
+  _explosion.height = 5;
+  _explosion.velocity = 0;
+  _explosion.grav = 0;
+  _explosion.sprite_index = spr_explosion;
+  _explosion.destroy_after_animation = true;
+  _explosion.anim_speed = 30;
+  _explosion.draw_shadow = false;
+}
 
+scr_create_smoke_puff(x, y, _scale);
 
 // Create damage object
 var _damage = instance_create(x, y, obj_damage);

@@ -3,7 +3,7 @@
   <spriteName>spr_arena_base</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>10000</depth>
   <persistent>0</persistent>
   <parentName>obj_wall</parentName>
   <maskName>spr_arena_collision</maskName>
