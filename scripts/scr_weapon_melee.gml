@@ -58,14 +58,16 @@ if (equipment[_slot, _eq_progress_time] >= equipment[_slot, _eq_execution_time] 
   _damage_obj.image_angle = attack_direction;
   
   var _slash_particle = instance_create(x, y, obj_particle);
-  _slash_particle.image_angle = attack_direction;
-  _slash_particle.sprite_index = equipment[_slot, _eq_particle_sprite];
-  _slash_particle.anim_speed = 72;
-  _slash_particle.height = equipment[_slot, _eq_height];
-  _slash_particle.dir = attack_direction;
-  _slash_particle.len = 100;
-  _slash_particle.destroy_after_animation = true;
-  _slash_particle.draw_shadow = false;
+  if (instance_exists(_slash_particle)) {
+    _slash_particle.image_angle = attack_direction;
+    _slash_particle.sprite_index = equipment[_slot, _eq_particle_sprite];
+    _slash_particle.anim_speed = 72;
+    _slash_particle.height = equipment[_slot, _eq_height];
+    _slash_particle.dir = attack_direction;
+    _slash_particle.len = 100;
+    _slash_particle.destroy_after_animation = true;
+    _slash_particle.draw_shadow = false;
+  }
   
 }
 // Combo timing

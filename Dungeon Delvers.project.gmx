@@ -287,13 +287,16 @@
       <script>scripts\scr_arrow_destroy.gml</script>
       <script>scripts\scr_create_smoke_puff.gml</script>
     </scripts>
-    <scripts name="fp">
-      <script>scripts\map.gml</script>
-      <script>scripts\of.gml</script>
-      <script>scripts\filter.gml</script>
-      <script>scripts\array_find.gml</script>
-      <script>scripts\for_each.gml</script>
-      <script>scripts\reduce.gml</script>
+    <scripts name="Utils">
+      <script>scripts\chance.gml</script>
+      <scripts name="fp">
+        <script>scripts\map.gml</script>
+        <script>scripts\of.gml</script>
+        <script>scripts\filter.gml</script>
+        <script>scripts\array_find.gml</script>
+        <script>scripts\for_each.gml</script>
+        <script>scripts\reduce.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Objects">
       <scripts name="Game Controller">
@@ -317,9 +320,6 @@
         <script>scripts\scr_get_enemy_count.gml</script>
         <script>scripts\scr_get_enemy_list.gml</script>
       </scripts>
-    </scripts>
-    <scripts name="Utils">
-      <script>scripts\chance.gml</script>
     </scripts>
     <scripts name="Entities">
       <script>scripts\scr_initialise_stats.gml</script>
