@@ -176,6 +176,7 @@
   <backgrounds name="background">
     <background>background\ts_dungeon</background>
     <background>background\bg_main</background>
+    <background>background\bg_grass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
