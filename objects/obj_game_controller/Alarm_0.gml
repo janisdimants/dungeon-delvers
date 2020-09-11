@@ -1,0 +1,2 @@
+/// @description  Resize application surface
+

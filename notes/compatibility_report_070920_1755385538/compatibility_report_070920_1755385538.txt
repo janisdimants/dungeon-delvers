@@ -1,0 +1,694 @@
+Converting GML script: ${project_dir}\scripts\scr_get_input\scr_get_input.gml
+Converted description /// @description scr_get_input()
+Converted string - line 4: 'W' -> "W"
+Converted string - line 5: 'A' -> "A"
+Converted string - line 6: 'S' -> "S"
+Converted string - line 7: 'D' -> "D"
+Converted string - line 19: 'E' -> "E"
+
+Converting GML script: ${project_dir}\scripts\scr_frame_time\scr_frame_time.gml
+Converted description /// @description scr_frame_time()
+
+Converting GML script: ${project_dir}\scripts\scr_frame_time_independant\scr_frame_time_independant.gml
+Converted description /// @description scr_frame_time_independant()
+
+Converting GML script: ${project_dir}\scripts\scr_get_face\scr_get_face.gml
+Converted description /// @description scr_get_face();
+
+Converting GML script: ${project_dir}\scripts\scr_get_head_direction\scr_get_head_direction.gml
+Converted description /// @description scr_get_head_direction();
+
+Converting GML script: ${project_dir}\scripts\scr_create_inst_offset\scr_create_inst_offset.gml
+Converted description /// @description scr_create_inst_offset(projectile object, forward offset, side offset, direction)/// @param projectile object
+/// @param  forward offset
+/// @param  side offset
+/// @param  direction
+
+Converting GML script: ${project_dir}\scripts\scr_next_floor\scr_next_floor.gml
+Converted description /// @description scr_next_floor()
+
+Converting GML script: ${project_dir}\scripts\scr_get_equipment_mapping\scr_get_equipment_mapping.gml
+Converted description /// @description scr_get_equipment_mapping();
+
+Converting GML script: ${project_dir}\scripts\scr_round_to_decimal\scr_round_to_decimal.gml
+Converted description /// @description scr_round_to_decimal(number_to_round, decimal)/// @param number_to_round
+/// @param  decimal
+
+Converting GML script: ${project_dir}\scripts\scr_limit_instance_count\scr_limit_instance_count.gml
+Converted description /// @description scr_limit_instance_count(limit?)/// @param limit?
+
+Converting GML script: ${project_dir}\scripts\scr_init_equipment_slot\scr_init_equipment_slot.gml
+Converted description /// @description scr_init_equipment_slot(slot);/// @param slot
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_sword\scr_weapon_sword.gml
+Converted description /// @description scr_weapon_sword(equip?)/// @param equip?
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_scythe\scr_weapon_scythe.gml
+Converted description /// @description scr_weapon_sword(equip?)/// @param equip?
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_bloodsword\scr_weapon_bloodsword.gml
+Converted description /// @description scr_weapon_sword(equip?)/// @param equip?
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_spear\scr_weapon_spear.gml
+Converted description /// @description scr_weapon_spear(slot, equip?)/// @param slot
+/// @param  equip?
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_bow\scr_weapon_bow.gml
+Converted description /// @description scr_weapon_bow(equip?)/// @param equip?
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_melee\scr_weapon_melee.gml
+Converted description /// @description scr_weapon_melee(_slot)/// @param _slot
+
+Converting GML script: ${project_dir}\scripts\scr_weapon_ranged\scr_weapon_ranged.gml
+Converted description /// @description scr_weapon_ranged()
+
+Converting GML script: ${project_dir}\scripts\scr_spell_fire\scr_spell_fire.gml
+Converted description /// @description scr_spell_fire(slot, equip?)/// @param slot
+/// @param  equip?
+
+Converting GML script: ${project_dir}\scripts\scr_spell_groundbeam\scr_spell_groundbeam.gml
+Converted description /// @description scr_spell_groundbeam(equip?)/// @param equip?
+
+Converting GML script: ${project_dir}\scripts\scr_roll\scr_roll.gml
+Converted description /// @description scr_roll(slot, equip?)/// @param slot
+/// @param  equip?
+
+Converting GML script: ${project_dir}\scripts\scr_move_state\scr_move_state.gml
+Converted description /// @description scr_move_state();
+
+Converting GML script: ${project_dir}\scripts\scr_dodge_state\scr_dodge_state.gml
+Converted description /// @description scr_blocked_state()
+
+Converting GML script: ${project_dir}\scripts\scr_dead_state\scr_dead_state.gml
+Converted description /// @description scr_dead_state()
+
+Converting GML script: ${project_dir}\scripts\scr_get_base_ui\scr_get_base_ui.gml
+Converted builtin - line 6: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 7: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description scr_get_base_ui()
+
+Converting GML script: ${project_dir}\scripts\scr_update_ui_variables\scr_update_ui_variables.gml
+Converted builtin - line 21: view_xview[0] = player.x - (view_wview[0]/2 -> __view_set( e__VW.XView, 0, player.x - (view_wview[0]/2 )
+Converted builtin - line 22: view_yview[0] = player.y - (view_hview[0]/2 -> __view_set( e__VW.YView, 0, player.y - (view_hview[0]/2 )
+Converted builtin - line 15: view_wview[0] = view_h * aspect_ratio -> __view_set( e__VW.WView, 0, view_h * aspect_ratio )
+Converted builtin - line 16: view_hview[0] = view_h -> __view_set( e__VW.HView, 0, view_h )
+Converted description /// @description scr_update_ui_variables()
+Converted builtin - line 21: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 22: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+Converting GML script: ${project_dir}\scripts\scr_draw_mana\scr_draw_mana.gml
+Converted description /// @description scr_draw_mana()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_mana_old\scr_draw_mana_old.gml
+Converted description /// @description scr_draw_mana()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_health\scr_draw_health.gml
+Converted description /// @description scr_draw_health()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_health_old\scr_draw_health_old.gml
+Converted description /// @description scr_draw_health()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_weapon_spell\scr_draw_weapon_spell.gml
+Converted description /// @description scr_draw_weapon_spell()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_wave\scr_draw_wave.gml
+Converted description /// @description scr_draw_wave()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_equipment\scr_draw_equipment.gml
+Converted description /// @description scr_draw_equipment();
+
+Converting GML script: ${project_dir}\scripts\scr_play_game\scr_play_game.gml
+Converted description /// @description scr_play_game();
+
+Converting GML script: ${project_dir}\scripts\scr_exit_to_desktop\scr_exit_to_desktop.gml
+Converted description /// @description scr_exit_to_desktop()
+
+Converting GML script: ${project_dir}\scripts\scr_to_pause\scr_to_pause.gml
+Converted description /// @description scr_to_pause()
+
+Converting GML script: ${project_dir}\scripts\scr_to_menu\scr_to_menu.gml
+Converted description /// @description scr_to_menu();
+
+Converting GML script: ${project_dir}\scripts\scr_to_game\scr_to_game.gml
+Converted description /// @description scr_to_game();
+
+Converting GML script: ${project_dir}\scripts\scr_to_options\scr_to_options.gml
+Converted description /// @description scr_to_options()
+
+Converting GML script: ${project_dir}\scripts\scr_to_options_gameplay\scr_to_options_gameplay.gml
+Converted description /// @description scr_to_options_gameplay()
+
+Converting GML script: ${project_dir}\scripts\scr_to_options_graphics\scr_to_options_graphics.gml
+Converted description /// @description scr_to_options_graphics()
+
+Converting GML script: ${project_dir}\scripts\scr_to_options_audio\scr_to_options_audio.gml
+Converted description /// @description scr_to_options_audio()
+
+Converting GML script: ${project_dir}\scripts\scr_to_options_input\scr_to_options_input.gml
+Converted description /// @description scr_to_options_input()
+
+Converting GML script: ${project_dir}\scripts\scr_toggle_fullscreen\scr_toggle_fullscreen.gml
+Converted description /// @description scr_toggle_fullscreen(get?, direction)/// @param get?
+/// @param  direction
+
+Converting GML script: ${project_dir}\scripts\scr_next_resolution\scr_next_resolution.gml
+Converted description /// @description scr_next_resolution(get?, dir)/// @param get?
+/// @param  dir
+
+Converting GML script: ${project_dir}\scripts\scr_next_fps_cap\scr_next_fps_cap.gml
+Converted description /// @description scr_next_fps_cap(get?, direction)/// @param get?
+/// @param  direction
+
+Converting GML script: ${project_dir}\scripts\scr_apply_gfx_options\scr_apply_gfx_options.gml
+Converted description /// @description scr_apply_gfx_options(get option, previous)/// @param get option
+/// @param  previous
+
+Converting GML script: ${project_dir}\scripts\scr_apply_values\scr_apply_values.gml
+Converted description /// @description scr_apply_values();
+
+Converting GML script: ${project_dir}\scripts\scr_target_increment\scr_target_increment.gml
+Converted description /// @description scr_target_increment(target, increment)/// @param target
+/// @param  increment
+
+Converting GML script: ${project_dir}\scripts\scr_set_dmg_number_visibility\scr_set_dmg_number_visibility.gml
+Converted description /// @description scr_set_dmg_number_visibility();
+
+Converting GML script: ${project_dir}\scripts\scr_set_hp_visibility\scr_set_hp_visibility.gml
+Converted description /// @description scr_set_dmg_number_visibility();
+
+Converting GML script: ${project_dir}\scripts\scr_move\scr_move.gml
+Converted description /// @description scr_move(speed, direction);/// @param speed
+/// @param  direction
+
+Converting GML script: ${project_dir}\scripts\scr_move_entity\scr_move_entity.gml
+Converted description /// @description scr_move_entity(h, v);/// @param h
+/// @param  v
+
+Converting GML script: ${project_dir}\scripts\scr_apply_force\scr_apply_force.gml
+Converted description /// @description scr_apply_force(strength, direction)/// @param strength
+/// @param  direction
+
+Converting GML script: ${project_dir}\scripts\scr_get_char_width\scr_get_char_width.gml
+Converted description /// @description scr_get_char_width(char_id, size)/// @param char_id
+/// @param  size
+
+Converting GML script: ${project_dir}\scripts\scr_get_text_width\scr_get_text_width.gml
+Converted description /// @description scr_get_text_width(text, size, spacing)/// @param text
+/// @param  size
+/// @param  spacing
+
+Converting GML script: ${project_dir}\scripts\scr_get_char_index\scr_get_char_index.gml
+Converted description /// @description scr_get_char_index(character)/// @param character
+
+Converting GML script: ${project_dir}\scripts\scr_wavy_text\scr_wavy_text.gml
+Converted description /// @description scr_wiggle_text(x, y, string);/// @param x
+/// @param  y
+/// @param  string
+
+Converting GML script: ${project_dir}\scripts\scr_draw_healthbar\scr_draw_healthbar.gml
+Converted description /// @description scr_draw_healthbar()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_text\scr_draw_text.gml
+Converted description /// @description scr_draw_text(x, y, size, text, centered?)/// @param x
+/// @param  y
+/// @param  size
+/// @param  text
+/// @param  centered?
+
+Converting GML script: ${project_dir}\scripts\scr_draw_stun_effect\scr_draw_stun_effect.gml
+Converted description /// @description scr_draw_stun_effect()
+
+Converting GML script: ${project_dir}\scripts\scr_draw_self_height_shadow\scr_draw_self_height_shadow.gml
+Converted description /// @description scr_draw_self_height_shadow()
+
+Converting GML script: ${project_dir}\scripts\scr_create_particle\scr_create_particle.gml
+Converted description /// @description scr_create_particle(len, dir, lifetime, height, bounce, attached)/// @param len
+/// @param  dir
+/// @param  lifetime
+/// @param  height
+/// @param  bounce
+/// @param  attached
+
+Converting GML script: ${project_dir}\scripts\scr_arrow_destroy\scr_arrow_destroy.gml
+Converted description /// @description scr_arrow_destroy(instance_hit)/// @param instance_hit
+
+Converting GML script: ${project_dir}\scripts\scr_create_smoke_puff\scr_create_smoke_puff.gml
+Converted description /// @description scr_create_smoke_puff(x, y, size_multiplier?)/// @param x
+/// @param  y
+/// @param  size_multiplier?
+
+Converting GML script: ${project_dir}\scripts\chance\chance.gml
+Converted description /// @description chance(percentage)/// @param percentage
+
+Converting GML script: ${project_dir}\scripts\map\map.gml
+Error: variable 'script' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description  map(script_idx, arr)/// @param script_idx
+/// @param  arr
+
+Converting GML script: ${project_dir}\scripts\of\of.gml
+Converted description /// @description of(*args);/// @param *args
+
+Converting GML script: ${project_dir}\scripts\filter\filter.gml
+Error: variable 'script' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description  filter(predicate_script_idx, arr, data?)/// @param predicate_script_idx
+/// @param  arr
+/// @param  data?
+
+Converting GML script: ${project_dir}\scripts\array_find\array_find.gml
+Converted description /// @description  array_find(value, arr)/// @param value
+/// @param  arr
+
+Converting GML script: ${project_dir}\scripts\for_each\for_each.gml
+Error: variable 'script' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description  for_each(script_idx, arr)/// @param script_idx
+/// @param  arr
+
+Converting GML script: ${project_dir}\scripts\reduce\reduce.gml
+Error: variable 'script' has same name as a built-in (function, constant or variable), it must be renamed to function correctly
+Converted description /// @description  reduce(script_idx, arr, initial_value)/// @param script_idx
+/// @param  arr
+/// @param  initial_value
+
+Converting GML script: ${project_dir}\scripts\scr_settings_and_vars\scr_settings_and_vars.gml
+Converted description /// @description  Global Game Settings and runtime variables
+
+Converting GML script: ${project_dir}\scripts\scr_audio_mixer\scr_audio_mixer.gml
+Converted description /// @description  Sound effects mixer
+
+Converting GML script: ${project_dir}\scripts\scr_set_group_gain\scr_set_group_gain.gml
+Converted description /// @description  scr_set_group_gain(group)/// @param group
+
+Converting GML script: ${project_dir}\scripts\scr_play_rand_snd\scr_play_rand_snd.gml
+Converted description /// @description  scr_play_rand_snd(snd_array)/// @param snd_array
+
+Converting GML script: ${project_dir}\scripts\scr_start_next_stage\scr_start_next_stage.gml
+Converted description /// @description scr_start_next_stage()
+
+Converting GML script: ${project_dir}\scripts\scr_end_stage\scr_end_stage.gml
+Converted description /// @description scr_end_stage()
+
+Converting GML script: ${project_dir}\scripts\scr_update_wave_status\scr_update_wave_status.gml
+Converted description /// @description scr_update_wave_status()
+
+Converting GML script: ${project_dir}\scripts\scr_calculate_budget\scr_calculate_budget.gml
+Converted description /// @description scr_calculate_budget(stage, wave)/// @param stage
+/// @param  wave
+
+Converting GML script: ${project_dir}\scripts\scr_calculate_stage_spawn_rate\scr_calculate_stage_spawn_rate.gml
+Converted description /// @description scr_calculate_stage_spawn_rate(stage);/// @param stage
+
+Converting GML script: ${project_dir}\scripts\scr_get_enemy_by_budget\scr_get_enemy_by_budget.gml
+Converted description /// @description scr_get_enemy_by_budget(budget)/// @param budget
+
+Converting GML script: ${project_dir}\scripts\scr_filter_mobs_by_budget\scr_filter_mobs_by_budget.gml
+Converted description /// @description scr_filter_mobs_by_budget(mob, index, budget)/// @param mob
+/// @param  index
+/// @param  budget
+
+Converting GML script: ${project_dir}\scripts\scr_get_enemy_count\scr_get_enemy_count.gml
+Converted description /// @description scr_get_enemy_count()
+
+Converting GML script: ${project_dir}\scripts\scr_get_enemy_list\scr_get_enemy_list.gml
+Converted description /// @description scr_get_enemy_list()
+
+Converting GML script: ${project_dir}\scripts\scr_initialise_stats\scr_initialise_stats.gml
+Converted description /// @description scr_initialise_stats()
+
+Converting GML script: ${project_dir}\scripts\scr_get_stun_time\scr_get_stun_time.gml
+Converted description /// @description scr_get_stun_time(base_time)/// @param base_time
+
+Converting GML script: ${project_dir}\scripts\scr_get_burn_amount\scr_get_burn_amount.gml
+Converted description /// @description scr_get_stun_time(base_time)/// @param base_time
+
+Converting GML script: ${project_dir}\scripts\scr_chase_target\scr_chase_target.gml
+Converted description /// @description scr_chase_target(target, stop_distance?)/// @param target
+/// @param  stop_distance?
+
+Converting GML script: ${project_dir}\scripts\scr_melee_attack_target\scr_melee_attack_target.gml
+Converted description /// @description scr_melee_attack_target(target)/// @param target
+
+Converting GML script: ${project_dir}\scripts\scr_find_target\scr_find_target.gml
+Converted description /// @description scr_find_target()
+
+Converting GML script: ${project_dir}\scripts\scr_explode\scr_explode.gml
+Converted description /// @description scr_explode()
+
+Converting GML script: ${project_dir}\scripts\scr_create_skeleton_death_particles\scr_create_skeleton_death_particles.gml
+Converted description /// @description scr_create_skeleton_death_particles(helmet?)/// @param helmet?
+
+Font fnt_main has been converted to font family PixelFont (Medium)
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fnt_main\fnt_main.gms1.png
+Converting GML script: ${project_dir}\objects\obj_game_controller\Create_0.gml
+Converted description /// @description  DEBUG Set display settings
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Alarm_0.gml
+Converted description /// @description  Resize application surface
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Step_0.gml
+Converted builtin - line 38: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 47: view_xview[0] += cam_move_x * camera_speed * frame_time -> __view_set( e__VW.XView, 0, __view_get( e__VW.XView, 0 ) + (cam_move_x * camera_speed * frame_time) )
+Converted builtin - line 39: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 48: view_yview[0] += cam_move_y * camera_speed * frame_time -> __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (cam_move_y * camera_speed * frame_time) )
+Converted builtin - line 40: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 41: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Find player object
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Other_4.gml
+Converted description /// @description  Update room settings
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Other_2.gml
+Converted description /// @description  Set mouse cursor
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Draw_64.gml
+Converted builtin - line 7: view_xview[0] -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 8: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 9: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 10: view_hview[0] -> __view_get( e__VW.HView, 0 )
+Converted description /// @description  Draw debug text
+Converted string - line 4: 'width' -> "width"
+Converted string - line 5: 'height' -> "height"
+Converted string - line 7: 'x' -> "x"
+Converted string - line 8: 'y' -> "y"
+Converted string - line 9: 'w' -> "w"
+Converted string - line 10: 'h' -> "h"
+Converted string - line 11: 'room_speed' -> "room_speed"
+Converted string - line 12: 'game_speed' -> "game_speed"
+
+Converting GML script: ${project_dir}\objects\obj_game_controller\Draw_0.gml
+Converted description /// @description  Draw gibs surface
+
+Converting GML script: ${project_dir}\objects\obj_wave_controller\Create_0.gml
+Converted description /// @description  Initialise Wave Controller
+
+Converting GML script: ${project_dir}\objects\obj_wave_controller\Draw_64.gml
+Converted description /// @description  Draw game UI
+
+Converting GML script: ${project_dir}\objects\obj_damage\Create_0.gml
+Converted description /// @description  Initialize damage variables
+
+Converting GML script: ${project_dir}\objects\obj_damage\Step_2.gml
+Converted description /// @description  Update lifetime
+
+Converting GML script: ${project_dir}\objects\obj_damage\Collision_218565c5-0a33-4ab5-955c-ea7741580466.gml
+Converted description /// @description  Damage logic
+
+Converting GML script: ${project_dir}\objects\obj_base_projectile\Create_0.gml
+Converted description /// @description  Inherit damage variables
+
+Converting GML script: ${project_dir}\objects\obj_base_projectile\Step_0.gml
+Converted description /// @description  Movement and rotation
+
+Converting GML script: ${project_dir}\objects\obj_base_projectile\Collision_845b58e3-368b-4197-ac14-74a9bde592ef.gml
+Converted description /// @description  Inherit damage logic
+
+Converting GML script: ${project_dir}\objects\obj_base_projectile\Draw_0.gml
+Converted description /// @description  Draw with height
+
+Converting GML script: ${project_dir}\objects\obj_arrow\Create_0.gml
+Converted description /// @description  Inherit projectile create event
+
+Converting GML script: ${project_dir}\objects\obj_arrow\Draw_0.gml
+Converted description /// @description  Draw with height
+
+Converting GML script: ${project_dir}\objects\obj_fire_projectile\Create_0.gml
+Converted description /// @description  Inherit projectile variables
+
+Converting GML script: ${project_dir}\objects\obj_fire_projectile\Step_0.gml
+Converted description /// @description  Movement and rotation
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam_projectile\Create_0.gml
+Converted description /// @description  Inherit projectile variables
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam_projectile\Step_0.gml
+Converted description /// @description  Inherit projectile movement
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam_projectile\Collision_cc7a17f3-828f-440b-9734-8f7cab6462b0.gml
+Converted description /// @description  Ignore regular damage logic
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam\Create_0.gml
+Converted description /// @description  Init damage variables
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam\Step_0.gml
+Converted description /// @description  Update sprite speed
+
+Converting GML script: ${project_dir}\objects\obj_ground_beam\Other_7.gml
+Converted description /// @description  Self destruct
+
+Converting GML script: ${project_dir}\objects\obj_wall\Create_0.gml
+Converted description /// @description  Set depth and randomise image
+
+Converting GML script: ${project_dir}\objects\obj_door\Create_0.gml
+Converted description /// @description  Set image speed to 0
+
+Converting GML script: ${project_dir}\objects\obj_door\Step_2.gml
+Converted description /// @description  Check if all enemies are dead
+
+Converting GML script: ${project_dir}\objects\obj_door\Collision_e2cd7474-23f9-46c8-bcc2-e507a0276e23.gml
+Converted description /// @description  Move to next floor
+
+Converting GML script: ${project_dir}\objects\obj_spawner\Create_0.gml
+Converted description /// @description  Initialize Variables
+
+Converting GML script: ${project_dir}\objects\obj_spawner\Step_0.gml
+Converted description /// @description  Update sprite
+
+Converting GML script: ${project_dir}\objects\obj_spawner\Other_7.gml
+Converted description /// @description  Create instance of enemy and particle
+
+Converting GML script: ${project_dir}\objects\obj_player\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_0.gml
+Converted description /// @description  Control the logic
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_64.gml
+Converted description /// @description  Draw debug text
+Converted string - line 7: 'head_direction ' -> "head_direction "
+Converted string - line 8: 'pointer_direction ' -> "pointer_direction "
+Converted string - line 9: 'global.controller_id ' -> "global.controller_id "
+Converted string - line 11: 'total_move_h ' -> "total_move_h "
+Converted string - line 12: 'total_move_v ' -> "total_move_v "
+Converted string - line 14: 'total_speed ' -> "total_speed "
+Converted string - line 16: 'max_speed ' -> "max_speed "
+Converted string - line 17: 'len ' -> "len "
+Converted string - line 18: 'move_cap ' -> "move_cap "
+Converted string - line 20: 'state ' -> "state "
+Converted string - line 21: 'dash_key ' -> "dash_key "
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_0.gml
+Converted description /// @description  Draw the player
+
+Converting GML script: ${project_dir}\objects\obj_entity\Create_0.gml
+Converted description /// @description  Entity variables
+
+Converting GML script: ${project_dir}\objects\obj_entity\Step_2.gml
+Converted description /// @description  Movement
+
+Converting GML script: ${project_dir}\objects\obj_entity\Collision_70c8d821-126d-44d1-a275-8fd8b0a08093.gml
+Converted description /// @description  Push back entity from each other
+
+Converting GML script: ${project_dir}\objects\obj_entity\Draw_0.gml
+Converted description /// @description  Draw entity
+
+Converting GML script: ${project_dir}\objects\obj_base_enemy\Create_0.gml
+Converted description /// @description  Inherit entity Variables
+
+Converting GML script: ${project_dir}\objects\obj_base_enemy\Step_0.gml
+Converted description /// @description  Check if dead
+
+Converting GML script: ${project_dir}\objects\obj_skeleton\Create_0.gml
+Converted description /// @description  Inherit parent
+
+Converting GML script: ${project_dir}\objects\obj_skeleton\Draw_0.gml
+Converted description /// @description  Draw with shadow
+
+Converting GML script: ${project_dir}\objects\obj_skeleton_bomb\Create_0.gml
+Converted description /// @description  Inherit parent
+
+Converting GML script: ${project_dir}\objects\obj_skeleton_bomb\Draw_0.gml
+Converted description /// @description  Draw with shadow
+
+Converting GML script: ${project_dir}\objects\obj_skeleton_helmet\Create_0.gml
+Converted description /// @description  Inherit parent
+
+Converting GML script: ${project_dir}\objects\obj_skeleton_helmet\Draw_0.gml
+Converted description /// @description  Draw with shadow
+
+Converting GML script: ${project_dir}\objects\obj_bat\Create_0.gml
+Converted description /// @description  Inherit parent
+
+Converting GML script: ${project_dir}\objects\obj_bat\Destroy_0.gml
+Converted description /// @description  Create bat death particles
+
+Converting GML script: ${project_dir}\objects\obj_bat\Step_0.gml
+Converted description /// @description  Inherit parent
+
+Converting GML script: ${project_dir}\objects\obj_bat\Draw_0.gml
+Converted description /// @description  Draw with shadow
+
+Converting GML script: ${project_dir}\objects\obj_sword_slash\Create_0.gml
+Converted description /// @description  Init variables
+
+Converting GML script: ${project_dir}\objects\obj_sword_slash\Step_0.gml
+Converted description /// @description  Update image speed
+
+Converting GML script: ${project_dir}\objects\obj_sword_slash\Other_7.gml
+Converted description /// @description  Destroy self
+
+Converting GML script: ${project_dir}\objects\obj_sword_slash\Draw_0.gml
+Converted description /// @description  Draw with height
+
+Converting GML script: ${project_dir}\objects\obj_spear_slash\Create_0.gml
+Converted description /// @description  Init variables
+
+Converting GML script: ${project_dir}\objects\obj_spear_slash\Step_0.gml
+Converted description /// @description  Update image speed
+
+Converting GML script: ${project_dir}\objects\obj_spear_slash\Other_7.gml
+Converted description /// @description  Destroy self
+
+Converting GML script: ${project_dir}\objects\obj_spear_slash\Draw_0.gml
+Converted description /// @description  Draw with height
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Create_0.gml
+Converted description /// @description  Init variables
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Step_0.gml
+Converted description /// @description  Update image speed
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Other_7.gml
+Converted description /// @description  Destroy self
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Draw_0.gml
+Converted description /// @description  Draw with height
+
+Converting GML script: ${project_dir}\objects\obj_particle\Step_2.gml
+Converted description /// @description  Follow attached instance
+Converted string - line 10: 'x' -> "x"
+
+Converting GML script: ${project_dir}\objects\obj_particle\Step_0.gml
+Converted description /// @description  Exit if attached
+
+Converting GML script: ${project_dir}\objects\obj_particle\Collision_e845e939-aeab-460c-b28c-1d4213cb4c84.gml
+Converted description /// @description  Mirror animation 
+
+Converting GML script: ${project_dir}\objects\obj_particle\Other_7.gml
+Converted description /// @description  Destroy if flag is set true
+
+Converting GML script: ${project_dir}\objects\obj_ui_element\Create_0.gml
+Converted description /// @description  Initialise variables
+
+Converting GML script: ${project_dir}\objects\obj_ui_element\Alarm_0.gml
+Converted description /// @description  Update width and height variables
+
+Converting GML script: ${project_dir}\objects\obj_ui_element\Step_0.gml
+Converted description /// @description  Selection and navigation
+
+Converting GML script: ${project_dir}\objects\obj_ui_element\Draw_64.gml
+Converted description /// @description  Draw UI element on GUI layer
+
+Converting GML script: ${project_dir}\objects\obj_ui_element\Draw_0.gml
+Converted description /// @description  Do not draw in game
+
+Converting GML script: ${project_dir}\objects\obj_play\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_exit\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_paused\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_dark_layer\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_resume\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_options\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_to_menu\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_gameplay\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_option_dmg_numbers\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_option_hp_visibility\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_graphics\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_audio\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_input\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_back_to_menu\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_options_back_to_options\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_ui_value\Create_0.gml
+Converted description /// @description  Inherited Event
+
+Converting GML script: ${project_dir}\objects\obj_ui_value\Alarm_0.gml
+Converted description /// @description  Create arrows
+
+Converting GML script: ${project_dir}\objects\obj_ui_value\Step_0.gml
+Converted description /// @description  Update sprite based on value
+
+Converting GML script: ${project_dir}\objects\obj_ui_apply_values\Create_0.gml
+Converted description /// @description  Inherited Event
+
+Converting GML script: ${project_dir}\objects\obj_ui_arrow\Create_0.gml
+Converted description /// @description  Inherited Event
+
+Converting GML script: ${project_dir}\objects\obj_ui_arrow\Step_0.gml
+Converted description /// @description  Inherited Event
+
+Converting GML script: ${project_dir}\objects\obj_home\Create_0.gml
+Converted description /// @description  Inherit event
+
+Converting GML script: ${project_dir}\objects\obj_shop\Create_0.gml
+Converted description /// @description  Inherit event
+
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Missing audiogroup for sound: 'snd_footstep_1' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_2' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_3' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_4' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_5' - setting to default audio group
+Missing audiogroup for sound: 'snd_bow_shoot' - setting to default audio group
+Missing audiogroup for sound: 'snd_damage_1' - setting to default audio group
+Missing audiogroup for sound: 'snd_damage_2' - setting to default audio group
+Missing audiogroup for sound: 'snd_damage_3' - setting to default audio group
+Missing audiogroup for sound: 'snd_spear_swing_1' - setting to default audio group
+Missing audiogroup for sound: 'snd_spear_swing_2' - setting to default audio group
+Missing audiogroup for sound: 'snd_spear_swing_3' - setting to default audio group
+Missing audiogroup for sound: 'snd_spear_swing_4' - setting to default audio group
+Missing audiogroup for sound: 'snd_menu_open' - setting to default audio group
+Missing audiogroup for sound: 'snd_menu_close' - setting to default audio group
+Missing audiogroup for sound: 'snd_menu_hover' - setting to default audio group
+Missing audiogroup for sound: 'snd_menu_submenu_open' - setting to default audio group
+Missing audiogroup for sound: 'snd_menu_submenu_close' - setting to default audio group
+Missing audiogroup for sound: 'snd_fire' - setting to default audio group
+Missing audiogroup for sound: 'snd_wave_start' - setting to default audio group
+Missing audiogroup for sound: 'snd_wave_end' - setting to default audio group
+Missing audiogroup for sound: 'snd_stage_end' - setting to default audio group
+Game speed set to 120
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'view/__view_set.gml'
+Added compatibility script 'view/__view_set_internal.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'
