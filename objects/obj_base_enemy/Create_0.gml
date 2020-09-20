@@ -17,7 +17,9 @@ invinc_time = .2;
 knockback_amount = 150;
 damage = .5;
 range = 7;
-stun_time = .3;
+modifiers = of();
+
+
 mirror_towards_enemy = true;
 
 // Runtime

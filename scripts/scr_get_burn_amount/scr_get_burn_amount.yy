@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Effect Modifiers",
-    "path": "folders/Scripts/Entities/Effect Modifiers.yy",
+    "name": "Status Modifiers System",
+    "path": "folders/Scripts/Objects/Entities/Status Modifiers System.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_get_burn_amount",

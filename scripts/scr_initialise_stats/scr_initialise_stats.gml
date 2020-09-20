@@ -1,26 +1,18 @@
 /// @description scr_initialise_stats()
 function scr_initialise_stats() {
-	// Initialises all variables of base stats
+	var _status_script_list = scr_get_status_script_list()
+	
+	status_script_to_index_map = ds_map_create();
+	status_list = map(scr_map_status_list, _status_script_list);
+	
+	show_debug_message("INIT STATUS LIST" + string(status_list));
+}
 
-	// Stuns
-	// self
-	stun_timer = 0; 
-	// attack
-	stun_chance = 0;
-	stun_length = 1; // currently only enemy
-	stun_length_modifier = 1;
-
-	// Burn
-	// self
-	burn_timer = 0;
-	burn_damage = .5; // taken per second
-	// attack
-	burn_chance = 0;
-	burn_amount = 1;
-	burn_amount_modifier = 1;
-
-
-
-
-
+function scr_map_status_list(status_script, index) {
+	ds_map_add(status_script_to_index_map, status_script, index);
+	
+	var _default_amount = 0;
+	var _default_data = array_create(1);
+	
+	return of(status_script, _default_amount, index, _default_data);
 }

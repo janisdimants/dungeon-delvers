@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Dodges",
-    "path": "folders/Scripts/Equipment/Dodges.yy",
+    "path": "folders/Scripts/Objects/Entities/Equipment/Dodges.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_roll",

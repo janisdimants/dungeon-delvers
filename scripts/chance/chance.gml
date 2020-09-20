@@ -9,6 +9,4 @@ function chance() {
 
 	return (_rolled <= _chance);
 
-
-
 }

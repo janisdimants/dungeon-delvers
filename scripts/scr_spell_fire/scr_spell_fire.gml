@@ -18,11 +18,14 @@ function scr_spell_fire(argument0, argument1) {
 	  equipment[_slot, _eq_height] = 6;
 	  equipment[_slot, _eq_damage] = 0.5;
 	  equipment[_slot, _eq_knockback] = 30;
-	  equipment[_slot, _eq_stun_time] = 0;
 	  equipment[_slot, _eq_time] = .15; // animation length
 	  equipment[_slot, _eq_executed] = false; //equipment[_slot, _eq_executed]
 	  equipment[_slot, _eq_execution_time] = .15;
 	  equipment[_slot, _eq_active_movement_modifier] = 0.7;
+	  equipment[_slot, _eq_modifiers] = of(
+			// Status, Chance, Amount
+			of(scr_fire_status, 1, 0.2)
+		);
 	  exit;
 	}
 
@@ -102,8 +105,7 @@ function scr_spell_fire(argument0, argument1) {
       
 	      projectile.team = team;
 	      //projectile.damage = equipment[_slot, _eq_damage];
-	      projectile.burn_amount = equipment[_slot, _eq_damage];
-	      projectile.stun_time = equipment[_slot, _eq_stun_time];
+	      projectile.modifiers = equipment[_slot, _eq_modifiers];
 	      projectile.knockback = equipment[_slot, _eq_knockback];
 	      projectile.piercing = true;
       

@@ -11,7 +11,7 @@ function of() {
 	```
 	*/
 
-	var arr;
+	var arr = array_create(0);
 	for (var i = 0; i < argument_count; i += 1) {
 	    arr[i] = argument[i];
 	}

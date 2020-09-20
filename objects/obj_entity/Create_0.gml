@@ -15,7 +15,6 @@ team = 0;
 scr_initialise_stats();
 
 // TIMERS
-invinc_timer = .02;
 invinc_time = .2;
 invincible = false;
 

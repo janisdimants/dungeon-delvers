@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Enemies",
-    "path": "folders/Scripts/Entities/Enemies.yy",
+    "path": "folders/Scripts/Objects/Entities/Enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_find_target",

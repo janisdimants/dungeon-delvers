@@ -31,7 +31,7 @@ function scr_explode() {
 	_damage.damage = damage; // add modifiers in calculation here? maybe script?
 	_damage.knockback_amount = knockback_amount;
 	_damage.knockback_dir = 0; // TODO: Fix this
-	_damage.stun_time = stun_time;
+	_damage.modifiers = modifiers;
 	_damage.lifetime = 0.01;
 
 	_damage.sprite_index = spr_col_circle;

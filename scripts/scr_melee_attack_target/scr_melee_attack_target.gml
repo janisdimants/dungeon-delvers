@@ -10,24 +10,21 @@ function scr_melee_attack_target() {
 	var _damage = damage;
 	var _knockback_dir = dir;
 	var _knockback_amount = knockback_amount;
-	var _stun_time = scr_get_stun_time(stun_length);
+	
+	var _modifiers = modifiers;
 
 	with (_target) {
 	  // Make sure player isn't invincible
-	  // or in middle of a roll
-	  if (invinc_timer <= 0 && !invincible) {
+	  if (!invincible) {
 	    hp -= _damage;
 	    global.hit_pause_timer = other.hit_pause;
 	    scr_apply_force(_knockback_amount, _knockback_dir);
-	    invinc_timer = invinc_time;
-	    stun_timer = _stun_time;
+			scr_set_status_amount(scr_get_status(scr_invincible_status), invinc_time);
+			scr_apply_modifiers(_modifiers);
 	  }
 	}
 
-	// Add some logic for stagger/pause after attack?
+	//TODO: Add some logic inbetween state for a stagger/pause after an attack?
+	
 	return true;
-
-
-
-
 }

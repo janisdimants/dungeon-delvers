@@ -1,4 +1,4 @@
-/// @description  Inherit damage variables
+/// @description  Variables
 event_inherited();
 
 /// Projectile variables

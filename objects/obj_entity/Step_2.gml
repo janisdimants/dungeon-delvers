@@ -40,48 +40,6 @@ if (_total_speed > max_speed) {
 
 scr_move_entity(total_move_h, total_move_v);
 
-
-/// Update timers
-
-if (invinc_timer > 0) {
-  invinc_timer -= frame_time;
-  invinc_timer = max(0, invinc_timer);
-}
-
-if (hit_timer > 0) {
-  hit_timer -= frame_time;
-  hit_timer = max(0, hit_timer);
-}
-
-if (stun_timer > 0) {
-  stun_timer -= frame_time;
-  stun_timer = max(0, stun_timer);
-}
-
-if (burn_timer > 0) {
-  burn_timer -= frame_time;
-  
-  // Apply burn
-  hp -= frame_time * burn_damage;
-  var _burn_interval = 0.25;
-  
-  if (burn_timer % _burn_interval < frame_time) {
-     var _particle = scr_create_particle(
-       random(10),
-       random(360),
-       -1,
-       (sprite_height + random(sprite_height)) * 0.4
-     );
-       
-     if (instance_exists(_particle)) {
-       _particle.destroy_after_animation = true;
-       _particle.grav = -25;
-       _particle.anim_speed = 8;
-       _particle.velocity = -10;
-       _particle.sprite_index = spr_fire_projectile;
-       _particle.draw_shadow = false;
-     }
-  }
-}
-
+// Status effects
+scr_update_status_effects();
 

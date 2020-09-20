@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Ranged",
-    "path": "folders/Scripts/Equipment/Ranged.yy",
+    "path": "folders/Scripts/Objects/Entities/Equipment/Ranged.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_weapon_bow",

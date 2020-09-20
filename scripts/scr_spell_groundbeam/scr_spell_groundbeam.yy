@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Spells",
-    "path": "folders/Scripts/Equipment/Spells.yy",
+    "path": "folders/Scripts/Objects/Entities/Equipment/Spells.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_spell_groundbeam",

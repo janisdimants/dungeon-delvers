@@ -9,7 +9,4 @@ function scr_get_stun_time() {
 	var _stun_length = _apply_stun * _base_time * stun_length_modifier;
 
 	return _stun_length;
-
-
-
 }

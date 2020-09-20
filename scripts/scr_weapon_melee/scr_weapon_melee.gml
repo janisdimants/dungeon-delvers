@@ -25,7 +25,7 @@ function scr_weapon_melee(argument0) {
 	var _img_number = sprite_get_number(equipment[_slot, _eq_sprite]);
 	equipment[_slot, _eq_image_index] = (equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time]) * _img_number;
 
-	move_speed_modifier = equipment[_slot, _eq_active_movement_modifier]; //TODO: rework this so we don't manually update it?
+	move_speed_modifier = equipment[_slot, _eq_active_movement_modifier]; //TODO: rework this so we don't manually update it? please
 
 	var _non_combo_length = equipment[_slot, _eq_time] - equipment[_slot, _eq_combo_time];
 	equipment[_slot, _eq_combo_ready] = equipment[_slot, _eq_progress_time] > _non_combo_length;
@@ -54,7 +54,7 @@ function scr_weapon_melee(argument0) {
 	  _damage_obj.hit_pause = equipment[_slot, _eq_hit_pause_time];
   
 	  // Apply stun
-	  _damage_obj.stun_time = scr_get_stun_time(equipment[_slot, _eq_stun_time]);
+	  _damage_obj.modifiers = equipment[_slot, _eq_modifiers];
   
 	  _damage_obj.sprite_index = equipment[_slot, _eq_collision_sprite];
 	  _damage_obj.image_angle = attack_direction;

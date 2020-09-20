@@ -1,4 +1,4 @@
-/// @description  Inherit parent
+/// @description  Variables
 event_inherited();
 
 /// Set stats

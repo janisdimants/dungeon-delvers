@@ -29,7 +29,7 @@ function scr_chase_target() {
 	}
 
 	// Stop movement while stunned
-	if (stun_timer > 0) {
+	if (scr_get_status_amount(scr_get_status(scr_stun_status)) > 0) {
 	  len = 0;
 	}
 

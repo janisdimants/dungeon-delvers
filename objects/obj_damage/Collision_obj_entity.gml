@@ -6,25 +6,21 @@ if (other.team == team) { exit; }
 var _damage = damage;
 var _knockback_dir = knockback_dir;
 var _knockback_amount = knockback_amount;
-var _stun_time = stun_time;
-var _burn_amount = burn_amount;
+var _modifiers = modifiers;
 
 with (other) {
-  if (invinc_timer <= 0) {
+  if (!invincible) {
     hp -= _damage;
     global.hit_pause_timer = other.hit_pause;
     scr_apply_force(_knockback_amount, _knockback_dir);
-    invinc_timer = invinc_time;
+		
+		scr_set_status_amount(scr_get_status(scr_invincible_status), invinc_time);
     
     // EFFECTS
     // Set hitstun time
     hit_timer = hit_time;
     
-    // Set stun
-    stun_timer = _stun_time;
-    
-    // Add burn
-    burn_timer += _burn_amount;
+    scr_apply_modifiers(_modifiers);
          
     scr_play_rand_snd(of(
       snd_damage_1,

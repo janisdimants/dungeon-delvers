@@ -9,7 +9,4 @@ function scr_get_burn_amount() {
 	var _burn_amount = _apply_burn * _base_time * burn_amount_modifier;
 
 	return _burn_amount;
-
-
-
 }
