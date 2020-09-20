@@ -66,30 +66,27 @@ if (selected) {
     }
 
     accept_cooldown = cooldown;
-    /// Debug - clear mouse for HTML5 specific input bug
-    mouse_clear(mb_any); 
   }
   
   if (input_cooldown <= 0) {
     // Navigate up
-    if (input_y < 0 && previous) {
-      previous.selected = true;
-      previous.input_cooldown = cooldown;
-      selected = false;
-      _trigger_sound = true; 
-    }
-    
-    // Navigate down
-    if (input_y > 0 && next) {
-      next.selected = true;
-      next.input_cooldown = cooldown;
-      selected = false;
-      _trigger_sound = true;
+    if (abs(input_y) > global.deadzone) {
+			// Find closest selectable UI element above this one
+			var _search_above = input_y < 0;
+			var _element = scr_find_closest_selectable_element(_search_above);
+			
+			if (_element != noone) {
+	      _element.selected = true;
+	      _element.input_cooldown = cooldown;
+	      selected = false;
+				
+				_trigger_sound = true;
+			}
     }
   }
 }
 
 if (_trigger_sound) {
-    audio_play_sound(snd_menu_hover, 0, false);
+	audio_play_sound(snd_menu_hover, 0, false);
 }
 

@@ -217,6 +217,7 @@
     {"id":{"name":"__view_get","path":"scripts/__view_get/__view_get.yy",},"order":0,},
     {"id":{"name":"__view_set","path":"scripts/__view_set/__view_set.yy",},"order":1,},
     {"id":{"name":"__view_set_internal","path":"scripts/__view_set_internal/__view_set_internal.yy",},"order":2,},
+    {"id":{"name":"scr_find_closest_selectable_element","path":"scripts/scr_find_closest_selectable_element/scr_find_closest_selectable_element.yy",},"order":3,},
     {"id":{"name":"__init_view","path":"scripts/__init_view/__init_view.yy",},"order":3,},
     {"id":{"name":"__init_global","path":"scripts/__init_global/__init_global.yy",},"order":3,},
     {"id":{"name":"scr_get_status","path":"scripts/scr_get_status/scr_get_status.yy",},"order":7,},
