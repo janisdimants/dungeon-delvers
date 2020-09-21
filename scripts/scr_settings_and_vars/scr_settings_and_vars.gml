@@ -28,8 +28,4 @@ function scr_settings_and_vars() {
 	global.center_window = true;
 	global.game_paused = false;
 	global.hit_pause_timer = 0;
-
-
-
-
 }

@@ -16,56 +16,12 @@ function scr_draw_text() {
 	if (argument_count > 4) {
 	  _centered = argument[4];
 	}
-
-	var _font_sprite;
-
-	switch (_size) {
-	  case 12:
-	    _font_sprite = spr_font_12;
-	    break;
-	  case 10:
-	    _font_sprite = spr_font_10;
-	    break;
-	  case 8:
-	    _font_sprite = spr_font_8;
-	    break;
-	  case 6:
-	    _font_sprite = spr_font_6;
-	    break;
-	}
-
-	var _spacing = 1;
-
-
-	// Character base offset within sprite
-	_x -= 2 * scale_x;
-	_y -= (16-_size) * 0.5 * scale_y;
-
+	
 	if (_centered) {
-	  _x -= scr_get_text_width(_text, _size, _spacing)/2;
+	  draw_set_halign(fa_center);
+	} else {
+	  draw_set_halign(fa_left);
 	}
-
-	for (var i = 0; i < string_length(_text); i++) {
-	  var _char = string_char_at(_text, i+1)
-	  var _char_id = scr_get_char_index(_char);
-  
-	  draw_sprite_ext(
-	    _font_sprite,
-	    _char_id,
-	    _x,
-	    _y,
-	    scale_x,
-	    scale_y,
-	    0,
-	    image_blend,
-	    1
-	  );
-    
-	  _x += (scr_get_char_width(_char, _size) + _spacing) * scale_x;
-	}
-
-
-
-
-
+	
+	draw_text_transformed(_x, _y, _text, scale_x, scale_y, 0);
 }

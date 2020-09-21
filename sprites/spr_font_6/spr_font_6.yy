@@ -229,7 +229,7 @@
   ],
   "parent": {
     "name": "Fonts",
-    "path": "folders/Animation Curves/Sprites/UI/Fonts.yy",
+    "path": "folders/Animation Curves/UI/Fonts.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_font_6",

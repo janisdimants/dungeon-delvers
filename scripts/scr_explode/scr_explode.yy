@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Skeleton",
-    "path": "folders/Scripts/Objects/Entities/Enemies/Skeleton.yy",
+    "path": "folders/Scripts/Object Scripts/Entities/Enemies/Skeleton.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_explode",

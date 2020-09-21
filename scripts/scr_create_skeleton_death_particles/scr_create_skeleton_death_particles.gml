@@ -68,7 +68,7 @@ function scr_create_skeleton_death_particles() {
   
 	  if (_i == 0) {
 	    _particle.sprite_index = spr_skeleton_head;
-	    _particle.anim_speed = 16 * (_len / 100);
+	    _particle.anim_speed = 14 * (_len / 100);
 	    _particle.anim_damp = 8;
 	    _particle.damp = 90;
 	    _particle.height = 10;

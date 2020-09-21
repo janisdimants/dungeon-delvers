@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Bat",
-    "path": "folders/Animation Curves/Sprites/Enemies/Bat.yy",
+    "path": "folders/Animation Curves/Enemies/Bat.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bat_head",

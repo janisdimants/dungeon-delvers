@@ -97,7 +97,7 @@
   ],
   "parent": {
     "name": "Heads",
-    "path": "folders/Animation Curves/Sprites/Player/Heads.yy",
+    "path": "folders/Animation Curves/Player/Heads.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_head_gork",

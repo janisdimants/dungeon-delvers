@@ -26,11 +26,18 @@ scr_get_base_ui();
 if (global.mouse_moved) {
   var _mx = window_mouse_get_x();
   var _my = window_mouse_get_y();
+	
+	var _element_width = string_width(text);
+	var _element_height = string_height(text);
+
+	if (sprite_width > _element_width) { _element_width = sprite_width; }
+	if (sprite_height > _element_height) { _element_height = sprite_height; }
+
   
-  selected = (_mx > x * scale_x &&
-      _mx < (x+element_width) * scale_x &&
-      _my > y * scale_y &&
-      _my < (y+element_height) * scale_y
+  selected = (_mx > (x - select_padding) * scale_x &&
+      _mx < (x + _element_width + select_padding) * scale_x &&
+      _my > (y - select_padding) * scale_y &&
+      _my < (y + _element_height + select_padding) * scale_y
   );
   
   if (selected && !was_unselected) {

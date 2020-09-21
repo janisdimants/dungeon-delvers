@@ -97,7 +97,7 @@
   ],
   "parent": {
     "name": "Player",
-    "path": "folders/Animation Curves/Sprites/Player.yy",
+    "path": "folders/Animation Curves/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_player_head_old",

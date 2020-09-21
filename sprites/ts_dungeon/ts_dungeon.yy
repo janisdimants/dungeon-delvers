@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "tilesets",
-    "path": "folders/Animation Curves/Sprites/tilesets.yy",
+    "path": "folders/Animation Curves/tilesets.yy",
   },
   "resourceVersion": "1.0",
   "name": "ts_dungeon",

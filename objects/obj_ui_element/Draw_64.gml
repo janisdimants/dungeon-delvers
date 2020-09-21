@@ -7,11 +7,17 @@ scr_get_base_ui();
   draw_set_colour(image_blend);
   draw_set_alpha(0.3);
   
+	var _element_width = string_width(text);
+	var _element_height = string_height(text);
+
+	if (sprite_width > _element_width) { _element_width = sprite_width; }
+	if (sprite_height > _element_height) { _element_height = sprite_height; }
+	
   draw_rectangle(
     (x-select_padding) * scale_x,
     (y-select_padding) * scale_y,
-    (x+element_width+(select_padding*2)) * scale_x,
-    (y+element_height+(select_padding*2)) * scale_y,
+    (x+_element_width+select_padding) * scale_x,
+    (y+_element_height+select_padding) * scale_y,
     0
   );
   
@@ -46,7 +52,8 @@ if (sprite_index > -1) {
 }
 
 if (string_length(text) > 0) {
-  scr_draw_text(_x, _y, text_size, text, false);
+	draw_set_color(image_blend);
+  scr_draw_text(_x, _y, 8, text, false);
 }
 
 

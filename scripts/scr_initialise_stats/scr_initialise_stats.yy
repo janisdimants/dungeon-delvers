@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Entities",
-    "path": "folders/Scripts/Objects/Entities.yy",
+    "path": "folders/Scripts/Object Scripts/Entities.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_initialise_stats",

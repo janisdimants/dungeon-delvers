@@ -85,7 +85,7 @@
   ],
   "parent": {
     "name": "Effects",
-    "path": "folders/Animation Curves/Sprites/Effects.yy",
+    "path": "folders/Animation Curves/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sword_slash",

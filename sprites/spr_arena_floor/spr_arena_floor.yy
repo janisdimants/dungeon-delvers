@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Arena",
-    "path": "folders/Animation Curves/Sprites/Levels/Arena.yy",
+    "path": "folders/Animation Curves/Levels/Arena.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_arena_floor",

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Projectiles",
-    "path": "folders/Animation Curves/Sprites/Projectiles.yy",
+    "path": "folders/Animation Curves/Projectiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ground_beam_projectile",

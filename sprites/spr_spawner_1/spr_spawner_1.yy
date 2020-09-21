@@ -117,7 +117,7 @@
   ],
   "parent": {
     "name": "General",
-    "path": "folders/Animation Curves/Sprites/Levels/General.yy",
+    "path": "folders/Animation Curves/Levels/General.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_spawner_1",

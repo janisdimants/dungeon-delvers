@@ -3,9 +3,9 @@ if (attached > 0) {
   exit;
 }
 
-script_execute(scr_frame_time,0,0,0,0,0);
-/// Update height
+scr_frame_time();
 
+/// Update height
 if (velocity > 0) {
   velocity += grav * frame_time;
   
@@ -14,7 +14,7 @@ if (velocity > 0) {
   if (height < ground_level) {
     height = ground_level;
     velocity *= -bounce;
-    
+		
     if (velocity > -0.1) {
       velocity = 0;
     }

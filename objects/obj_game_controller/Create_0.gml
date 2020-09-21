@@ -18,6 +18,3 @@ game_paused = false;
 player = instance_find(obj_player, 0);
 camera_speed = 10; // Percent per second
 gibs_surf = noone;
-
-scr_update_ui_variables();
-

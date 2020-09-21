@@ -89,7 +89,7 @@
   ],
   "parent": {
     "name": "Game",
-    "path": "folders/Animation Curves/Sprites/UI/Game.yy",
+    "path": "folders/Animation Curves/UI/Game.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_wave",

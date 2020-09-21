@@ -2,7 +2,6 @@
 
 if (global.debug == false) { exit; }
 
-draw_set_font(fnt_main);
 draw_set_halign(fa_left);
 draw_text(20, 20, string_hash_to_newline("head_direction "+string(head_direction)));
 draw_text(20, 40, string_hash_to_newline("pointer_direction "+string(pointer_direction)));

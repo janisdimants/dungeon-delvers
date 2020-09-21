@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Wave Controller",
-    "path": "folders/Scripts/Objects/Wave Controller.yy",
+    "path": "folders/Scripts/Object Scripts/Wave Controller.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_get_enemy_list",

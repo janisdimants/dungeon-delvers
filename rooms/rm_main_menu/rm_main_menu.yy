@@ -27,9 +27,9 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
+    {"name":"inst_DF2ABB72","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_55D05AE0","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_E8C0C5C2","path":"rooms/rm_main_menu/rm_main_menu.yy",},
-    {"name":"inst_DF2ABB72","path":"rooms/rm_main_menu/rm_main_menu.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

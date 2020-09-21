@@ -29,14 +29,11 @@ function scr_update_ui_variables() {
 	  surface_resize(application_surface, width, height);
 	}
 
-
 	center_x = width/2;
 	center_y = height/2;
 
 	font_scale_x = scale_x/6;
 	font_scale_y = scale_y/6;
 
-
-
-
+	scr_initialise_fonts();
 }

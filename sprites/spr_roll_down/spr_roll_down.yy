@@ -121,7 +121,7 @@
   ],
   "parent": {
     "name": "Roll",
-    "path": "folders/Animation Curves/Sprites/Dodges/Roll.yy",
+    "path": "folders/Animation Curves/Dodges/Roll.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_roll_down",

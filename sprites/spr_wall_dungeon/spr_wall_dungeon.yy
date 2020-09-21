@@ -73,7 +73,7 @@
   ],
   "parent": {
     "name": "Levels",
-    "path": "folders/Animation Curves/Sprites/Levels.yy",
+    "path": "folders/Animation Curves/Levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_wall_dungeon",

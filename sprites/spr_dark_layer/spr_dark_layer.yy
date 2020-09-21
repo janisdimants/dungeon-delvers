@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Menu",
-    "path": "folders/Animation Curves/Sprites/UI/Menu.yy",
+    "path": "folders/Animation Curves/UI/Menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_dark_layer",

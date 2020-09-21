@@ -1,7 +1,6 @@
 /// @description  Inherited Event
 event_inherited();
 
-with (other) {
 /// Initialise arrow button variables
 
 target = noone;
@@ -10,5 +9,3 @@ forward = true;
 increment = 0;
 
 depth = -10001;
-
-}

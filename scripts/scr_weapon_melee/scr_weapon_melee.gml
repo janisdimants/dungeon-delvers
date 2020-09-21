@@ -88,6 +88,4 @@ function scr_weapon_melee(argument0) {
 	  equipment[_slot, _eq_active] = false;
 	}
 
-
-
 }

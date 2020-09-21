@@ -6,8 +6,9 @@ event_inherited();
 increment = forward * 2 - 1;
 
 // Disable based on if increment is out of index
+var _value_cap = array_length(target.value_list) - 1;
 var _disable = (
-  target.value + increment > target.image_number - 1 ||
+  target.value + increment > _value_cap ||
   target.value + increment < 0
 )
 

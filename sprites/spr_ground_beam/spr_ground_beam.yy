@@ -101,7 +101,7 @@
   ],
   "parent": {
     "name": "Spells",
-    "path": "folders/Animation Curves/Sprites/Spells.yy",
+    "path": "folders/Animation Curves/Spells.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ground_beam",

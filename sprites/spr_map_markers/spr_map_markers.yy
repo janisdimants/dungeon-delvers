@@ -85,7 +85,7 @@
   ],
   "parent": {
     "name": "Map",
-    "path": "folders/Animation Curves/Sprites/Map.yy",
+    "path": "folders/Animation Curves/Map.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_map_markers",

@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_paused_header",
-    "path": "sprites/spr_paused_header/spr_paused_header.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

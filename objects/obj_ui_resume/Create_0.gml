@@ -5,6 +5,5 @@ event_inherited();
 
 action = scr_to_game;
 action_snd = undefined;
-next = obj_ui_options;
-image_index = 0;
+text = "RESUME";
 

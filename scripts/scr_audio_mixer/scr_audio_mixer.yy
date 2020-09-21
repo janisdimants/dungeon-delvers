@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Audio Controller",
-    "path": "folders/Scripts/Objects/Audio Controller.yy",
+    "path": "folders/Scripts/Object Scripts/Audio Controller.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_audio_mixer",

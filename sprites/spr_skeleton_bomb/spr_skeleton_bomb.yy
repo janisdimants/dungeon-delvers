@@ -97,7 +97,7 @@
   ],
   "parent": {
     "name": "Skeleton",
-    "path": "folders/Animation Curves/Sprites/Enemies/Skeleton.yy",
+    "path": "folders/Animation Curves/Enemies/Skeleton.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_skeleton_bomb",

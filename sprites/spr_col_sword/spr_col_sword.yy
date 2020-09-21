@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Collision Boxes",
-    "path": "folders/Animation Curves/Sprites/Collision Boxes.yy",
+    "path": "folders/Animation Curves/Collision Boxes.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_col_sword",

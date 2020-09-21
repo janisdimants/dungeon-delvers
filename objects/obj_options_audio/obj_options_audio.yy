@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_options_items",
-    "path": "sprites/spr_options_items/spr_options_items.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

@@ -5,5 +5,5 @@ event_inherited();
 
 action = scr_exit_to_desktop;
 
-text = "exit";
+text = "EXIT";
 

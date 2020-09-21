@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_pause_items",
-    "path": "sprites/spr_pause_items/spr_pause_items.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

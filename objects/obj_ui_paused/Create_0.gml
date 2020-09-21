@@ -4,3 +4,5 @@ event_inherited();
 /// Set header variables
 selectable = false;
 
+text = "PAUSED";
+

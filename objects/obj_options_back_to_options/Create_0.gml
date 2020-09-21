@@ -5,7 +5,5 @@ event_inherited();
 
 action = scr_to_options;
 action_snd = snd_menu_submenu_close;
-image_index = 4;
-
-previous = obj_options_input;
+text = "BACK";
 

@@ -5,7 +5,6 @@ event_inherited();
 
 action = scr_play_game;
 last_selected = true;
-next = obj_exit;
 
-text = "play";
+text = "PLAY";
 

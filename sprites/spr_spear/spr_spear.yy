@@ -101,7 +101,7 @@
   ],
   "parent": {
     "name": "Weapons",
-    "path": "folders/Animation Curves/Sprites/Weapons.yy",
+    "path": "folders/Animation Curves/Weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_spear",
