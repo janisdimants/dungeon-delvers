@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_map_markers",
-    "path": "sprites/spr_map_markers/spr_map_markers.yy",
+    "name": "spr_map_camp",
+    "path": "sprites/spr_map_camp/spr_map_camp.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,9 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_city","path":"objects/obj_city/obj_city.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -33,7 +31,7 @@
     "path": "folders/Objects/Map.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_city",
+  "name": "obj_camp",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -5,7 +5,11 @@ function scr_update_wave_status() {
 
 	scr_frame_time();
 
-	var _waves_total = 5;
+	var _waves_total = 5
+	
+	if (global.debug) {
+		_waves_total = 1;	
+	}
 
 	if (!wave_active) {
 	  // Pause section between waves

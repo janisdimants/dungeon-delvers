@@ -79,7 +79,7 @@ if (_hit_pause_timer > 0) {
 /// Handle game pausing
 scr_get_input();
 
-if (room == rm_arena) {
+if (room != rm_main_menu) {
   if (!global.game_paused && menu_key) {
     audio_play_sound(snd_menu_open, 0, false);
     scr_to_pause();

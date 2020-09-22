@@ -1,7 +1,7 @@
 /// @description  Global Game Settings and runtime variables
 function scr_settings_and_vars() {
 
-	global.debug = false;
+	global.debug = true;
 
 	// Game variables
 	global.game_speed = 1;

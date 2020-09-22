@@ -17,5 +17,4 @@ draw_text(220, 100, string_hash_to_newline("len "+string(len)));
 draw_text(220, 120, string_hash_to_newline("move_cap "+string(move_cap)));
 
 draw_text(420, 20, string_hash_to_newline("state "+string(state)));
-draw_text(420, 40, string_hash_to_newline("dash_key "+string(dash_key)));
 
