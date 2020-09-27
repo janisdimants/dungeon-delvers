@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Navigation",
-    "path": "folders/Scripts/UI/Navigation.yy",
+    "name": "Helper",
+    "path": "folders/Scripts/UI/Helper.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_find_closest_selectable_element",

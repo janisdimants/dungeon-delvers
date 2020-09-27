@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "path": "folders/Objects/Entities/Enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_base_enemy",

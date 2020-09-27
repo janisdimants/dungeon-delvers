@@ -1,7 +1,7 @@
 /// @description  Global Game Settings and runtime variables
 function scr_settings_and_vars() {
 
-	global.debug = true;
+	global.debug = false;
 
 	// Game variables
 	global.game_speed = 1;
@@ -15,8 +15,12 @@ function scr_settings_and_vars() {
 	// Gameplay
 	global.show_damage_numbers = false;
 	global.show_healthbar_level = 0;
+	
 	// Graphics
+	global.fullscreen = 0;
+	global.resolution_option = 3;
 	global.fps_cap = 250;
+	
 	// Controls
 	global.deadzone = 0.3;
 

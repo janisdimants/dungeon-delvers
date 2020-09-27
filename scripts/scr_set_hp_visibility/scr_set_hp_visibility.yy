@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Options",
-    "path": "folders/Scripts/UI/Options.yy",
+    "name": "Gameplay",
+    "path": "folders/Scripts/UI/Options/Gameplay.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_set_hp_visibility",
