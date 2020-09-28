@@ -6,4 +6,4 @@ A videogame.
 
 ## Building
 
-This game is built with _Game Maker: Studio 1.4.9999_. Using, GM:S 1.4, open "Dungeon Delvers.project.gmx" and go to _Run_ > _Run Normally_ to build and launch the game.
+This game is built with _Game Maker: Studio 2.3+_. Using, GM:S 2, open "Dungeon Delvers.yyp" and go to _Build_ > _Run_, or press F5 to build and launch the game.
