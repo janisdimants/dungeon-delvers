@@ -1,7 +1,7 @@
 {
   "compression": 1,
   "volume": 1.0,
-  "preload": true,
+  "preload": false,
   "bitRate": 192,
   "sampleRate": 44100,
   "type": 1,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_spear_swing_4",
-  "duration": 0.663662,
+  "soundFile": "snd_sword_swing_3.wav",
+  "duration": 0.351145,
   "parent": {
-    "name": "spear",
-    "path": "folders/Sounds/weapons/spear.yy",
+    "name": "sword",
+    "path": "folders/Sounds/weapons/sword.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_spear_swing_4",
+  "name": "snd_sword_swing_3",
   "tags": [],
   "resourceType": "GMSound",
 }

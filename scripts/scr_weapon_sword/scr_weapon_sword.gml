@@ -25,7 +25,7 @@ function scr_weapon_sword(argument0) {
 	  equipment[_slot, _eq_hit_pause_time] = 0.03;
 	  equipment[_slot, _eq_knockback] = 170;
 	  equipment[_slot, _eq_active_movement_modifier] = 0.7;
-	  equipment[_slot, _eq_sounds] = [ snd_spear_swing_1 ];
+	  equipment[_slot, _eq_sounds] = [snd_sword_swing_1, snd_sword_swing_2, snd_sword_swing_3, snd_sword_swing_4];
 	  exit;
 	}
 
