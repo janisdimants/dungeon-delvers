@@ -36,12 +36,7 @@ function scr_weapon_melee(argument0) {
   
 	  var _damage_obj = scr_create_inst_offset(obj_damage, 0, 0, attack_direction);
   
-	  scr_play_rand_snd(of(
-	    snd_spear_swing_1,
-	    snd_spear_swing_2,
-	    snd_spear_swing_3,
-	    snd_spear_swing_4,
-	  ));
+	  scr_play_rand_snd(equipment[_slot, _eq_sounds]);
   
 	  _damage_obj.team = team;
 	  _damage_obj.damage = equipment[_slot, _eq_damage]; // add modifiers in calculation here? maybe script?

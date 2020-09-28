@@ -24,7 +24,6 @@ function scr_get_equipment_mapping() {
 	_eq_active_movement_modifier = 18;
 	_eq_visual_progress = 21;
 	_eq_modifiers = 22;
-
-
+	_eq_sounds = 22;
 
 }

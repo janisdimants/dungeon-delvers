@@ -31,6 +31,12 @@ function scr_weapon_spear() {
 	  equipment[_slot, _eq_damage] = .4;
 	  equipment[_slot, _eq_knockback] = 240;
 	  equipment[_slot, _eq_active_movement_modifier] = 0.7;
+		equipment[_slot, _eq_sounds] = [
+		    snd_spear_swing_1,
+		    snd_spear_swing_2,
+		    snd_spear_swing_3,
+		    snd_spear_swing_4,
+		  ];
 	  exit;
 	}
 
