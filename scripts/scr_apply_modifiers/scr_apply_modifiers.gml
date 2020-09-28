@@ -4,6 +4,9 @@ function scr_apply_modifiers(modifiers){
 	for (var i = 0; i < array_length(modifiers); i++) {
 			var _modifier = modifiers[i];
 			
+			// This is in place, in case empty modifier list is passed, sometimes bugs? *shrug*
+			if (!is_array(_modifier)) { exit; }
+			
 			var _status_script = _modifier[0];
 			var _chance = _modifier[1];
 			var _amount = _modifier[2];

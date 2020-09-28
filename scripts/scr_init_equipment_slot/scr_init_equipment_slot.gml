@@ -27,7 +27,10 @@ function scr_init_equipment_slot(argument0) {
 	equipment[_slot, _eq_stun_time] = 0;
 	equipment[_slot, _eq_knockback] = 0;
 	equipment[_slot, _eq_active_movement_modifier] = 1;
-	equipment[_slot, _eq_modifiers] = of();
+	equipment[_slot, _eq_modifiers] = [
+			// Status, Chance, Amount
+			of(scr_stun_status, 1, 0.2)
+	]
 	equipment[_slot, _eq_sounds] = [ snd_spear_swing_1 ];
 	exit;
 

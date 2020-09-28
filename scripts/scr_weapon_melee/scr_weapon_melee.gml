@@ -1,7 +1,6 @@
 /// @description scr_weapon_melee(_slot)
 /// @param _slot
-function scr_weapon_melee(argument0) {
-	var _slot = argument0;
+function scr_weapon_melee(_slot) {
 
 	// INPUT LOGIC
 	if (!equipment[_slot, _eq_active] && equipment[_slot, _eq_input_down]) {
