@@ -21,7 +21,7 @@ function scr_weapon_spear() {
 	  equipment[_slot, _eq_collision_sprite] = spr_col_spear; // TODO: sprite = of(on_player, collision, particle)
 	  equipment[_slot, _eq_particle_sprite] = spr_spear_slash;
 	  equipment[_slot, _eq_hit_pause_time] = 0.03;
-	  equipment[_slot, _eq_icon_index] = 2;
+	  equipment[_slot, _eq_icon_index] = 3;
 	  equipment[_slot, _eq_executed] = false; //attacked
 	  equipment[_slot, _eq_execution_time] = .15;
 	  equipment[_slot, _eq_height] = 6;
@@ -29,7 +29,6 @@ function scr_weapon_spear() {
 	  equipment[_slot, _eq_combo_time] = 0.25; // TODO: combo = of(active, time)
 	  equipment[_slot, _eq_combo_ready] = false;
 	  equipment[_slot, _eq_damage] = .4;
-	  equipment[_slot, _eq_stun_time] = 1; // TODO: stun = of(chance, time)
 	  equipment[_slot, _eq_knockback] = 240;
 	  equipment[_slot, _eq_active_movement_modifier] = 0.7;
 	  exit;

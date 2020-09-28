@@ -2,24 +2,34 @@
 /// @param equip?
 function scr_weapon_bow(argument0) {
 
-	var equip = argument0;
+	var _slot = argument[0];
+	var _equip = false;
+	if (argument_count > 1) {
+	  _equip = argument[1];
+	}
 
-	if (equip) {
-	  weapon = scr_weapon_bow;
-	  weapon_sprite = spr_bow;
-	  weapon_icon_index = 2;
-	  attacked = false;
-	  weapon_attack_frame = 11;
-	  weapon_height = 6;
-	  weapon_length = .6; // Seconds
-	  weapon_damage = .5;
-	  weapon_stun = 0.2;
-	  weapon_knockback = 50;
-	  weapon_movement_modifier = 0.7;
+	if (_equip) {
+		scr_init_equipment_slot(_slot);
+	  equipment[_slot, _eq_script] = scr_weapon_bow;
+	  equipment[_slot, _eq_active] = false; // TODO: status = of(active, time)
+	  equipment[_slot, _eq_progress_time] = 0;
+	  equipment[_slot, _eq_visual_progress] = 0;
+	  equipment[_slot, _eq_sprite] = spr_bow;
+	  equipment[_slot, _eq_icon_index] = 4;
+	  equipment[_slot, _eq_executed] = false;
+	  equipment[_slot, _eq_execution_time] = .2;
+	  equipment[_slot, _eq_height] = 6;
+	  equipment[_slot, _eq_time] = .6; // Seconds
+	  equipment[_slot, _eq_combo_time] = 0.25; // TODO: combo = of(active, time)
+	  equipment[_slot, _eq_combo_ready] = false;
+	  equipment[_slot, _eq_damage] = .5;
+	  equipment[_slot, _eq_stun_time] = 0.2;
+	  equipment[_slot, _eq_knockback] = 50;
+	  equipment[_slot, _eq_active_movement_modifier] = 0.7;
 	  exit;
 	}
 
-	scr_weapon_ranged();
+	scr_weapon_ranged(_slot);
 
 
 

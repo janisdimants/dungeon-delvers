@@ -1,5 +1,6 @@
 /// @description scr_weapon_ranged()
 function scr_weapon_ranged() {
+	var _slot = argument0;
 
 	// Turn weapon
 	scr_get_head_direction();

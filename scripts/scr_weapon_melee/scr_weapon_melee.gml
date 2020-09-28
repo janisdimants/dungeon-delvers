@@ -2,7 +2,6 @@
 /// @param _slot
 function scr_weapon_melee(argument0) {
 	var _slot = argument0;
-	scr_get_equipment_mapping();
 
 	// INPUT LOGIC
 	if (!equipment[_slot, _eq_active] && equipment[_slot, _eq_input_down]) {
@@ -15,10 +14,8 @@ function scr_weapon_melee(argument0) {
 	}
 
 	// ATTACK LOGIC
-	// Update progress time
+	// Update progresses
 	equipment[_slot, _eq_progress_time] += frame_time;
-
-	// Update progress bar
 	equipment[_slot, _eq_visual_progress] = (equipment[_slot, _eq_progress_time] / equipment[_slot, _eq_time]);
 
 	// Update sprite
@@ -53,7 +50,7 @@ function scr_weapon_melee(argument0) {
 	  _damage_obj.lifetime = 0.01;
 	  _damage_obj.hit_pause = equipment[_slot, _eq_hit_pause_time];
   
-	  // Apply stun
+	  // Apply modifiers
 	  _damage_obj.modifiers = equipment[_slot, _eq_modifiers];
   
 	  _damage_obj.sprite_index = equipment[_slot, _eq_collision_sprite];

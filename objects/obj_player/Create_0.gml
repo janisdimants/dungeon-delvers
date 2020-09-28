@@ -54,6 +54,7 @@ scr_init_equipment_slot(3);
 scr_roll(0, true);
 
 scr_weapon_spear(1, true);
+scr_weapon_sword(1, true);
 
 scr_spell_fire(2, true);
 
