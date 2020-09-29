@@ -15,18 +15,25 @@ with (other) {
     scr_apply_force(_knockback_amount, _knockback_dir);
 		
 		scr_set_status_amount(scr_get_status(scr_invincible_status), invinc_time);
+		
+	      
+	var _snd = scr_play_rand_snd(of(
+	    snd_damage_1,
+	    snd_damage_2,
+	    snd_damage_3,
+	));
+
+	if(audio_is_playing(snd_damage_1) && audio_is_playing(snd_damage_2) && audio_is_playing(snd_damage_3)) {
+		// To prevent hardcore clipping when AOE a lot of mobs,
+		// reduce gain of additional hitsounds.
+		audio_sound_gain(_snd, 0.1, 0);
+	}
     
     // EFFECTS
     // Set hitstun time
     hit_timer = hit_time;
     
     scr_apply_modifiers(_modifiers);
-         
-    scr_play_rand_snd(of(
-      snd_damage_1,
-      snd_damage_2,
-      snd_damage_3,
-    ));
 
     if (global.show_damage_numbers) {
       // Create damage popup
