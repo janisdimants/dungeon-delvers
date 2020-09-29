@@ -14,7 +14,7 @@
   "duration": 0.053639,
   "parent": {
     "name": "footsteps",
-    "path": "folders/Sounds/footsteps.yy",
+    "path": "folders/Sounds/player/footsteps.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_footstep_4",
