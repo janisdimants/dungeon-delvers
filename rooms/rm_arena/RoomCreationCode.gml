@@ -1,1 +1,1 @@
-audio_play_sound(snd_ambience_calm_wind, 99, 1);
+global.ambience_snd_idx = audio_play_sound(snd_ambience_calm_wind, 99, 1);

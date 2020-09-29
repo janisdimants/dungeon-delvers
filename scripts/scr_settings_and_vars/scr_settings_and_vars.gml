@@ -15,18 +15,19 @@ function scr_settings_and_vars() {
 	// Gameplay
 	global.show_damage_numbers = false;
 	global.show_healthbar_level = 0;
-	
+
 	// Graphics
 	global.fullscreen = 0;
 	global.resolution_option = 3;
 	global.fps_cap = 250;
-	
+
 	// Controls
 	global.deadzone = 0.3;
 
 	// Audio settings
 	global.sfx_volume = 1.0;
 	global.music_volume = 1.0;
+	global.ambience_snd_idx = 0; // TODO: Perhaps move into audio controller?
 
 	// Runtime
 	global.center_window = true;
