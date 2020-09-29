@@ -1,0 +1,1 @@
+audio_play_sound(snd_ambience_calm_wind, 99, 1);

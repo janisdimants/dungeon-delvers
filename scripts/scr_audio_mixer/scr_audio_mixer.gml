@@ -23,6 +23,12 @@ function scr_audio_mixer() {
 	    of(snd_footstep_4, _max * _volume_movement),
 	    of(snd_footstep_5, _max * _volume_movement),
 	));
+	
+	// Ambience
+	var _volume_ambience = 0.01;
+	scr_set_group_gain(of(
+	    of(snd_ambience_calm_wind, _volume_ambience),  
+	));
 
 	// Weapons
 	var _volume_weapons = _max;
@@ -41,6 +47,11 @@ function scr_audio_mixer() {
 	    of(snd_spear_swing_2, _volume_spear), 
 	    of(snd_spear_swing_3, _volume_spear),
 	    of(snd_spear_swing_4, _volume_spear),  
+
+		of(snd_sword_swing_1, _volume_spear),  
+		of(snd_sword_swing_2, _volume_spear),  
+		of(snd_sword_swing_3, _volume_spear),  
+		of(snd_sword_swing_4, _volume_spear),  
 	));
 
 	// Waves

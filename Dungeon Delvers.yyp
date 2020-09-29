@@ -270,6 +270,7 @@
     {"id":{"name":"obj_option_hp_visibility","path":"objects/obj_option_hp_visibility/obj_option_hp_visibility.yy",},"order":1,},
     {"id":{"name":"obj_options_graphics","path":"objects/obj_options_graphics/obj_options_graphics.yy",},"order":2,},
     {"id":{"name":"obj_options_audio","path":"objects/obj_options_audio/obj_options_audio.yy",},"order":3,},
+    {"id":{"name":"snd_ambience_calm_wind","path":"sounds/snd_ambience_calm_wind/snd_ambience_calm_wind.yy",},"order":0,},
     {"id":{"name":"obj_options_input","path":"objects/obj_options_input/obj_options_input.yy",},"order":4,},
     {"id":{"name":"snd_sword_swing_4","path":"sounds/snd_sword_swing_4/snd_sword_swing_4.yy",},"order":3,},
     {"id":{"name":"obj_options_back_to_menu","path":"objects/obj_options_back_to_menu/obj_options_back_to_menu.yy",},"order":5,},
@@ -413,6 +414,7 @@
     {"folderPath":"folders/Objects/Entities/Mobs.yy","order":3,"resourceVersion":"1.0","name":"Mobs","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sounds/weapons/sword.yy","order":5,"resourceVersion":"1.0","name":"sword","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sounds/player.yy","order":5,"resourceVersion":"1.0","name":"player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sounds/ambient.yy","order":6,"resourceVersion":"1.0","name":"ambient","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
