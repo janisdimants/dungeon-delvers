@@ -27,7 +27,6 @@ function scr_settings_and_vars() {
 	// Audio settings
 	global.sfx_volume = 1.0;
 	global.music_volume = 1.0;
-	global.ambience_snd_idx = 0; // TODO: Perhaps move into audio controller?
 
 	// Runtime
 	global.center_window = true;

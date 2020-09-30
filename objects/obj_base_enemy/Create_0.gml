@@ -11,6 +11,10 @@ attack_state = scr_melee_attack_target;
 move_sprite = spr_empty;
 hit_sprite = spr_empty;
 
+// Sounds
+attack_sounds = [];
+grunt_sounds = [];
+
 team = 2;
 move_speed = 30;
 invinc_time = .2;
@@ -19,11 +23,8 @@ damage = .5;
 range = 7;
 modifiers = of();
 
-
 mirror_towards_enemy = true;
 
 // Runtime
 target = undefined;
 target_reached = false;
-
-

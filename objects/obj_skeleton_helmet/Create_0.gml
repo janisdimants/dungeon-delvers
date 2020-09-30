@@ -11,3 +11,10 @@ move_speed = 24;
 move_sprite = spr_skeleton_helmet;
 hit_sprite = spr_skeleton_helmet_hit;
 
+// Sounds
+grunt_sounds = [
+	snd_skeleton_grunt_1,
+	snd_skeleton_grunt_2,
+	snd_skeleton_grunt_3,
+	snd_skeleton_grunt_4,
+];
