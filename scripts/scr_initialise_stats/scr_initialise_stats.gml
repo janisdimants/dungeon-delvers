@@ -4,8 +4,6 @@ function scr_initialise_stats() {
 	
 	status_script_to_index_map = ds_map_create();
 	status_list = map(scr_map_status_list, _status_script_list);
-	
-	show_debug_message("INIT STATUS LIST" + string(status_list));
 }
 
 function scr_map_status_list(status_script, index) {
