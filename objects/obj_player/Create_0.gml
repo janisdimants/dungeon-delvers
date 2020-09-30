@@ -46,6 +46,8 @@ stun_time = 1;
 move = scr_move_state;
 
 // Active items
+focused_equipment = -1;
+
 scr_init_equipment_slot(0);
 scr_init_equipment_slot(1);
 scr_init_equipment_slot(2);
@@ -54,7 +56,7 @@ scr_init_equipment_slot(3);
 scr_roll(0, true);
 
 scr_weapon_spear(1, true);
-scr_weapon_sword(1, true);
+scr_weapon_bow(1, true);
 
 scr_spell_fire(2, true);
 

@@ -28,7 +28,9 @@ draw_sprite(sprite_index, image_index, x, y - body_bob);
 
 // Equipment
 for (var i = 0; i < array_height_2d(equipment); i++) {
-  if (equipment[i, _eq_script] && equipment[i, _eq_sprite]) {
+	// Check if equipment needs to be drawn as other may be active
+	var _draw_equipment = (focused_equipment == -1 || focused_equipment == i);
+  if (_draw_equipment && equipment[i, _eq_script] && equipment[i, _eq_sprite]) {
     var _y = y - equipment[i, _eq_height] - body_bob;
     draw_sprite_ext(
       equipment[i, _eq_sprite], equipment[i, _eq_image_index], x, _y,
