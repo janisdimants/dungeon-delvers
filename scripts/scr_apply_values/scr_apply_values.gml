@@ -7,7 +7,7 @@ function scr_apply_values() {
 	// Call action on all value objects
 	with (obj_ui_value) {
 	  if (action) {
-	    script_execute(action);
+	    script_execute(action, value);
 	  }
 	}
 

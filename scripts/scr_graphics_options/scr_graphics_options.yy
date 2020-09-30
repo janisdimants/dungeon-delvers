@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Graphics",
-    "path": "folders/Scripts/UI/Options/Graphics.yy",
+    "name": "Options",
+    "path": "folders/Scripts/UI/Options.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_set_fullscreen",
+  "name": "scr_graphics_options",
   "tags": [],
   "resourceType": "GMScript",
 }
