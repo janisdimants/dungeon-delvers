@@ -40,10 +40,18 @@ function scr_update_wave_status() {
 	      var _enemy_budget = min(_max_enemy_budget, budget);
       
 	      var _enemy = scr_get_enemy_by_budget(budget);
+		  
+		  if (_enemy == noone) {
+			  // Can't "afford" more enemies
+			  // end wave
+			  budget = 0;
+			  exit;
+		  }
+		  
 	      var _enemy_obj = _enemy[0];
 	      var _enemy_cost = _enemy[1];
-      
-	      budget -= _enemy_cost;
+		  budget -= _enemy_cost;
+		  
 	      instance_create(640, 480, _enemy_obj);
       
 	      // Reset spawn timer
