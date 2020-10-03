@@ -12,5 +12,11 @@ if (grunt_timer < GRUNT_INTERVAL_BASE + random(5) || !_mob_count || !_mob) {
 	exit;
 }
 
-scr_play_rand_snd(_mob.grunt_sounds);
+scr_play_rand_snd_at(
+	_mob.grunt_sounds,
+	_mob.x,
+	_mob.y,
+	false,
+	1,
+);
 grunt_timer = 0;
