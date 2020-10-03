@@ -21,7 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_option_sound_volume","path":"objects/obj_option_sound_volume/obj_option_sound_volume.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_option_master_volume","path":"objects/obj_option_master_volume/obj_option_master_volume.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -30,7 +30,7 @@
     "path": "folders/Objects/UI/Options/Audio.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_option_sound_volume",
+  "name": "obj_option_master_volume",
   "tags": [],
   "resourceType": "GMObject",
 }

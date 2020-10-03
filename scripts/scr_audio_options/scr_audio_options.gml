@@ -18,3 +18,8 @@ function scr_set_music_volume(value) {
 	// TODO: Any extra audio logic here to update with it??
 	
 }
+
+function scr_set_master_volume(value) {
+	show_debug_message(string(audio_get_master_gain(0)));
+	audio_set_master_gain(0, value * 0.1);
+}
