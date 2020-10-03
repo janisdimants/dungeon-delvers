@@ -19,14 +19,11 @@ function scr_play_rand_snd(snd_array) {
 /// @param {array} snd_array An array of sound indexes
 /// @param {int} _x The x position.
 /// @param {int} _y The y position.
-/// @param {int} falloff_ref The falloff reference relative to the listener (clamp).
-/// @param {int} falloff_max The maximum falloff distance relative to the listener.
-/// @param {int} falloff_factor The falloff factor (default 1).
 /// @param {bool} loop Flags the sound as looping or not.
 /// @param {int} priority Set the channel priority for the sound.
 /// @return {index} Sound ID
 function scr_play_rand_snd_at(
-	snd_array, _x, _y, falloff_ref, falloff_max, falloff_factor, loop, priority
+	snd_array, _x, _y, loop, priority
 ) {
 	var _rand_snd = array_choose(snd_array);
 	
@@ -35,7 +32,7 @@ function scr_play_rand_snd_at(
 	}
 
 	return scr_play_snd_at(
-	  _rand_snd, _x, _y, falloff_ref, falloff_max, falloff_factor, loop, priority
+	  _rand_snd, _x, _y, loop, priority
 	);
 }
 
@@ -43,13 +40,10 @@ function scr_play_rand_snd_at(
 /// @param {index} _snd_idx Sound index
 /// @param {int} _x The x position.
 /// @param {int} _y The y position.
-/// @param {int} falloff_ref The falloff reference relative to the listener (clamp).
-/// @param {int} falloff_max The maximum falloff distance relative to the listener.
-/// @param {int} falloff_factor The falloff factor (default 1).
 /// @param {bool} loop Flags the sound as looping or not.
 /// @param {int} priority Set the channel priority for the sound.
 /// @return {index} Sound ID
-function scr_play_snd_at(_snd_idx, _x, _y, falloff_ref, falloff_max, falloff_factor, loop, priority) {
+function scr_play_snd_at(_snd_idx, _x, _y, loop, priority) {
 	// for now presume that we'll work with only one view
 	var _view = view_camera[0];
 	
@@ -67,9 +61,13 @@ function scr_play_snd_at(_snd_idx, _x, _y, falloff_ref, falloff_max, falloff_fac
 		_rel_x,
 		_rel_y,
 		0,
-		falloff_ref,
-		falloff_max,
-		falloff_factor,
+		
+		// Falloff params should probably be refined
+		// but we'll leave them as this for now.
+		100,
+		300,
+		1,
+
 		loop,
 		priority,
 	);
