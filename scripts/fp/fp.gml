@@ -40,6 +40,21 @@ function array_find(argument0, argument1) {
 	return false;
 }
 
+/// @function array_choose(array)
+/// @param {array} input Input array
+function array_choose(_input) {
+	/// @description Like regular "choose", but pick
+	/// from an array instead of multiple values.
+	
+	var _arr_len = array_length_1d(_input);
+	
+	if (!_arr_len) {
+		return undefined;
+	}
+	
+	return _input[irandom_range(0, _arr_len - 1)];
+}
+
 /// @description  filter(predicate_script_idx, arr, data?)
 /// @param predicate_script_idx
 /// @param  arr
