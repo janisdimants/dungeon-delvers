@@ -7,4 +7,4 @@ scr_play_rand_snd([
 	snd_skeleton_bomb_attack_1,
 	snd_skeleton_bomb_attack_2,
 	snd_skeleton_bomb_attack_3,
-])
+]);
