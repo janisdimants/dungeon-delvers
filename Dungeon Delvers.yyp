@@ -4,6 +4,7 @@
     {"id":{"name":"spr_player_head","path":"sprites/spr_player_head/spr_player_head.yy",},"order":1,},
     {"id":{"name":"spr_base_down","path":"sprites/spr_base_down/spr_base_down.yy",},"order":2,},
     {"id":{"name":"spr_base_right","path":"sprites/spr_base_right/spr_base_right.yy",},"order":3,},
+    {"id":{"name":"perlin_noise","path":"scripts/perlin_noise/perlin_noise.yy",},"order":3,},
     {"id":{"name":"spr_base_left","path":"sprites/spr_base_left/spr_base_left.yy",},"order":4,},
     {"id":{"name":"spr_shadow_small","path":"sprites/spr_shadow_small/spr_shadow_small.yy",},"order":5,},
     {"id":{"name":"spr_shadow_tiny","path":"sprites/spr_shadow_tiny/spr_shadow_tiny.yy",},"order":6,},
