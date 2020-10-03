@@ -12,6 +12,11 @@ move_sprite = spr_skeleton_helmet;
 hit_sprite = spr_skeleton_helmet_hit;
 
 // Sounds
+attack_sounds = [
+	snd_skeleton_attack_1,
+	snd_skeleton_attack_2,
+	snd_skeleton_attack_3,
+];
 grunt_sounds = [
 	snd_skeleton_grunt_1,
 	snd_skeleton_grunt_2,

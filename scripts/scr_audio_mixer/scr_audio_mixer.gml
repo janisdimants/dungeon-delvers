@@ -69,5 +69,9 @@ function scr_audio_mixer() {
 		[snd_skeleton_grunt_2, _volume_mobs],
 		[snd_skeleton_grunt_3, _volume_mobs],
 		[snd_skeleton_grunt_4, _volume_mobs],
+		
+		[snd_skeleton_bomb_attack_1, _volume_mobs],
+		[snd_skeleton_bomb_attack_2, _volume_mobs],
+		[snd_skeleton_bomb_attack_3, _volume_mobs],
 	]);
 }
