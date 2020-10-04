@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Entities/Enemies.yy",
+    "name": "Mobs",
+    "path": "folders/Objects/Entities/Mobs.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_bird",

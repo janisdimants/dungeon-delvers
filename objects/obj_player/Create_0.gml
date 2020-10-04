@@ -15,7 +15,8 @@ footstep_sound_played = false;
 
 /// Player sprite variables
 
-head = spr_player_head;
+
+head = choose(spr_head_elf, spr_head_gork, spr_head_human);
 
 body_img_speed = 32;
 body[RIGHT] = spr_base_right;
