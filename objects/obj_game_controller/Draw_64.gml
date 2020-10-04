@@ -15,12 +15,8 @@ if (global.debug == true) {
 /// Draw game UI
 if (player) {
 	shader_reset();
-  scr_draw_equipment();
-  scr_draw_mana();
-  scr_draw_health();
+	scr_draw_equipment();
+	scr_draw_mana();
+	scr_draw_health();
 	scr_reset_to_default_shader();
 }
-if (global.game_paused) {
-
-}
-

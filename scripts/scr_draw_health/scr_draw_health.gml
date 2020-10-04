@@ -4,7 +4,7 @@ function scr_draw_health() {
 
 	var _sprite = spr_player_hp;
 	var _max_hp = player.max_hp;
-	var _hp = player.hp;
+	var _hp = floor(max(player.hp, 0));
 	var _x = -48 * scale_x;
 	var _y = 0 * scale_y;
 
@@ -22,7 +22,4 @@ function scr_draw_health() {
 	  c_white,
 	  1
 	);
-
-
-
 }
