@@ -16,7 +16,9 @@ function scr_melee_attack_target() {
 	with (_target) {
 	  // Make sure player isn't invincible
 	  if (!invincible) {
-	    hp -= _damage;
+
+	    hp = max(hp - _damage, 0);
+
 	    global.hit_pause_timer = other.hit_pause;
 			
 		// This is probably the least appropriate place to put audio logic
@@ -37,8 +39,13 @@ function scr_melee_attack_target() {
 		scr_play_rand_snd_at(other.attack_sounds, _trg_x, _trg_y, false, 1);
 		
 	    scr_apply_force(_knockback_amount, _knockback_dir);
-			scr_set_status_amount(scr_get_status(scr_invincible_status), invinc_time);
-			scr_apply_modifiers(_modifiers);
+		scr_set_status_amount(scr_get_status(scr_invincible_status), invinc_time);
+		scr_apply_modifiers(_modifiers);
+		
+		if (!hp) {
+			state = scr_dead_state;
+			exit;
+		}
 	  }
 	}
 
