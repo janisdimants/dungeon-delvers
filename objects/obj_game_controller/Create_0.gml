@@ -12,6 +12,7 @@ if (recording) {
 
 window_set_size(_w, _h);
 global.center_window = true;
+global.game_over = false;
 
 /// Game controller variables
 game_paused = false;

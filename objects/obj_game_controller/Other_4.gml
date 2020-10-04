@@ -12,3 +12,5 @@ global.mouse_moved = true;
 gibs_surf = surface_create(room_width, room_height);
 lightning_surf = surface_create(room_width, room_height);
 
+// Needed for gameover_controller
+global.game_over = false;

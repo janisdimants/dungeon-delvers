@@ -44,6 +44,7 @@ function scr_melee_attack_target() {
 		
 		if (!hp) {
 			state = scr_dead_state;
+			global.game_over = true;
 			exit;
 		}
 	  }

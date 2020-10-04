@@ -72,3 +72,12 @@ function scr_play_snd_at(_snd_idx, _x, _y, loop, priority) {
 		priority,
 	);
 }
+
+/// @description Stop current ambient audio
+function scr_stop_ambient_audio() {
+	var _amb_snd_idx = global.ambience_snd_idx;
+	if (_amb_snd_idx) {
+		audio_stop_sound(_amb_snd_idx);
+		global.ambience_snd_idx = 0;
+	}
+}
