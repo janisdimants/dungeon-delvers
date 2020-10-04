@@ -4,6 +4,11 @@ function scr_to_menu() {
 		// noop if already in menu
 		exit;
 	}
+	
+	with(obj_wave_controller) {
+		stage = 0;
+		wave = 0;
+	}
 
 	scr_stop_ambient_audio();
 	global.game_paused = false;
