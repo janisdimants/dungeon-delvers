@@ -116,6 +116,7 @@
     {"id":{"name":"snd_spear_swing_3","path":"sounds/snd_spear_swing_3/snd_spear_swing_3.yy",},"order":2,},
     {"id":{"name":"snd_spear_swing_4","path":"sounds/snd_spear_swing_4/snd_spear_swing_4.yy",},"order":3,},
     {"id":{"name":"snd_menu_open","path":"sounds/snd_menu_open/snd_menu_open.yy",},"order":0,},
+    {"id":{"name":"scr_update_map_nodes","path":"scripts/scr_update_map_nodes/scr_update_map_nodes.yy",},"order":2,},
     {"id":{"name":"snd_menu_close","path":"sounds/snd_menu_close/snd_menu_close.yy",},"order":1,},
     {"id":{"name":"snd_menu_hover","path":"sounds/snd_menu_hover/snd_menu_hover.yy",},"order":2,},
     {"id":{"name":"obj_bird","path":"objects/obj_bird/obj_bird.yy",},"order":0,},

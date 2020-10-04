@@ -10,8 +10,13 @@ with (player_marker) {
 
 	if (x == _trg_x && y == _trg_y) {
 		player_in_transit = false;
-		other.player_target = noone;
 		speed = 0;
+
+		scr_update_map_nodes();
+
+		other.player_target.player_is_here = true;
+		other.player_target = noone;
+
 		room_goto(rm_arena);
 		exit;
 	}
