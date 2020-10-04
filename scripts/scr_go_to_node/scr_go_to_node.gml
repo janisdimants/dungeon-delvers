@@ -1,10 +1,17 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+/// @description 
 function scr_go_to_node(){
+	if (player_is_here) {
+		return;
+	}
+
 	with (obj_map_node) {
 		player_is_here = false;	
 	}
+
 	player_is_here = true;
 	
-	room_goto(rm_arena);
+	with (obj_map_controller) {
+		player_in_transit = true;
+		player_target = other.id;
+	}
 }

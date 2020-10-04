@@ -67,6 +67,7 @@
     {"id":{"name":"snd_player_pain_3","path":"sounds/snd_player_pain_3/snd_player_pain_3.yy",},"order":3,},
     {"id":{"name":"spr_selection_arrow","path":"sprites/spr_selection_arrow/spr_selection_arrow.yy",},"order":2,},
     {"id":{"name":"spr_dark_layer","path":"sprites/spr_dark_layer/spr_dark_layer.yy",},"order":0,},
+    {"id":{"name":"map_helpers","path":"scripts/map_helpers/map_helpers.yy",},"order":1,},
     {"id":{"name":"scr_stun_status","path":"scripts/scr_stun_status/scr_stun_status.yy",},"order":1,},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},"order":4,},
     {"id":{"name":"obj_option_music_volume","path":"objects/obj_option_music_volume/obj_option_music_volume.yy",},"order":1,},

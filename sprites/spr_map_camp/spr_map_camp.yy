@@ -26,6 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"e8140282-05da-4051-aea4-0f2cd762a718","path":"sprites/spr_map_camp/spr_map_camp.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"e8140282-05da-4051-aea4-0f2cd762a718","path":"sprites/spr_map_camp/spr_map_camp.yy",},"LayerId":{"name":"8da343be-5312-4d75-be29-ecdfe244f417","path":"sprites/spr_map_camp/spr_map_camp.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"e8140282-05da-4051-aea4-0f2cd762a718","path":"sprites/spr_map_camp/spr_map_camp.yy",},"LayerId":{"name":"8da343be-5312-4d75-be29-ecdfe244f417","path":"sprites/spr_map_camp/spr_map_camp.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_map_camp","path":"sprites/spr_map_camp/spr_map_camp.yy",},"resourceVersion":"1.0","name":"e8140282-05da-4051-aea4-0f2cd762a718","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
