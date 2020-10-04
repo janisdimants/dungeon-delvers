@@ -1,10 +1,16 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_map_player",
+    "path": "sprites/spr_map_player/spr_map_player.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_ui_element",
+    "path": "objects/obj_ui_element/obj_ui_element.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -17,17 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_map_controller","path":"objects/obj_map_controller/obj_map_controller.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Map",
+    "path": "folders/Objects/Map.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_map_controller",
+  "name": "obj_map_player_marker",
   "tags": [],
   "resourceType": "GMObject",
 }

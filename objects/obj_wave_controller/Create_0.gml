@@ -12,5 +12,3 @@ wave_cooldown_timer = 0;
 active_enemies = 0;
 wave_budget = 0;
 budget = 0;
-
-

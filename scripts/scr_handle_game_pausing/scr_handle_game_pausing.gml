@@ -6,6 +6,7 @@ function scr_handle_game_pausing(){
 	var _unpausable_rooms = [
 		rm_main_menu,
 		rm_death,
+		rm_map
 	];
 
 	if (array_find(room, _unpausable_rooms)) {

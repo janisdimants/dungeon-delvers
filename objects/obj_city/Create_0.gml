@@ -14,8 +14,8 @@ var _camp_count = 6 + irandom(6);
 
 for (var i = 0; i < _camp_count; i++) {
 		// Get random position around the camp
-		var _min_distance = 10;
-		var _max_distance = 100;
+		var _min_distance = 50;
+		var _max_distance = 1000;
 		
 		var _direction = random(360);
 		var _distance = _min_distance + (random(1) * (_max_distance - _min_distance));
@@ -24,7 +24,6 @@ for (var i = 0; i < _camp_count; i++) {
 		var _camp_y = y + lengthdir_y(_distance, _direction);
 		
 		// Create a camp
-		var _camp = instance_create(_camp_x, _camp_y, obj_camp);
-		
+		instance_create(_camp_x, _camp_y, obj_camp);
 }
 
