@@ -5,4 +5,5 @@ function scr_dead_state() {
 
 	scr_get_input();
 
+	invincible = true;
 }
