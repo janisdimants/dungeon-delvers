@@ -26,14 +26,16 @@ function scr_melee_attack_target() {
 		var _trg_y = _target.y;
 		
 		// player pain
-		scr_play_rand_snd_at([
-			snd_player_pain_1,
-			snd_player_pain_2,
-			snd_player_pain_3,
-			snd_player_pain_4,
-			snd_player_pain_5,
-			snd_player_pain_6,
-		], _trg_x, _trg_y, false, 99);
+		if (hp) {
+			scr_play_rand_snd_at([
+				snd_player_pain_1,
+				snd_player_pain_2,
+				snd_player_pain_3,
+				snd_player_pain_4,
+				snd_player_pain_5,
+				snd_player_pain_6,
+			], _trg_x, _trg_y, false, 99);
+		}
 		
 		// attacker attack sound, if any defined.
 		scr_play_rand_snd_at(other.attack_sounds, _trg_x, _trg_y, false, 1);
