@@ -13,5 +13,6 @@ player_marker = instance_create_depth(
 	obj_map_player_marker
 );
 
+PLAYER_MARKER_TRANSIT_SPEED = 0.3;
 player_in_transit = false;
 player_target = noone;

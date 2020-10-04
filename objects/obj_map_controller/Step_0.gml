@@ -11,11 +11,14 @@ with (player_marker) {
 	if (x == _trg_x && y == _trg_y) {
 		player_in_transit = false;
 		other.player_target = noone;
+		speed = 0;
 		room_goto(rm_arena);
-		return;
+		exit;
 	}
 
-	// TODO: Replace with smooth traversal
-	x = _trg_x;
-	y = _trg_y;
+	direction = point_direction(x, y, _trg_x, _trg_y);
+	speed = min(
+		other.PLAYER_MARKER_TRANSIT_SPEED,
+		point_distance(x, y, _trg_x, _trg_y)
+	);
 }
