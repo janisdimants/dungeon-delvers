@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Player States",
-    "path": "folders/Scripts/Object Scripts/Entities/Equipment/Player States.yy",
+    "path": "folders/Scripts/Object Scripts/Entities/Player States.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_move_state",
