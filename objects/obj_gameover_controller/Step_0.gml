@@ -8,12 +8,9 @@ if (!global.game_over || room == ROOM) {
 }
 
 fade_step += frame_time_indep;
-var _step = fade_step;
-var _fade_duration = FADE_DURATION;
 
 with (fader) {
-	image_alpha = _step / _fade_duration;
-	draw_self();
+	image_alpha = other.fade_step / other.FADE_DURATION;
 }
 
 if (fade_step >= FADE_DURATION) {
