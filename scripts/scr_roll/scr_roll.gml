@@ -43,7 +43,7 @@ function scr_roll() {
 	var _img_number = sprite_get_number(_dodge_sprite[face]);
 
 	// Update progress time
-	equipment[_slot, _eq_progress_time] += frame_time;
+	equipment[_slot, _eq_progress_time] += global.frame_time;
 
 	// Update progress bar
 	equipment[_slot, _eq_visual_progress] = (equipment[_slot, _eq_progress_time] / equipment[_slot, _eq_time]);

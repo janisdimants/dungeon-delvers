@@ -6,15 +6,13 @@ function scr_move(argument0, argument1) {
 	var len = argument0;
 	var dir = argument1;
 
-	scr_frame_time();
-
 	var collided = false;
 	var move_offset_check_distance = 2;
 	var move_offset_move_distance = 2;
 
 	// Get move speed
-	var hspd = lengthdir_x(len, dir) * frame_time;
-	var vspd = lengthdir_y(len, dir) * frame_time;
+	var hspd = lengthdir_x(len, dir) * global.frame_time;
+	var vspd = lengthdir_y(len, dir) * global.frame_time;
 
 	if (!place_free(x + hspd, y)) {
 	  if (hspd > 0) { move_contact_solid(0, hspd); }

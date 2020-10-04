@@ -14,7 +14,7 @@ function scr_weapon_melee(_slot) {
 
 	// ATTACK LOGIC
 	// Update progresses
-	equipment[_slot, _eq_progress_time] += frame_time;
+	equipment[_slot, _eq_progress_time] += global.frame_time;
 	equipment[_slot, _eq_visual_progress] = (equipment[_slot, _eq_progress_time] / equipment[_slot, _eq_time]);
 
 	// Update sprite

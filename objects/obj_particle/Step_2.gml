@@ -7,7 +7,6 @@ if (attached > 0) {
   }
   x = attached.x + attach_offset_x;
   y = attached.y + attach_offset_y;
-  show_debug_message("x" + string(attach_offset_x));
 }
 
 /// Update depth

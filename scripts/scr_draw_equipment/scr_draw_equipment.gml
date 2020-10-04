@@ -7,7 +7,6 @@ function scr_draw_equipment() {
 	var _progress_sprite = spr_equipment_progress;
 	var _combo_progress_sprite = spr_equipment_combo_progress;
 	var _equipment = player.equipment;
-	var _hp = player.hp;
 	var _start_x = width/2 - (24 * scale_x);
 	var _offset = 16 * scale_x;
 	var _y = height - 0 * scale_y;

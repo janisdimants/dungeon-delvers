@@ -1,6 +1,6 @@
 /// @description  Draw with height
 
-shader_reset();
+scr_reset_to_default_shader();
 draw_sprite_ext(
   sprite_index, image_index,
   x, y-height,

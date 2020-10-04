@@ -18,15 +18,17 @@ function scr_update_ui_variables() {
 
 	// Center the view on player, to ensure after minimising
 	// the view is in the right position
-	if (player) {
-	  __view_set( e__VW.XView, 0, player.x - (__view_get( e__VW.WView, 0 )/2 ));
-	  __view_set( e__VW.YView, 0, player.y - (__view_get( e__VW.HView, 0 )/2 ));
+	var _player = instance_find(obj_player, 0);
+	if (_player) {
+	  __view_set( e__VW.XView, 0, _player.x - (__view_get( e__VW.WView, 0 )/2 ));
+	  __view_set( e__VW.YView, 0, _player.y - (__view_get( e__VW.HView, 0 )/2 ));
 	}
 
-	// Resize application surface 4 times larger,
-	// to make subpixel movements smoother
+	// Resize application surface to match screen size,
+	// Here we can also apply super-sampling by multiplying width/height values
+	var _SS = global.super_sampling;
 	if (width > 0 && height > 0) {
-	  surface_resize(application_surface, width, height);
+	  surface_resize(application_surface, width * _SS, height * _SS);
 	}
 
 	center_x = width/2;

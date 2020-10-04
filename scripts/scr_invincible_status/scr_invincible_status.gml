@@ -4,7 +4,7 @@ function scr_invincible_status(status){
 	var _amount = scr_get_status_amount(status);
 	
 	if (_amount > 0) {
-	  _amount -= frame_time;
+	  _amount -= global.frame_time;
 	}
 	
 	invincible = (_amount > 0);

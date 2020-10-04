@@ -35,7 +35,7 @@ function scr_spell_groundbeam(argument0) {
 	var _side_offset = -3;
 	var _release = attack2_key_up;
 
-	spell_img_index += (_spell_img_number/spell_length) * frame_time;
+	spell_img_index += (_spell_img_number/spell_length) * global.frame_time;
 
 	if (spell_img_index > _attack_frame) {
 	  if (!attacked && !_release) {

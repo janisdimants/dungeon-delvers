@@ -10,4 +10,5 @@ global.mouse_moved = true;
 
 // Update surface size
 gibs_surf = surface_create(room_width, room_height);
+lightning_surf = surface_create(room_width, room_height);
 

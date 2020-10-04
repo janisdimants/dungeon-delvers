@@ -1,5 +1,4 @@
 /// @description  Control the logic
-scr_frame_time();
 script_execute(state);
 
 /// Update Sprite
@@ -13,9 +12,8 @@ depth = -y;
 
 
 /// Stat update (Restore mana)
-scr_frame_time();
 
-mana += mana_restore_rate * frame_time;
+mana += mana_restore_rate * global.frame_time;
 
 if (mana > max_mana) {
   mana = max_mana;

@@ -4,15 +4,15 @@ function scr_fire_status(status){
 	var _amount = scr_get_status_amount(status);
 
 	if (_amount > 0) {
-	  _amount -= frame_time;
+	  _amount -= global.frame_time;
   
 	  // Apply burn
-	  hp -= frame_time * .5;
+	  hp -= global.frame_time * .5;
 		
 		// Create burn particle effects
 	  var _burn_interval = 0.25;
   
-		if (_amount % _burn_interval < frame_time) {
+		if (_amount % _burn_interval < global.frame_time) {
 			var _particle = scr_create_particle(
 				random(10),
 				random(360),

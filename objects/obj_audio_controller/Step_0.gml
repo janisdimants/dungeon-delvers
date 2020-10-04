@@ -2,7 +2,7 @@
 
 // Count frame time
 scr_frame_time()
-grunt_timer += frame_time;
+grunt_timer += global.frame_time;
 
 // Play a random mobs grunt sound once every GRUNT_INTERVAL_BASE seconds or so.
 var _mob_count = instance_number(obj_base_enemy);

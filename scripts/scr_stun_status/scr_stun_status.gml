@@ -4,7 +4,7 @@ function scr_stun_status(status){
 	var _amount = scr_get_status_amount(status);
 
 	if (_amount > 0) {
-	  _amount -= frame_time;
+	  _amount -= global.frame_time;
 	}
 
 	scr_set_status_amount(status, _amount);

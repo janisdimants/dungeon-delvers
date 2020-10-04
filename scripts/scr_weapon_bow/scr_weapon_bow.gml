@@ -17,12 +17,12 @@ function scr_weapon_bow(argument0) {
 	  equipment[_slot, _eq_sprite] = spr_bow;
 	  equipment[_slot, _eq_icon_index] = 4;
 	  equipment[_slot, _eq_executed] = false;
-	  equipment[_slot, _eq_execution_time] = (11/20) * .6; // Last Image index before shot
+	  equipment[_slot, _eq_execution_time] = (11/20) * .5; // Last Image index before shot
 	  equipment[_slot, _eq_height] = 6;
-	  equipment[_slot, _eq_time] = .6; // Seconds
+	  equipment[_slot, _eq_time] = .5; // Seconds
 	  equipment[_slot, _eq_combo_time] = 0.25; // TODO: combo = of(active, time)
 	  equipment[_slot, _eq_combo_ready] = false;
-	  equipment[_slot, _eq_damage] = .5;
+	  equipment[_slot, _eq_damage] = .9;
 	  equipment[_slot, _eq_stun_time] = 0.2;
 	  equipment[_slot, _eq_knockback] = 50;
 	  equipment[_slot, _eq_active_movement_modifier] = 0.7;

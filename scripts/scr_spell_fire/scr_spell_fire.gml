@@ -59,12 +59,12 @@ function scr_spell_fire(argument0, argument1) {
 
 	if (!equipment[_slot, _eq_executed]) {
 	  // Update progress time
-	  equipment[_slot, _eq_progress_time] += frame_time;
+	  equipment[_slot, _eq_progress_time] += global.frame_time;
     
 	  equipment[_slot, _eq_visual_progress] = 1 - min(equipment[_slot, _eq_progress_time]/(equipment[_slot, _eq_time]-_cast_time), 1);
   
 	  // Stop mana regeneration by reverse updating it
-	  mana -= mana_restore_rate * frame_time;
+	  mana -= mana_restore_rate * global.frame_time;
 
 	  // Arm extended to shoot
 	  if (equipment[_slot, _eq_progress_time] > equipment[_slot, _eq_execution_time]) {
@@ -125,7 +125,7 @@ function scr_spell_fire(argument0, argument1) {
 	    audio_sound_gain(snd_fire, 0, _projectile_lifespan_in_ms);
 	  }
 	} else {
-	  equipment[_slot, _eq_progress_time] -= frame_time;
+	  equipment[_slot, _eq_progress_time] -= global.frame_time;
 	  equipment[_slot, _eq_visual_progress] = 1 - max(equipment[_slot, _eq_progress_time]/equipment[_slot, _eq_time], 0);
   
 	  if (equipment[_slot, _eq_progress_time] < 0) {

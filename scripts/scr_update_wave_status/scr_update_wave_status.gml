@@ -3,8 +3,6 @@ function scr_update_wave_status() {
 
 	if (room != rm_arena) { exit; }
 
-	scr_frame_time();
-
 	var _waves_total = 5
 	
 	if (global.debug) {
@@ -13,7 +11,7 @@ function scr_update_wave_status() {
 
 	if (!wave_active) {
 	  // Pause section between waves
-	  wave_cooldown_timer -= frame_time;
+	  wave_cooldown_timer -= global.frame_time;
 
 	  // Begin the next wave
 	  if (wave_cooldown_timer <= 0) {
@@ -32,7 +30,7 @@ function scr_update_wave_status() {
 	  }
 	} else {
 	  if (budget >= 1) {
-	    enemy_spawn_timer -= frame_time;
+	    enemy_spawn_timer -= global.frame_time;
 
 	    // Spawn enemy from remaining budget
 	    if (enemy_spawn_timer < 0) {

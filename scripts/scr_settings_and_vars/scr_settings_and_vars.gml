@@ -4,6 +4,8 @@ function scr_settings_and_vars() {
 	global.debug = false;
 
 	// Game variables
+	global.ingame_shader = shd_base_lightning;
+	global.time_of_day = 0; 
 	global.game_speed = 1;
 	global.controller_id = -1;
 	global.mouse_moved = true;
@@ -19,6 +21,7 @@ function scr_settings_and_vars() {
 	// Graphics
 	global.fullscreen = 0;
 	global.resolution_option = 3;
+	global.super_sampling = 1;
 	global.fps_cap = 250;
 
 	// Controls
@@ -32,4 +35,6 @@ function scr_settings_and_vars() {
 	global.center_window = true;
 	global.game_paused = false;
 	global.hit_pause_timer = 0;
+	
+	scr_frame_time();
 }

@@ -14,7 +14,7 @@ for (var i = 0; i < array_height_2d(equipment); i++) {
 }
 
 // Body
-shader_reset();
+scr_reset_to_default_shader();
 draw_sprite(shadow, 0, x, y);
 
 if (invincible) {
@@ -42,7 +42,7 @@ for (var i = 0; i < array_height_2d(equipment); i++) {
 // Head
 draw_sprite(head, head_direction, x, y - body_bob);
 
-shader_reset();
+scr_reset_to_default_shader();
 
 scr_draw_healthbar();
 

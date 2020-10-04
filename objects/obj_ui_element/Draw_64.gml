@@ -25,6 +25,8 @@ scr_get_base_ui();
   draw_set_alpha(1);
 }*/
 
+shader_reset();
+
 var _selected_color = c_white;
 var _col = $dddddd;
 
