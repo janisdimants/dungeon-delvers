@@ -9,7 +9,8 @@ if (global.debug == true) {
   draw_text(20, 230, string_hash_to_newline("w"+string(__view_get( e__VW.WView, 0 ))));
   draw_text(20, 250, string_hash_to_newline("h"+string(__view_get( e__VW.HView, 0 ))));
   draw_text(20, 290, string_hash_to_newline("room_speed"+string(room_speed)));
-  draw_text(20, 310, string_hash_to_newline("game_speed"+string(global.game_speed)));
+  draw_text(20, 310, string_hash_to_newline("fps_real"+string(fps_real)));
+  draw_text(20, 330, string_hash_to_newline("game_speed"+string(global.game_speed)));
 }
 
 /// Draw game UI

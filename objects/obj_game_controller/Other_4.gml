@@ -1,7 +1,7 @@
 /// @description  Update room settings
 
-if (room_speed != global.fps_cap) {
-  room_speed = global.fps_cap;
+if (game_get_speed(gamespeed_fps) != global.fps_cap) {
+  game_set_speed(global.fps_cap, gamespeed_fps);
 }
 
 // Safety measure, so when room loads, it initializes

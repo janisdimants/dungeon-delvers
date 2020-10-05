@@ -1,7 +1,7 @@
 /// @description  Global Game Settings and runtime variables
 function scr_settings_and_vars() {
 
-	global.debug = false;
+	global.debug = true;
 
 	// Game variables
 	global.ingame_shader = shd_base_lightning;
@@ -22,7 +22,7 @@ function scr_settings_and_vars() {
 	global.fullscreen = 0;
 	global.resolution_option = 3;
 	global.super_sampling = 1;
-	global.fps_cap = 250;
+	global.fps_cap = 9999;
 
 	// Controls
 	global.deadzone = 0.3;

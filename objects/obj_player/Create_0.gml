@@ -18,7 +18,7 @@ footstep_sound_played = false;
 
 head = choose(spr_head_elf, spr_head_gork, spr_head_human);
 
-body_img_speed = 32;
+body_img_speed = 24;
 body[RIGHT] = spr_base_right;
 body[UP] = spr_base_down;
 body[LEFT] = spr_base_left;

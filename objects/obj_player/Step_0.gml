@@ -6,7 +6,7 @@ var _total_move_speed = point_distance(0, 0, total_move_h, total_move_v);
 var _move_speed_percentage = _total_move_speed / 100;
 
 sprite_index = body[face];
-image_speed = (body_img_speed/room_speed)*_move_speed_percentage*global.game_speed;
+image_speed = (body_img_speed/game_get_speed(gamespeed_fps))*_move_speed_percentage*global.game_speed;
 
 depth = -y;
 

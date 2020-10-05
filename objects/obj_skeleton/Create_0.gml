@@ -5,7 +5,7 @@ event_inherited();
 
 hp = 2;
 max_hp = hp;
-anim_speed = 26;
+anim_speed = 24;
 move_speed = 30;
 
 move_sprite = spr_skeleton;

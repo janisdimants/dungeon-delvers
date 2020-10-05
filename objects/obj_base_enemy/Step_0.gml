@@ -29,7 +29,8 @@ depth = -y;
 
 if (hit_timer <= 0 && scr_get_status_amount(scr_get_status(scr_stun_status)) <= 0) {
   sprite_index = move_sprite;
-  image_speed = anim_speed / room_speed * global.game_speed;
+  //image_speed = (anim_speed / room_speed) * global.game_speed;
+  image_speed = anim_speed/4 * global.game_speed;
 } else if (hit_timer > 0) {
   sprite_index = hit_sprite;
   image_speed = 0;
