@@ -10,12 +10,12 @@ image_speed = 0;
 image_index = 1 + irandom(1);
 
 // Generate camps around
-var _camp_count = 6 + irandom(6);
+var _camp_count = 2 + irandom(2);
 
 for (var i = 0; i < _camp_count; i++) {
 		// Get random position around the camp
-		var _min_distance = 50;
-		var _max_distance = 1000;
+		var _min_distance = 10;
+		var _max_distance = 50;
 		
 		var _direction = random(360);
 		var _distance = _min_distance + (random(1) * (_max_distance - _min_distance));

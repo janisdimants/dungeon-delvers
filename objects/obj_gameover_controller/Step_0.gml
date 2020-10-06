@@ -6,6 +6,9 @@ if (!global.game_over || room == ROOM) {
 	// Game still in progress or already ended
 	exit;
 }
+if (fader == noone) {
+	fader = instance_create(0, 0, obj_ui_dark_layer);
+}
 
 fade_step += frame_time_indep;
 
