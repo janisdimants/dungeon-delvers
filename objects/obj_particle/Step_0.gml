@@ -32,7 +32,7 @@ len = max(0, _new_len);
 
 /// Update animation
 
-image_speed = (anim_speed/room_speed)*global.game_speed;
+image_speed = (anim_speed/fps_real)*global.game_speed;
 
 if (anim_speed > 0 && anim_damp > 0) {
   anim_speed = max(anim_speed - anim_damp * global.frame_time, 0);

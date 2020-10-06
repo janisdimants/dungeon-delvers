@@ -23,7 +23,7 @@ function scr_fire_status(status){
 			if (instance_exists(_particle)) {
 				_particle.destroy_after_animation = true;
 				_particle.grav = -25;
-				_particle.anim_speed = 20;
+				_particle.anim_speed = 14;
 				_particle.velocity = -10;
 				_particle.sprite_index = spr_fire_projectile;
 				_particle.draw_shadow = false;
